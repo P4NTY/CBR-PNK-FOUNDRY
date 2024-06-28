@@ -1,4 +1,5 @@
 {
+    "id": "CBRPNK2137",
     "name": "CBRPNK",
     "title": "CBR+PNK",
     "description": "Unofficial system to <strong>CBR+PNK</strong>",
@@ -8,15 +9,12 @@
     }],
     "version": 0.01,
     "compatibility": {
-        "minimum": "12",
-        "verified": "12.317"
+        "minimum": "11",
+        "verified": "12"
       },
-    "esmodules": [
-        "mian.js"
-    ],
-    "styles": [
-        "mian.css"
-    ],
+    "esmodules": [ "mian.js" ],
+    "styles": [ "mian.css" ],
+    "url": "https://github.com/P4NTY/CBR-PNK-FOUNDRY",
     "background": "systems/CBRPNK/assets/CBRPNK_splash.webp",
     "download": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/raw/main/CBRPNK.zip"
 }
