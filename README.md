@@ -22,3 +22,5 @@ Unofficial system to play CBR+PNK on Foundry VTT
 - Detection of throw by dice so nice
 - Version detection by Foundry
 - Improving the version-lifting manifest
+
+[![COFFE](https://cdn.buymeacoffee.com/buttons/v2/default-blue.png)](https://www.buymeacoffee.com/kiszu)
