@@ -1,0 +1,20 @@
+<div class="runner {{class}}">
+    <img src="{{img}}" title="{{name}}" data-edit="img"/>
+    <div class="text">
+        <h1>{{name}} {{#if title}}- {{title}}{{/if}}</h1>
+        <div class="result">
+            <h3>{{action}}</h3>
+            <div class="dice">
+                {{{dices}}}
+            </div>
+        </div>
+        <div class="desc">
+            {{{desc}}}
+        </div>
+    </div>
+    <div class="situation">
+        {{#if efect}}<p>EFFECT: {{efect}}</p>{{/if}}
+        <p>{{approach}}</p>
+        {{#if threat}}<p>THREAT: {{threat}}</p>{{/if}}
+    </div>
+</div>

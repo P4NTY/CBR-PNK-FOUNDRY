@@ -1,0 +1,310 @@
+{
+    "Actor": {
+        "types": ["runner"],
+        "runner": {
+            "angle": {
+                "isOpen": false,
+                "hunted": false,
+                "for": "",
+                "DETAILS": "",
+                "DEBT": {
+                    "value": 0,
+                    "max": 3
+                },
+                "CRED": {
+                    "value": 0,
+                    "max": 3
+                }
+            },
+            "roll": {
+                "efect": 2,
+                "threat": 2,
+                "approach": "",
+                "skill": "",
+                "addDice": "+0"
+            },
+            "stress": {
+                "value": 0,
+                "max": 7,
+                "isLOAD": false
+            },
+            "approach": {
+                "AGGRESSIVE": {
+                    "dice": 0,
+                    "GLICHED": false
+                },
+                "SMART": {
+                    "dice": 0,
+                    "GLICHED": false
+                },
+                "EMPATHIC": {
+                    "dice": 0,
+                    "GLICHED": false
+                },
+                "STEALTHY": {
+                    "dice": 0,
+                    "GLICHED": false
+                }
+            },
+            "skills": {
+                "ANALYZE": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "PEOPLE": false,
+                        "SITUATION": false,
+                        "INFORMATION": false
+                    }
+                },
+                "ATHLETICS": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "SPRINT": false,
+                        "PARKOUR": false,
+                        "SWIM": false,
+                        "CLIMB": false
+                    }
+                },
+                "CLOSE": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "BRAWLING": false,
+                        "WEAPON": false
+                    }
+                },
+                "CODING": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "HACK": false,
+                        "COMPILE": false,
+                        "MINE": false,
+                        "SCRAMBLE": false
+                    }
+                },
+                "INFLUENCE": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "PERFORM": false,
+                        "NEGOTIATE": false,
+                        "INTIMIDATE": false
+                    }
+                },
+                "PILOTING": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "CARS": false,
+                        "BIKES": false,
+                        "CHOPPERS": false,
+                        "DRONES": false
+                    }
+                },
+                "RANGED": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "PISTOL": false,
+                        "RIFLE": false,
+                        "SMG": false,
+                        "THROWING": false
+                    }
+                },
+                "RIGGING": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "ELETRONICS": false,
+                        "ROBOTICS": false,
+                        "HEAVY": false
+                    }
+                },
+                "SCIENCES": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "BIOTECH": false,
+                        "PHYSICS": false,
+                        "CHEMISTRY": false
+                    }
+                },
+                "STREETWISE": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "POLITICS": false,
+                        "MARKET": false,
+                        "NAVIGATION": false
+                    }
+                }
+            },
+            "AUGMENTATIONS": {
+                "first": {
+                    "name": "",
+                    "desc": "",
+                    "GLICHED": false
+                },
+                "second": {
+                    "name": "",
+                    "desc": "",
+                    "GLICHED": false
+                },
+                "third": {
+                    "name": "",
+                    "desc": "",
+                    "GLICHED": false
+                }
+            },
+            "GEAR": {
+                "LOAD": {
+                    "value": 0,
+                    "selected": "light",
+                    "light": {
+                        "value": 3,
+                        "desc": "Move freely, blend in easily."
+                    },
+                    "medium": {
+                        "value": 5,
+                        "desc": "Look ready for a job."
+                    },
+                    "heavy": {
+                        "value": 7,
+                        "desc": "Loud or slow, very conspicuous."
+                    }
+                },
+                "Equpment": {
+                    "eq1": {
+                        "name": "A BLADE OR TWO",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq2": {
+                        "name": "SIDEARM",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq3": {
+                        "name": "SUBMACHINE GUN",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq4": {
+                        "name": "LARGE/HEAVY WEAPON",
+                        "isUse": false,
+                        "value": 2
+                    },
+                    "eq5": {
+                        "name": "TRACKING DEVICE",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq6": {
+                        "name": "CYBERDECK",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq7": {
+                        "name": "SMALL DRONE",
+                        "isUse": false,
+                        "value": 1,
+                        "desc": "STEALTHY OR SWIFT"
+                    },
+                    "eq8": {
+                        "name": "MEDIUM DRONE",
+                        "isUse": false,
+                        "value": 2,
+                        "desc": "TOUGH OR OFFENSIVE"
+                    },
+                    "eq9": {
+                        "name": "SPARE BATTERY",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq10": {
+                        "name": "MEDKIT",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq11": {
+                        "name": "DISGUISE OR CAMO",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq12": {
+                        "name": "ARMOR",
+                        "isUse": false,
+                        "value": 1,
+                        "eq12a": {
+                            "name": "+HEAVY",
+                            "isUse": false,
+                            "value": 2
+                        }
+                    },
+                    "eq13": {
+                        "name": "INFILTRATION GEAR",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq14": {
+                        "name": "EXTRA AMMO",
+                        "isUse": false,
+                        "value": 1,
+                        "desc": "STANDARD / PIERCING / EXPLOSIVE / INCENDIARY"
+                    },
+                    "eq15": {
+                        "name": "SURVIVAL KIT",
+                        "isUse": false,
+                        "value": 1,
+                        "desc": "MASK, RATION, WATER / AIR PURIF",
+                        "stack": 0,
+                        "max": 3
+                    },
+                    "eq16": {
+                        "name": "GRENADES",
+                        "isUse": false,
+                        "value": 1,
+                        "desc": "EMP / GAS / STUN / INCEND / FRAG",
+                        "stack": 0,
+                        "max": 2
+                    },
+                    "eq17": {
+                        "name": "DEMOLITION TOOLS",
+                        "isUse": false,
+                        "value": 2
+                    },
+                    "eq18": {
+                        "name": "MICROTRONICS TOOLS",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq20": {
+                        "name": "SPARE PARTS",
+                        "isUse": false,
+                        "value": 1
+                    },
+                    "eq21": {
+                        "name": "EXTRA LOAD",
+                        "isUse": false,
+                        "stack": 0,
+                        "max": 4
+                    }
+                }
+            },
+            "HARM": {
+                "light": {
+                    "name": "",
+                    "value": 0,
+                    "max": 2
+                },
+                "medium": {
+                    "name": "",
+                    "value": 0,
+                    "max": 2
+                },
+                "hard": {
+                    "name": "",
+                    "value": 0,
+                    "max": 1
+                },
+                "die": {
+                    "name": "TIME TO DIE.",
+                    "value": 0,
+                    "max": 1
+                }
+            }
+        }
+    }
+}

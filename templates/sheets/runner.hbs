@@ -1,0 +1,455 @@
+<form class="runnerCard" autocomplete="off">
+  <header>
+    <section class="persona {{#if system.angle.hunted}}hunted{{/if}}">
+      <div class="angle {{#if system.angle.isOpen}}expan{{/if}}">
+        <input class="value" name="system.angle.for" type="text" placeholder="Why you runnig for?" value="{{system.angle.for}}"/>
+        {{editor system.angle.DETAILS target="system.angle.DETAILS" button=true owner=owner editable=editable}}
+        <div class="bar">
+          <div class="DEBT" style="--progress: {{system.angle.DEBT.value}};">DEBT</div>
+          <input id="{{actor._id}}_hunted" name="system.angle.hunted" type="checkbox" {{#if system.angle.hunted}}checked{{/if}}/>
+          <label for="{{actor._id}}_hunted">HUNTED</label>
+          <div class="CRED" style="--progress: {{system.angle.CRED.value}};">CRED</div>
+        </div>
+        <input id="{{actor._id}}_angleOpen" class="value" name="system.angle.isOpen" type="checkbox" {{#if system.angle.isOpen}}checked{{/if}}/>
+        <label class="angleOpen" for="{{actor._id}}_angleOpen">{{#if system.angle.isOpen}}Collapse{{else}}Expand{{/if}}</label>
+      </div>
+      <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+      <h1><input name="name" type="text" placeholder="Name" value="{{actor.name}}"/></h1>
+    </section>
+    <section class="roll">
+      <div>
+        <div class="efect">
+          <input name="efect" type="checkbox" id="{{actor._id}}_efect-1" {{#if (isEqual system.roll.efect 1) }}checked{{/if}}/><label for="{{actor._id}}_efect-1">1</label>
+          <input name="efect" type="checkbox" id="{{actor._id}}_efect-2" {{#if (isEqual system.roll.efect 2) }}checked{{/if}}/><label for="{{actor._id}}_efect-2">2</label>
+          <input name="efect" type="checkbox" id="{{actor._id}}_efect-3" {{#if (isEqual system.roll.efect 3) }}checked{{/if}}/><label for="{{actor._id}}_efect-3">3</label>
+          <input name="efect" type="checkbox" id="{{actor._id}}_efect-4" {{#if (isEqual system.roll.efect 4) }}checked{{/if}}/><label for="{{actor._id}}_efect-4">4</label>
+        </div>
+        <div class="threat">
+          <input name="threat" type="checkbox" id="{{actor._id}}_threat-1" {{#if (isEqual system.roll.threat 1) }}checked{{/if}}/><label for="{{actor._id}}_threat-1">1</label>
+          <input name="threat" type="checkbox" id="{{actor._id}}_threat-2" {{#if (isEqual system.roll.threat 2) }}checked{{/if}}/><label for="{{actor._id}}_threat-2">2</label>
+          <input name="threat" type="checkbox" id="{{actor._id}}_threat-3" {{#if (isEqual system.roll.threat 3) }}checked{{/if}}/><label for="{{actor._id}}_threat-3">3</label>
+          <input name="threat" type="checkbox" id="{{actor._id}}_threat-4" {{#if (isEqual system.roll.threat 4) }}checked{{/if}}/><label for="{{actor._id}}_threat-4">4</label>
+        </div>
+      </div>
+      <div class="addDice">
+        <input name="addDice" type="checkbox" id="{{actor._id}}_addDice-4" {{#if (isEqual system.roll.addDice -4) }}checked{{/if}}/><label for="{{actor._id}}_addDice-4">-4</label>
+        <input name="addDice" type="checkbox" id="{{actor._id}}_addDice-3" {{#if (isEqual system.roll.addDice -3) }}checked{{/if}}/><label for="{{actor._id}}_addDice-3">-3</label>
+        <input name="addDice" type="checkbox" id="{{actor._id}}_addDice-2" {{#if (isEqual system.roll.addDice -2) }}checked{{/if}}/><label for="{{actor._id}}_addDice-2">-2</label>
+        <input name="addDice" type="checkbox" id="{{actor._id}}_addDice-1" {{#if (isEqual system.roll.addDice -1) }}checked{{/if}}/><label for="{{actor._id}}_addDice-1">-1</label>
+        <input name="addDice" type="checkbox" id="{{actor._id}}_addDice+0" {{#if (isEqual system.roll.addDice 0) }}checked{{/if}}/><label for="{{actor._id}}_addDice+0">+0</label>
+        <input name="addDice" type="checkbox" id="{{actor._id}}_addDice+1" {{#if (isEqual system.roll.addDice 1) }}checked{{/if}}/><label for="{{actor._id}}_addDice+1">+1</label>
+        <input name="addDice" type="checkbox" id="{{actor._id}}_addDice+2" {{#if (isEqual system.roll.addDice 2) }}checked{{/if}}/><label for="{{actor._id}}_addDice+2">+2</label>
+        <input name="addDice" type="checkbox" id="{{actor._id}}_addDice+3" {{#if (isEqual system.roll.addDice 3) }}checked{{/if}}/><label for="{{actor._id}}_addDice+3">+3</label>
+        <input name="addDice" type="checkbox" id="{{actor._id}}_addDice+4" {{#if (isEqual system.roll.addDice 4) }}checked{{/if}}/><label for="{{actor._id}}_addDice+4">+4</label>
+      </div>
+      <div class="buttons">
+        <button id="{{actor._id}}_resistRoll" class="resistRoll">RESIST ROLL</button>
+        <button id="{{actor._id}}_actionRoll" class="actionRoll">ACTION ROLL</button>
+        <button id="{{actor._id}}_breathRoll" class="breathRoll">TAKE A BREATH</button>
+      </div>
+    </div>
+  </header>
+  <section class="stress">    
+    <input name="stress" type="checkbox" id="{{actor._id}}_stres-1" {{#if (isBigger system.stress.value 1) }}checked{{/if}}/><label for="{{actor._id}}_stres-1"></label>
+    <input name="stress" type="checkbox" id="{{actor._id}}_stres-2" {{#if (isBigger system.stress.value 2) }}checked{{/if}}/><label for="{{actor._id}}_stres-2"></label>
+    <input name="stress" type="checkbox" id="{{actor._id}}_stres-3" {{#if (isBigger system.stress.value 3) }}checked{{/if}}/><label for="{{actor._id}}_stres-3"></label>
+    <input name="stress" type="checkbox" id="{{actor._id}}_stres-4" {{#if (isBigger system.stress.value 4) }}checked{{/if}}/><label for="{{actor._id}}_stres-4"></label>
+    <input name="stress" type="checkbox" id="{{actor._id}}_stres-5" {{#if (isBigger system.stress.value 5) }}checked{{/if}}/><label for="{{actor._id}}_stres-5"></label>
+    <input name="stress" type="checkbox" id="{{actor._id}}_stres-6" {{#if (isBigger system.stress.value 6) }}checked{{/if}}/><label for="{{actor._id}}_stres-6"></label>
+    <input name="stress" type="checkbox" id="{{actor._id}}_stres-7" {{#if (isBigger system.stress.value 7) }}checked{{/if}}/><label for="{{actor._id}}_stres-7"></label>
+    <p>OVERLOAD</p>
+  </section>
+  <section class="approach">
+    <div class="{{#if system.approach.AGGRESSIVE.GLICHED}}GLICHED{{/if}} {{#if (isEqual system.roll.approach "AGGRESSIVE")}}select{{/if}}" data-value="{{system.approach.AGGRESSIVE.dice}}">
+      <h3 data-text="HESITATION">AGGRESSIVE</h3>
+      <div class="texts">
+        <p>FORCE INTIMIDATION DESTRUCTION</p>
+        <p> HESITATION </p>
+      </div>
+      <div class="dots">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+    <div class="{{#if system.approach.SMART.GLICHED}}GLICHED{{/if}} {{#if (isEqual system.roll.approach "SMART")}}select{{/if}}" data-value="{{system.approach.SMART.dice}}">
+      <h3 data-text="DISORIENTATION">SMART</h3>
+      <div class="texts">
+        <p>CREATIVITY CUNNING PERCEPTION</p>
+        <p> DISORIENTATION </p>
+      </div>
+      <div class="dots">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+    <div class="{{#if system.approach.EMPATHIC.GLICHED}}GLICHED{{/if}} {{#if (isEqual system.roll.approach "EMPATHIC")}}select{{/if}}" data-value="{{system.approach.EMPATHIC.dice}}">
+      <h3 data-text="APATHY">EMPATHIC</h3>
+      <div class="texts">
+        <p>CHARISMA LEADERSHIP DIPLOMAC</p>
+        <p> APATHY </p>
+      </div>
+      <div class="dots">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+    <div class="{{#if system.approach.STEALTHY.GLICHED}}GLICHED{{/if}} {{#if (isEqual system.roll.approach "STEALTHY")}}select{{/if}}" data-value="{{system.approach.STEALTHY.dice}}">
+      <h3 data-text="RECKLESSNESS">STEALTHY</h3>
+      <div class="texts">
+        <p>DISCRETION SUBTERFUGE SECRECY</p>
+        <p> RECKLESSNESS </p>
+      </div>
+      <div class="dots">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+  </section>
+  <section class="skills">
+    <table>
+      <tr data-value="{{system.skills.ANALYZE.dice}}" class="{{#if (isEqual system.roll.skill "ANALYZE")}}select{{/if}}">
+        <td><h3>ANALYZE</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.ANALYZE.EXPERTISES.PEOPLE}}active{{/if}}">PEOPLE</span>,
+          <span class="{{#if system.skills.ANALYZE.EXPERTISES.SITUATION}}active{{/if}}">SITUATION</span>,
+          <span class="{{#if system.skills.ANALYZE.EXPERTISES.INFORMATION}}active{{/if}}">INFORMATION</span>
+        </p></td>
+      </tr>
+      <tr data-value="{{system.skills.ATHLETICS.dice}}"  class="{{#if (isEqual system.roll.skill "ATHLETICS")}}select{{/if}}">
+        <td><h3>ATHLETICS</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.ATHLETICS.EXPERTISES.SPRINT}}active{{/if}}">SPRINT</span>,
+          <span class="{{#if system.skills.ATHLETICS.EXPERTISES.PARKOUR}}active{{/if}}">PARKOUR</span>,
+          <span class="{{#if system.skills.ATHLETICS.EXPERTISES.SWIM}}active{{/if}}">SWIM</span>,
+          <span class="{{#if system.skills.ATHLETICS.EXPERTISES.CLIMB}}active{{/if}}">CLIMB</span>
+        </p></td>
+      </tr>
+      <tr data-value="{{system.skills.CLOSE.dice}}"  class="{{#if (isEqual system.roll.skill "CLOSE")}}select{{/if}}">
+        <td><h3>CLOSE COMBAT</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.CLOSE.EXPERTISES.BRAWLING}}active{{/if}}">BRAWLING</span>,
+          <span class="{{#if system.skills.CLOSE.EXPERTISES.WEAPON}}active{{/if}}">WEAPON</span>
+        </p></td>
+      </tr>
+      <tr data-value="{{system.skills.CODING.dice}}"  class="{{#if (isEqual system.roll.skill "CODING")}}select{{/if}}">
+        <td><h3>CODING</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.CODING.EXPERTISES.HACK}}active{{/if}}">HACK</span>
+          <span class="{{#if system.skills.CODING.EXPERTISES.COMPILE}}active{{/if}}">COMPILE</span>
+          <span class="{{#if system.skills.CODING.EXPERTISES.MINE}}active{{/if}}">MINE</span>
+          <span class="{{#if system.skills.CODING.EXPERTISES.SCRAMBLE}}active{{/if}}">SCRAMBLE</span>
+        </p></td>
+      </tr>
+      <tr data-value="{{system.skills.INFLUENCE.dice}}"  class="{{#if (isEqual system.roll.skill "INFLUENCE")}}select{{/if}}">
+        <td><h3>INFLUENCE</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.INFLUENCE.EXPERTISES.PERFORM}}active{{/if}}">PERFORM</span>,
+          <span class="{{#if system.skills.INFLUENCE.EXPERTISES.NEGOTIATE}}active{{/if}}">NEGOTIATE</span>,
+          <span class="{{#if system.skills.INFLUENCE.EXPERTISES.INTIMIDATE}}active{{/if}}">INTIMIDATE</span>
+        </p></td>
+      </tr>
+      <tr  data-value="{{system.skills.PILOTING.dice}}"  class="{{#if (isEqual system.roll.skill "PILOTING")}}select{{/if}}">
+        <td><h3>PILOTING</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.PILOTING.EXPERTISES.CARS}}active{{/if}}">CARS</span>,
+          <span class="{{#if system.skills.PILOTING.EXPERTISES.BIKES}}active{{/if}}">BIKES</span>,
+          <span class="{{#if system.skills.PILOTING.EXPERTISES.CHOPPERS}}active{{/if}}">CHOPPERS</span>,
+          <span class="{{#if system.skills.PILOTING.EXPERTISES.DRONES}}active{{/if}}">DRONES</span>
+        </p></td>
+      </tr>
+      <tr data-value="{{system.skills.RANGED.dice}}"  class="{{#if (isEqual system.roll.skill "RANGED")}}select{{/if}}">
+        <td><h3>RANGED COMBAT</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.RANGED.EXPERTISES.PISTOL}}active{{/if}}">PISTOL</span>,
+          <span class="{{#if system.skills.RANGED.EXPERTISES.RIFLE}}active{{/if}}">RIFLE</span>,
+          <span class="{{#if system.skills.RANGED.EXPERTISES.SMG}}active{{/if}}">SMG</span>,
+          <span class="{{#if system.skills.RANGED.EXPERTISES.THROWING}}active{{/if}}">THROWING</span>
+        </p></td>
+      </tr>
+      <tr data-value="{{system.skills.RIGGING.dice}}"  class="{{#if (isEqual system.roll.skill "RIGGING")}}select{{/if}}">
+        <td><h3>RIGGING</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.RIGGING.EXPERTISES.ELETRONICS}}active{{/if}}">ELETRONICS</span>,
+          <span class="{{#if system.skills.RIGGING.EXPERTISES.ROBOTICS}}active{{/if}}">ROBOTICS</span>,
+          <span class="{{#if system.skills.RIGGING.EXPERTISES.HEAVY}}active{{/if}}">HEAVY M.</span>
+        </p></td>
+      </tr>
+      <tr data-value="{{system.skills.SCIENCES.dice}}"  class="{{#if (isEqual system.roll.skill "SCIENCES")}}select{{/if}}">
+        <td><h3>SCIENCES</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.SCIENCES.EXPERTISES.BIOTECH}}active{{/if}}">BIOTECH</span>,
+          <span class="{{#if system.skills.SCIENCES.EXPERTISES.PHYSICS}}active{{/if}}">PHYSICS</span>,
+          <span class="{{#if system.skills.SCIENCES.EXPERTISES.CHEMISTRY}}active{{/if}}">CHEMISTRY</span>
+        </p></td>
+      </tr>
+      <tr data-value="{{system.skills.STREETWISE.dice}}"  class="{{#if (isEqual system.roll.skill "STREETWISE")}}select{{/if}}">
+        <td><h3>STREETWISE</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.STREETWISE.EXPERTISES.POLITICS}}active{{/if}}">POLITICS</span>,
+          <span class="{{#if system.skills.STREETWISE.EXPERTISES.MARKET}}active{{/if}}">MARKET</span>,
+          <span class="{{#if system.skills.STREETWISE.EXPERTISES.NAVIGATION}}active{{/if}}">NAVIGATION</span>
+        </p></td>
+      </tr>
+    </table>
+  </section>
+  <section class="augmentations">
+    <h3>AUGMENTATIONS</h3>
+    <div class="{{#if system.AUGMENTATIONS.first.GLICHED}}GLICHED{{/if}}">
+      <input id="{{actor._id}}_aug-1" type="checkbox" />
+      <div class="text">
+        <label class="name" for="aug-1">
+          <input type="text" name="system.AUGMENTATIONS.first.name" value="{{system.AUGMENTATIONS.first.name}}"/>
+        </label>
+        <p>GLICHED</p>
+      </div>
+      <div class="desc">
+        {{editor system.AUGMENTATIONS.first.desc target="system.AUGMENTATIONS.first.desc" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+    <div class="{{#if system.AUGMENTATIONS.second.GLICHED}}GLICHED{{/if}}">
+      <input id="{{actor._id}}_aug-2" type="checkbox" />
+      <div class="text">
+        <label class="name" for="aug-2">
+          <input type="text" name="system.AUGMENTATIONS.second.name" value="{{system.AUGMENTATIONS.second.name}}"/>
+        </label>
+        <p>GLICHED</p>
+      </div>
+      <div class="desc">
+        {{editor system.AUGMENTATIONS.second.desc target="system.AUGMENTATIONS.second.desc" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+    <div class="{{#if system.AUGMENTATIONS.third.GLICHED}}GLICHED{{/if}}">
+      <input id="{{actor._id}}_aug-3" type="checkbox" />
+      <div class="text">
+        <label class="name" for="aug-3">
+          <input type="text" name="system.AUGMENTATIONS.third.name" value="{{system.AUGMENTATIONS.third.name}}"/>
+        </label>
+        <p>GLICHED</p>
+      </div>
+      <div class="desc">
+        {{editor system.AUGMENTATIONS.third.desc target="system.AUGMENTATIONS.third.desc" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+  </section>
+  <section class="gear">
+    <h3>
+      GEAR: &nbsp;
+      {{#if (isEqual system.GEAR.LOAD.selected "light")}}
+        {{system.GEAR.LOAD.light.value}}
+      {{/if}}
+      {{#if (isEqual system.GEAR.LOAD.selected "medium")}}
+        {{system.GEAR.LOAD.medium.value}}
+      {{/if}}
+      {{#if (isEqual system.GEAR.LOAD.selected "heavy")}}
+        {{system.GEAR.LOAD.heavy.value}}
+      {{/if}}
+    </h3>
+    <div>
+      <button class="load">
+      {{#if (isEqual system.GEAR.LOAD.selected "light")}}
+        LIGHT: {{system.GEAR.LOAD.light.desc}}
+      {{/if}}
+      {{#if (isEqual system.GEAR.LOAD.selected "medium")}}
+        MEDIUM: {{system.GEAR.LOAD.medium.desc}}
+      {{/if}}
+      {{#if (isEqual system.GEAR.LOAD.selected "heavy")}}
+        HEAVY: {{system.GEAR.LOAD.heavy.desc}}
+      {{/if}}
+    </button>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq1" type="checkbox" name="system.GEAR.Equpment.eq1.isUse" {{#if system.GEAR.Equpment.eq1.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq1">A BLADE OR TWO</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq2" type="checkbox" name="system.GEAR.Equpment.eq2.isUse" {{#if system.GEAR.Equpment.eq2.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq2">SIDEARM</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq3" type="checkbox" name="system.GEAR.Equpment.eq3.isUse" {{#if system.GEAR.Equpment.eq3.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq3">SUBMACHINE GUN</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq4" type="checkbox" name="system.GEAR.Equpment.eq4.isUse" {{#if system.GEAR.Equpment.eq4.isUse}}checked{{/if}}/>
+        <div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <label for="{{actor._id}}_eq4">LARGE/HEAVY WEAPON</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq5" type="checkbox" name="system.GEAR.Equpment.eq5.isUse" {{#if system.GEAR.Equpment.eq5.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq5">TRACKING DEVICE</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq6" type="checkbox" name="system.GEAR.Equpment.eq6.isUse" {{#if system.GEAR.Equpment.eq6.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq6">CYBERDECK</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq7" type="checkbox" name="system.GEAR.Equpment.eq7.isUse" {{#if system.GEAR.Equpment.eq7.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq7">SMALL DRONE</label>
+        <p>STEALTHY OR SWIFT</p>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq8" type="checkbox" name="system.GEAR.Equpment.eq8.isUse" {{#if system.GEAR.Equpment.eq8.isUse}}checked{{/if}}/>
+        <div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <label for="{{actor._id}}_eq8">MEDIUM DRONE</label>
+        <p>TOUGH OR OFFENSIVE</p>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq9" type="checkbox" name="system.GEAR.Equpment.eq9.isUse" {{#if system.GEAR.Equpment.eq9.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq9">SPARE BATTERY</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq10" type="checkbox" name="system.GEAR.Equpment.eq10.isUse" {{#if system.GEAR.Equpment.eq10.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq10">MEDKIT</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq11" type="checkbox" name="system.GEAR.Equpment.eq11.isUse" {{#if system.GEAR.Equpment.eq11.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq11">DISGUISE OR CAMO</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq12" type="checkbox" name="system.GEAR.Equpment.eq12.isUse" {{#if system.GEAR.Equpment.eq12.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq12">ARMOR</label>
+        <div>
+            <input id="{{actor._id}}_eq12a" type="checkbox" name="system.GEAR.Equpment.eq12a.isUse" {{#if system.GEAR.Equpment.eq12a.isUse}}checked{{/if}}/>
+            <div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <label for="{{actor._id}}_eq12a">+HEAVY</label>
+        </div>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq13" type="checkbox" name="system.GEAR.Equpment.eq13.isUse" {{#if system.GEAR.Equpment.eq13.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq13">INFILTRATION GEAR</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq14" type="checkbox" name="system.GEAR.Equpment.eq14.isUse" {{#if system.GEAR.Equpment.eq14.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq14">EXTRA AMMO</label>
+        <p>STANDARD / PIERCING / EXPLOSIVE / INCENDIARY</p>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq15" type="checkbox" name="system.GEAR.Equpment.eq15.isUse" {{#if system.GEAR.Equpment.eq15.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <div>
+            <label for="{{actor._id}}_eq15">SURVIVAL KIT</label>
+            <div class="stack" data-type="eq15" style="--max: {{system.GEAR.Equpment.eq15.max}};--stack: {{system.GEAR.Equpment.eq15.stack}}">
+              {{#if system.GEAR.Equpment.eq15.stack}}{{system.GEAR.Equpment.eq15.stack}}{{else}}0{{/if}}
+              /{{system.GEAR.Equpment.eq15.max}}
+            </div>
+        </div>
+        <p>MASK, RATION, WATER / AIR PURIF</p>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq16" type="checkbox" name="system.GEAR.Equpment.eq16.isUse" {{#if system.GEAR.Equpment.eq16.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <div>
+            <label for="{{actor._id}}_eq16">GRENADES</label>
+            <div class="stack" data-type="eq16" style="--max: {{system.GEAR.Equpment.eq16.max}};--stack: {{system.GEAR.Equpment.eq16.stack}}">
+              {{#if system.GEAR.Equpment.eq16.stack}}{{system.GEAR.Equpment.eq16.stack}}{{else}}0{{/if}}
+              /{{system.GEAR.Equpment.eq16.max}}
+            </div>
+        </div>
+        <p>EMP / GAS / STUN / INCEND / FRAG</p>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq17" type="checkbox" name="system.GEAR.Equpment.eq17.isUse" {{#if system.GEAR.Equpment.eq17.isUse}}checked{{/if}}/>
+        <div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <label for="{{actor._id}}_eq17">DEMOLITION TOOLS</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq18" type="checkbox" name="system.GEAR.Equpment.eq18.isUse" {{#if system.GEAR.Equpment.eq18.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq18">MICROTRONICS TOOLS</label>
+    </div>
+    <div>
+        <input id="{{actor._id}}_eq20" type="checkbox" name="system.GEAR.Equpment.eq20.isUse" {{#if system.GEAR.Equpment.eq20.isUse}}checked{{/if}}/>
+        <div><div class="box"></div></div>
+        <label for="{{actor._id}}_eq20">SPARE PARTS</label>
+    </div>
+    <div>
+        <div class="stack" data-type="eq21" style="--max: 4;--stack: {{system.GEAR.Equpment.eq21.stack}}">
+          {{#if system.GEAR.Equpment.eq21.stack}}{{system.GEAR.Equpment.eq21.stack}}{{else}}0{{/if}}/4
+        </div>
+        <label>EXTRA LOAD</label>
+    </div>
+  </section>
+  <section class="harm">
+    <ol start="1">
+        <li data-type="efect"`>
+            <input type="text" value="{{system.HARM.light.name}}" name="system.HARM.light.name" />
+            <div class="track" data-type="light" style="--max: 2;--value: {{system.HARM.light.value}};">2</div>
+        </li>
+        <li data-type="dice">
+            <input type="text" value="{{system.HARM.medium.name}}" name="system.HARM.medium.name" />
+            <div class="track" data-type="medium" style="--max: 2;--value: {{system.HARM.medium.value}};">2</div>
+        </li>
+        <li data-type="out">
+            <input type="text" value="{{system.HARM.hard.name}}" name="system.HARM.hard.name" />
+            <div class="track" data-type="hard" style="--max: 1;--value: {{system.HARM.hard.value}};">1</div>
+        </li>
+        <li data-type="die">
+            TIME TO DIE.
+        </li>
+    </ol>
+  </section>
+</form>
