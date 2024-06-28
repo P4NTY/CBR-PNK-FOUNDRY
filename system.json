@@ -8,11 +8,10 @@
         "name": "Kiszu",
         "discord": "2137"
     }],
-    "version": 0.01,
+    "version": "0.1",
     "compatibility": {
-        "coreVersion": 12,
         "minimum": "11",
-        "compatible": "12"
+        "compatible": "12.327"
     },
     "esmodules": [
         "mian.js"
@@ -20,7 +19,8 @@
     "styles": [
         "mian.css"
     ],
-    "url": "https://github.com/P4NTY/CBR-PNK-FOUNDRY",
     "background": "systems/CBRPNK/assets/CBRPNK_splash.webp",
+    "url": "https://github.com/P4NTY/CBR-PNK-FOUNDRY",
+    "manifest": "https://raw.githubusercontent.com/P4NTY/CBR-PNK-FOUNDRY/main/system.json",
     "download": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/raw/main/CBR-PNK-FOUNDRY.zip"
 }
