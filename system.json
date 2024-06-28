@@ -1,20 +1,28 @@
 {
-    "id": "CBRPNK2137",
+    "id": "CBRPNK",
     "name": "CBRPNK",
+    "system": "CBR+PNK",
     "title": "CBR+PNK",
     "description": "Unofficial system to <strong>CBR+PNK</strong>",
-    "authors": [{
-        "id": "Kiszu",
-        "discord": "2137"
-    }],
+    "authors": [
+    {
+    "name": "Kiszu",
+    "discord": "2137"
+    }
+    ],
     "version": 0.01,
     "compatibility": {
-        "minimum": "11",
-        "verified": "12"
-      },
-    "esmodules": [ "mian.js" ],
-    "styles": [ "mian.css" ],
+    "coreVersion": 12,
+    "minimumCoreVersion": "11",
+    "compatibleCoreVersion": "12"
+    },
+    "esmodules": [
+    "mian.js"
+    ],
+    "styles": [
+    "mian.css"
+    ],
     "url": "https://github.com/P4NTY/CBR-PNK-FOUNDRY",
     "background": "systems/CBRPNK/assets/CBRPNK_splash.webp",
     "download": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/raw/main/CBRPNK.zip"
-}
+    }
