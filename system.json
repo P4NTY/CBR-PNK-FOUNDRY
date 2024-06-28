@@ -1,10 +1,11 @@
 {
     "id": "CBRPNK2137",
     "name": "CBRPNK",
+    "system": "CBR+PNK",
     "title": "CBR+PNK",
     "description": "Unofficial system to <strong>CBR+PNK</strong>",
     "authors": [{
-        "id": "Kiszu",
+        "name": "Kiszu",
         "discord": "2137"
     }],
     "version": 0.01,
