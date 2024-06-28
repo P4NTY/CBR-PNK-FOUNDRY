@@ -1,6 +1,6 @@
 {
     "Actor": {
-        "types": ["runner", "npc"],
+        "types": ["runner"],
         "runner": {
             "angle": {
                 "isOpen": false,
