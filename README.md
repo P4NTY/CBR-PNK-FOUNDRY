@@ -11,7 +11,7 @@ Unofficial system to play CBR+PNK on Foundry VTT
 ![image](https://github.com/P4NTY/CBR-PNK-FOUNDRY/blob/main/assets/image.png?raw=true)
 - The left button is adding and the right button is decreasing values
 - GLICHED status can also be given with the middle mouse button.
-- Selecting the value of the APPROACH and Skills by clicking on the label
+- Selecting the value of the APPROACH and SKILL by clicking on the label
 
 ## To do:
 - Threat card
