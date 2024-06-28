@@ -10,8 +10,8 @@
     }],
     "version": 0.01,
     "compatibility": {
-        "minimum": "11",
-        "verified": "12"
+        "minimumCoreVersion": "11",
+        "compatibleCoreVersion": "12"
       },
     "esmodules": [ "mian.js" ],
     "styles": [ "mian.css" ],
