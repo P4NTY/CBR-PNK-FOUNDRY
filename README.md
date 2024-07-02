@@ -1,4 +1,4 @@
- ![Splash](https://raw.githubusercontent.com/P4NTY/CBR-PNK-FOUNDRY/main/assets/CBRPNK_splash.webp)
+![Splash](https://raw.githubusercontent.com/P4NTY/CBR-PNK-FOUNDRY/main/assets/CBRPNK_splash.webp)
 # CBR+PNK ON FOUNDRY VTT
 Unofficial system to play CBR+PNK on Foundry VTT
 - Link to install: https://raw.githubusercontent.com/P4NTY/CBR-PNK-FOUNDRY/main/system.json
@@ -12,15 +12,14 @@ Unofficial system to play CBR+PNK on Foundry VTT
 - The left button is adding and the right button is decreasing values.
 - GLICHED status can also be given with the middle mouse button -OR- just click GLICHED.
 - Selecting the value of the APPROACH and SKILL by clicking on the label.
+- Hunter card - as Actor
+- Item card
 
 ## To do:
-- Threat card
-- NPC card
 - Taking the text to the language packages
 
 ## To FIX:
 - Detection of throw by dice so nice
 - Version detection by Foundry
-- Improving the version-lifting manifest
 
 [![COFFE](https://cdn.buymeacoffee.com/buttons/v2/default-blue.png)](https://www.buymeacoffee.com/kiszu)
