@@ -1,7 +1,7 @@
 ![Splash](https://raw.githubusercontent.com/P4NTY/CBR-PNK-FOUNDRY/main/assets/CBRPNK_splash.webp)
 # CBR+PNK ON FOUNDRY VTT
 Unofficial system to play CBR+PNK on Foundry VTT
-- Link to install: https://raw.githubusercontent.com/P4NTY/CBR-PNK-FOUNDRY/main/system.json
+- Link to install: [https://raw.githubusercontent.com/P4NTY/CBR-PNK-FOUNDRY/main/system.json](https://github.com/P4NTY/CBR-PNK-FOUNDRY/releases/download/latest/system.json)
 - Link to TRPG system: https://emanoelmelo.itch.io/cbrpnk-core
  
 ## WHY?
