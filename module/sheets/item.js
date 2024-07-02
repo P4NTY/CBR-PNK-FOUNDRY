@@ -1,5 +1,12 @@
 // import tags from "../../tags.js";
-export default class emItem extends ItemSheet {
+export default class cbrItem extends ItemSheet {
+    static get defaultOptions() {
+        return foundry.utils.mergeObject(super.defaultOptions, {
+            width: 600,
+            height: 350,
+        });
+    }
+
     get template() {
         return `systems/CBRPNK/templates/sheets/${this.item.type}.hbs`;
     }
@@ -12,41 +19,24 @@ export default class emItem extends ItemSheet {
 
     activateListeners(html) {
         super.activateListeners(html);
-        
-        const input = html[0].querySelector('input.tagify');
-        new Tagify(input, {
-            whitelist: [
-                "Święte",
-                "Splugawione"
-            ],
-            maxTags: 10,
-            dropdown: {
-                maxItems: 20,
-                classname: "tags-look",
-                enabled: 0,
-                closeOnSelect: false
-            }
-        })
-    
-        html.find('.clock').mousedown( this._onMouseDown.bind(this) );
+        html.find(`#${this.item._id}_addStack`).mousedown( this._changeStack.bind(this) );
     }
 
-    _onMouseDown(event) {
-        event.preventDefault();
-
-        const colorArr = ["white","black","red","blue","yellow","purple","green"];
-
-        // console.log( event.target );
-        // leftBtn
-        if (event.which === 1 || event.button === 0)
-            this.item.update({ "system.value": Math.min(this.item.system.value+1,this.item.system.max) });
-        // middleBtn
-        else if (event.which === 2 || event.button === 1)
-            this.item.update({ "system.color": colorArr[
-                (colorArr.indexOf(this.item.system.color)+1)%colorArr.length
-            ] });
-        // rightBtn
-        else if (event.which === 3 || event.button === 2)
-            this.item.update({ "system.value": Math.max(this.item.system.value-1,0) });
+    _changeStack(event) {
+        const btnClick = 
+            (event.which === 1 || event.button === 0) ? "l" :
+            (event.which === 2 || event.button === 1) ? "m" :
+            (event.which === 3 || event.button === 2) ? "r" : null;
+        
+        switch (btnClick) {
+            case "l":
+                this.item.update({ "system.maxStack" : this.item.system.maxStack + 1 });
+                break;
+            case "r":
+                this.item.update({ "system.maxStack" : Math.max(this.item.system.maxStack - 1,0) });
+                break;
+            default:
+                break;
+        }
     }
 }

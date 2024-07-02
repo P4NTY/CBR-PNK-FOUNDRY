@@ -9,6 +9,7 @@
   --red: 217, 86, 86;
   --pink: 237, 17, 88;
   --wierd: 224, 38, 120;
+  --dark: 47, 47, 47;
 }
 #pause,
 .GLICHED :is(h3, .text) {
@@ -318,12 +319,12 @@ section.skills h3 {
   font-weight: normal;
 }
 section.skills p {
-  color: rgb(var(--gray));
+  color: rgb(var(--black));
   border-bottom: 1px solid;
   padding: 5px;
 }
 section.skills p strong {
-  color: rgb(var(--black));
+  color: rgb(var(--dark));
 }
 section.skills::before {
   content: "SKILLS";
@@ -385,7 +386,7 @@ section.skills .dots .box {
   border-left: 5px solid;
 }
 @keyframes agu-gl {
-  from {
+  form {
     background-color: rgb(var(--red));
   }
   to {
@@ -467,6 +468,14 @@ section.gear p {
 .stress::before {
   content: "STRES: ";
 }
+
+.stress p {
+  padding: 5px
+}
+.stress p.active {
+  animation: linear 1s infinite alternate agu-gl;
+}
+
 .stress input {
   display: none;
 }
@@ -496,7 +505,7 @@ section.gear p {
 }
 .skills span.active {
   font-weight: bold;
-  color: rgb(var(--black));
+  color: rgb(var(--red));
 }
 .harm {
   position: relative;
@@ -557,10 +566,12 @@ input[type="text"] {
 
 label.name {width: 100%;}
 
+.art,
 .persona {
     position: relative;
 }
 
+.art h1,
 .persona h1 {
     position: absolute;
     bottom: 3px;
@@ -573,6 +584,7 @@ label.name {width: 100%;}
     backdrop-filter: blur(5px);
 }
 
+.art h1 input,
 .persona h1 input {
     color: rgb(var(--white));
     border: none;
@@ -784,6 +796,7 @@ input[type="text"],
 }
 .angle.expan {
   bottom: auto;
+  z-index: 1;
 }
 
 .angle input[type="checkbox"] {
@@ -879,7 +892,7 @@ button.load {
   text-align: center;
 }
 
-.stack {
+.runnerCard .stack {
   border: 2px solid;
   min-width: 70px;
   justify-content: center;
@@ -913,10 +926,291 @@ textarea#chat-message {
 }
 
 figcaption {
-   font-family: "Tiny5";
+  font-family: "Tiny5";
   background:  rgba(var(--red),.5)
 }
 
 #pause img.fa-spin, #logo {
   display: none;
+}
+
+div#breaktime-app section.window-content {
+  background: rgb(var(--red));
+}
+div#breaktime-app section.window-content .fas {
+  color: rgb(var(--yellow));
+}
+
+.gm-screen-container.window-content.tab.active {
+  background: rgba(var(--black),0.66);
+}
+.gm-screen-app .gm-screen-actions.tabs .meta-actions button,
+.gm-screen-app .gm-screen-actions.tabs .gm-screen-tabs .item:not(.active),
+.gm-screen-app .gm-screen-actions .gm-screen-button {
+  background: rgb(var(--yellow));
+}
+
+.gm-screen-app .gm-screen-actions.tabs .gm-screen-tabs .active {
+  background: rgb(var(--red));
+}
+
+.gm-screen-grid-cell-content.sheet:has(.runnerCard) {
+  background: rgb(var(--white));
+}
+
+form.itemCard {
+  display: grid;
+  gap: 20px;
+  background: rgba(var(--red),.8);
+  grid-template-areas: ". .";
+}
+
+form.itemCard .art {
+  height: fit-content;
+}
+
+form.itemCard  input[type="text"] {
+  font-size: 20px;
+  
+}
+
+.itemCard .stack {
+  display: flex;
+  padding: 5px;
+}
+
+.stack .track {
+  flex-grow: 1;
+}
+
+.stack button {
+  aspect-ratio: 1;
+  width: 40px;
+  clip-path: polygon(100% 0, 100% 80%, 80% 100%, 0 100%, 0 0);
+  background: rgb(var(--yellow));
+  border: none;
+}
+
+.stack .track > div {
+  display: inline-block;
+  aspect-ratio: 1;
+  width: 40px;
+  clip-path: polygon(100% 0, 100% 80%, 80% 100%, 0 100%, 0 0);
+  background: rgb(var(--yellow));
+  border: none;
+  font-family: "Tiny5";
+  font-size: large;
+  padding: 0 5px;
+}
+
+.itemCard .editor-content {
+  max-height: 245px;
+}
+
+.rank {
+  display: grid;
+  grid-template-areas:
+      ". . .";
+  gap: 20px;
+}
+
+.rank .title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(var(--red));
+  clip-path: polygon(20% 0%, 95% 0%, 100% 40%, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0 0);
+  padding: 5px 10px;
+  
+}
+
+.title span {
+  font-size: small;
+  font-family: "Tiny5";
+}
+
+.rank h3 {
+  font-weight: bold;
+  margin: 0;
+  color: rgb(var(--white));
+  font-family: "Tiny5";
+}
+
+.hunterCard header {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin-bottom: 20px;
+}
+
+form.hunterCard {
+  background: rgb(var(--dark));
+  padding: 5px;
+}
+
+form.hunterCard header img {
+  border: 10px solid rgb(var(--red));
+  border-radius: 0;
+  
+}
+
+form.hunterCard header input[name="name"] {
+  color: rgb(var(--white));
+  background: rgb(var(--red));
+  border: 0;
+  font-size: 20px;
+  padding: 20px;
+  display: inline-block;
+  clip-path: polygon(20% 0%, 95% 0%, 100% 40%, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0 0);
+  border-radius: 0;
+}
+
+
+form.hunterCard header textarea {
+  background: rgb(var(--white));
+}
+
+.hunterCard textarea {
+  color: rgb(var(--white));
+}
+.hunterCard .persona .editor-content {
+  padding: 0 5px;
+}
+
+.RANK3 {
+  position: relative;
+}
+
+.RANK3 label {
+  position: absolute;
+  top: 7px;
+  display: inline-block;
+  width: 17px; height: 17px;
+  background: rgb(var(--white));
+  border: 1px solid rgb(var(--black));
+  transform: rotate(45deg);
+}
+
+.RANK3 input:checked + label {
+  background: rgb(var(--yellow));
+}
+
+.rank > div > .skill{
+  display: flex;
+  margin: 5px 0;
+  align-items: center;
+}
+
+.rank > div > .skill input[type="checkbox"],
+.RANK3 input[type="checkbox"] {
+  display: none;
+}
+
+.rank > div > .skill label {
+  display: inline-block;
+  width: 17px; height: 15px;
+  background: rgb(var(--white));
+  border: 1px solid rgb(var(--black));
+  transform: rotate(45deg);
+}
+
+
+.rank > div > .skill input[type="text"]{
+  color: rgb(var(--white));
+  border: 0;
+  border-bottom: 1px solid rgb(var(--red));
+  margin-left: 5px;
+}
+
+.hunterCard .track {
+  display: inline-block;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.hunterCard .track > div {
+  width: 20px;
+  height: 30px;
+  background: rgb(var(--red));
+  transform: skew(-15deg);
+  clip-path: polygon(80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%, 0 0);
+}
+
+.tracks > div {
+  border: 5px solid rgb(var(--white));
+  width: 80%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tracks p {
+  display: inline-block;
+  padding: 10px 5px;
+  font-family: "Tiny5";
+  color: rgb(var(--white));
+}
+
+.aa {
+  display: grid;
+  grid-template-areas:
+      ". .";
+  gap: 20px;
+}
+
+.aa h3 {
+  font-weight: bold;
+  margin: 0;
+  color: rgb(var(--white));
+  font-family: "Tiny5";
+  background: rgb(var(--red));
+  clip-path: polygon(20% 0%, 95% 0%, 100% 40%, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0 0);
+  padding: 5px 10px;
+}
+
+.hunterCard input[type="text"] {
+  display: inline-block;
+  border: 0;
+  border-bottom: 1px solid rgb(var(--red));
+  color: rgb(var(--white));
+  padding: 15px;
+}
+
+.rank > div > .skill input:checked + label {
+  background: rgb(var(--red));
+}
+
+.hunterCard input[type="text"] {
+  display: inline-block;
+  border: 0;
+  border-bottom: 1px solid rgb(var(--red));
+  color: rgb(var(--white));
+  padding: 15px;
+}
+
+.rank > div > .skill input:checked + label {
+  background: rgb(var(--red));
+}
+
+.hunterCard .editor-content p{
+  color: rgb(var(--white));
+}
+
+.hunterCard .track[data-value="1"] > div:nth-child(-n+1) {
+  background: rgb(var(--yellow)) !important;
+}
+.hunterCard .track[data-value="2"] > div:nth-child(-n+2) {
+  background: rgb(var(--yellow)) !important;
+}
+.hunterCard .track[data-value="3"] > div:nth-child(-n+3) {
+  background: rgb(var(--yellow)) !important;
+}
+.hunterCard .track[data-value="4"] > div:nth-child(-n+4) {
+  background: rgb(var(--yellow)) !important;
+}
+.hunterCard .track[data-value="5"] > div:nth-child(-n+5) {
+  background: rgb(var(--yellow)) !important;
+}
+.hunterCard .track[data-value="6"] > div:nth-child(-n+6) {
+  background: rgb(var(--yellow)) !important;
 }

@@ -1,39 +1,37 @@
-export default class cbrActor extends ActorSheet {
+export default class cbrRunner extends ActorSheet {
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
           width: 440,
           height: 790,
         });
       }
 
     get template() {
-        return `systems/CBRPNK/templates/sheets/runner.hbs`;
+        return `systems/CBRPNK/templates/sheets/${this.actor.type}.hbs`;
     }
 
     getData() {
         const context = super.getData();
         context.system = context.actor.system;
-        console.log(context);
         return context;
     }
 
     activateListeners(html) {
         super.activateListeners(html);
 
-        html.mousedown( this._onMouseDown.bind(this) );
+        html.mousedown( this._RunnerOnMouseDown.bind(this) );
         html.find(`#${this.actor._id}_actionRoll`).mousedown( this.actionRoll.bind(this) );
         html.find(`#${this.actor._id}_resistRoll`).mousedown( this.resistRoll.bind(this) );
         html.find(`#${this.actor._id}_breathRoll`).mousedown( this.breathRoll.bind(this) );
     }
-
-    _onMouseDown(event) {
+    _RunnerOnMouseDown(event) {
         const btnClick = 
             (event.which === 1 || event.button === 0) ? "l" :
             (event.which === 2 || event.button === 1) ? "m" :
             (event.which === 3 || event.button === 2) ? "r" : null;
 
         switch (event.target.closest("section").classList[0]) {
-            case "persona": 
+            case "persona":
                 if ( ["DEBT","CRED"].includes(event.target.classList[0]) ){
                     if (btnClick == "l") {
                         this.actor.update({ [`system.angle.${event.target.innerText}.value`]: Math.min(this.actor.system.angle[event.target.innerText].value+1, this.actor.system.angle[event.target.innerText].max) });
@@ -55,14 +53,15 @@ export default class cbrActor extends ActorSheet {
                     if (this.actor.system.stress.value+1 == 7 && !this.actor.system.stress.isLOAD) this.overLOAD();
                     this.actor.update({ "system.stress.value": Math.min(this.actor.system.stress.value+1, this.actor.system.stress.max) });
                 }
-                else if (btnClick == "r") {
-                    this.actor.update({ "system.stress.value": Math.max(this.actor.system.stress.value-1,0) });
-                    this.actor.update({ "system.stress.isLOAD": false });
-                }
+                else if (btnClick == "r")
+                    this.actor.update({
+                        "system.stress.value": Math.max(this.actor.system.stress.value-1,0),
+                        "system.stress.isLOAD": false
+                    });
             break;
             case "approach":
                 const clickedApproachName = `system.approach.${event.target.parentElement.parentElement.querySelector("h3").innerText}`;
-                
+
                 if (event.target.classList[0] === 'box') {
                     const currSkillValue = event.target.parentElement.parentElement.getAttribute("data-value");
                     if (btnClick == "l") {
@@ -144,8 +143,7 @@ export default class cbrActor extends ActorSheet {
                         });
                 }
             break;
-            default:
-            break;
+            default: break;
         }
     }
 
@@ -222,16 +220,6 @@ export default class cbrActor extends ActorSheet {
             speaker: ChatMessage.getSpeaker({token: this.actor}),
             content: content
         });
-
-        // this.actor.update({  
-        //     "system.roll" : {
-        //         "efect": 2,
-        //         "threat": 2,
-        //         "approach": "",
-        //         "skill": "",
-        //         "addDice": "+0"
-        //     }
-        // })
     }
 
     async overLOAD() {

@@ -1,0 +1,17 @@
+<form autocomplete="off" class="itemCard">
+    <div class="art">
+        <img src="{{item.img}}" title="{{item.name}}" data-edit="img">
+        <h1><input name="name" type="text" placeholder="Name" value="{{item.name}}"/></h1>
+    </div>
+    <div class="desc">
+        <div class="stack">
+            <div id="{{item.id}}_track" class="track">
+                {{#for system.maxStack}}
+                    <div class="spoke">#{i}</div>
+                {{/for}}
+            </div>
+            <button id="{{item.id}}_addStack"/>➕</button>
+        </div>
+        {{editor system.desc target="system.desc" button=true owner=owner editable=editable}}
+    </div>
+</form>

@@ -1,8 +1,6 @@
 import cbrItem from "./module/sheets/item.js";
-import cbrActor from "./module/sheets/runner.js";
-import {} from "./extensions/tagify/polyfills.min.js";
-import {} from "./extensions/tagify/tagify.js";
-// import {} from "./extensions/html2canvas/html2canvas.min.js";
+import cbrRunner from "./module/sheets/runner.js";
+import cbrHunter from "./module/sheets/hunter.js";
 
 Hooks.once("init", function () {
     console.log('Start');
@@ -11,13 +9,14 @@ Hooks.once("init", function () {
     Items.registerSheet("cbr", cbrItem, {makeDefault: true});
 
     Actors.unregisterSheet("core",ActorSheet);
-    Actors.registerSheet("cbr", cbrActor, {makeDefault: true});
+    Actors.registerSheet("cbr", cbrRunner, {types: ["runner"],makeDefault: true});
+    Actors.registerSheet("cbr", cbrHunter, {types: ["hunter"],makeDefault: true});
 });
 
 // Custom HandelBars
 Handlebars.registerHelper("for", function(options, elem) {
     let result = ``;
-    for (let i = 0 ; i < options ; i++)
+    for (let i = 1 ; i <= options ; i++)
         result += elem.fn(this).replace('#{i}', i);
     return result;
 });

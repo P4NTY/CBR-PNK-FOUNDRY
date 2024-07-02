@@ -1,6 +1,6 @@
 {
     "Actor": {
-        "types": ["runner"],
+        "types": ["runner", "hunter"],
         "runner": {
             "angle": {
                 "isOpen": false,
@@ -68,7 +68,10 @@
                     "dice": 0,
                     "EXPERTISES": {
                         "BRAWLING": false,
-                        "WEAPON": false
+                        "KNIFE": false,
+                        "SWORD": false,
+                        "BAT": false,
+                        "WIRE": false
                     }
                 },
                 "CODING": {
@@ -305,6 +308,72 @@
                     "max": 1
                 }
             }
+        },
+        "hunter": {
+            "desc": "",
+            "activation": {
+                "value": 0,
+                "max": 6
+            },
+            "counter": {
+                "value": 0,
+                "max": 6
+            },
+            "AUGMENTATION": {
+                "GLICHED": false,
+                "name": "",
+                "desc": ""
+            },
+            "Ability": {
+                "name": "",
+                "desc": ""
+            },
+            "RANK1": {
+                "stack": 0,
+                "max": 4,
+                "row1": {
+                    "isUse": false,
+                    "name": ""
+                },
+                "row2": {
+                    "isUse": false,
+                    "name": ""
+                },
+                "row3": {
+                    "isUse": false,
+                    "name": ""
+                }
+            },
+            "RANK2": {
+                "stack": 0,
+                "max": 6,
+                "row1": {
+                    "isUse": false,
+                    "name": ""
+                },
+                "row2": {
+                    "isUse": false,
+                    "name": ""
+                },
+                "row3": {
+                    "isUse": false,
+                    "name": ""
+                }
+            },
+            "RANK3": {
+                "stack": 0,
+                "max": 6,
+                "isUse": false,
+                "desc": ""
+            }
+        }
+    },
+    "Item": {
+        "types": ["item"],
+        "item": {
+            "desc": "",
+            "stack": 0,
+            "maxStack": 0
         }
     }
 }

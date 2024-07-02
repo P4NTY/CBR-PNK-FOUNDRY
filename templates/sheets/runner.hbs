@@ -57,7 +57,7 @@
     <input name="stress" type="checkbox" id="{{actor._id}}_stres-5" {{#if (isBigger system.stress.value 5) }}checked{{/if}}/><label for="{{actor._id}}_stres-5"></label>
     <input name="stress" type="checkbox" id="{{actor._id}}_stres-6" {{#if (isBigger system.stress.value 6) }}checked{{/if}}/><label for="{{actor._id}}_stres-6"></label>
     <input name="stress" type="checkbox" id="{{actor._id}}_stres-7" {{#if (isBigger system.stress.value 7) }}checked{{/if}}/><label for="{{actor._id}}_stres-7"></label>
-    <p>OVERLOAD</p>
+    <p class="{{#if system.stress.isLOAD}}active{{/if}}">OVERLOAD</p>
   </section>
   <section class="approach">
     <div class="{{#if system.approach.AGGRESSIVE.GLICHED}}GLICHED{{/if}} {{#if (isEqual system.roll.approach "AGGRESSIVE")}}select{{/if}}" data-value="{{system.approach.AGGRESSIVE.dice}}">
@@ -140,7 +140,10 @@
         </div></td>
         <td><p>
           <span class="{{#if system.skills.CLOSE.EXPERTISES.BRAWLING}}active{{/if}}">BRAWLING</span>,
-          <span class="{{#if system.skills.CLOSE.EXPERTISES.WEAPON}}active{{/if}}">WEAPON</span>
+          <span class="{{#if system.skills.CLOSE.EXPERTISES.KNIFE}}active{{/if}}">KNIFE</span>,
+          <span class="{{#if system.skills.CLOSE.EXPERTISES.SWORD}}active{{/if}}">SWORD</span>,
+          <span class="{{#if system.skills.CLOSE.EXPERTISES.BAT}}active{{/if}}">BAT</span>,
+          <span class="{{#if system.skills.CLOSE.EXPERTISES.WIRE}}active{{/if}}">WIRE</span>
         </p></td>
       </tr>
       <tr data-value="{{system.skills.CODING.dice}}"  class="{{#if (isEqual system.roll.skill "CODING")}}select{{/if}}">
@@ -150,9 +153,9 @@
           <div class="box"></div>
         </div></td>
         <td><p>
-          <span class="{{#if system.skills.CODING.EXPERTISES.HACK}}active{{/if}}">HACK</span>
-          <span class="{{#if system.skills.CODING.EXPERTISES.COMPILE}}active{{/if}}">COMPILE</span>
-          <span class="{{#if system.skills.CODING.EXPERTISES.MINE}}active{{/if}}">MINE</span>
+          <span class="{{#if system.skills.CODING.EXPERTISES.HACK}}active{{/if}}">HACK</span>,
+          <span class="{{#if system.skills.CODING.EXPERTISES.COMPILE}}active{{/if}}">COMPILE</span>,
+          <span class="{{#if system.skills.CODING.EXPERTISES.MINE}}active{{/if}}">MINE</span>,
           <span class="{{#if system.skills.CODING.EXPERTISES.SCRAMBLE}}active{{/if}}">SCRAMBLE</span>
         </p></td>
       </tr>

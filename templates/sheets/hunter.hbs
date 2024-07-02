@@ -1,0 +1,107 @@
+<form class="hunterCard" autocomplete="off">
+    <header>
+        <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+        <div class="persona">
+            <input name="name" type="text" placeholder="Name" value="{{actor.name}}"/>
+            {{editor system.desc target="system.desc" button=true owner=owner editable=editable}}
+            <div class="tracks">
+                <div class="activation">
+                    <p>ACTIVATION</p>
+                    <div class="track" data-value="{{system.activation.value}}" data-name="activation">
+                        {{#for 6}}
+                            <div></div>
+                        {{/for}}
+                    </div>
+                </div>
+                <div class="counter">
+                    <p>COUNTER</p>
+                    <div class="track" data-value="{{system.counter.value}}" data-name="counter">
+                        {{#for 6}}
+                            <div></div>
+                        {{/for}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="aa">
+        <div class="AUGMENTATION">
+            <h3>AUGMENTATION</h3>
+            <input type="text" name="system.AUGMENTATION.name" value="{{system.AUGMENTATION.name}}">
+            {{editor system.AUGMENTATION.desc target="system.AUGMENTATION.desc" button=true owner=owner editable=editable}}
+        </div>
+        <div class="Ability">
+            <h3>ABILITY</h3>
+            <input type="text" name="system.Ability.name" value="{{system.Ability.name}}">
+            {{editor system.Ability.desc target="system.Ability.desc" button=true owner=owner editable=editable}}
+        </div>
+    </div>
+    <div class="rank">
+        <div class="RANK1">
+            <div class="title">
+                <h3>RANK 1</h3>
+                <span>PICK 2</span>
+            </div>
+            <div class="skill">
+                <input type="checkbox" name="system.RANK1.row1.isUse" id="{{actor._id}}_R1r1" {{#if system.RANK1.row1.isUse}}checked{{/if}}>
+                <label for="{{actor._id}}_R1r1"></label>
+                <input type="text" name="system.RANK1.row1.name" value="{{system.RANK1.row1.name}}"/>
+            </div>
+            <div class="skill">
+                <input type="checkbox" name="system.RANK1.row2.isUse" id="{{actor._id}}_R1r2" {{#if system.RANK1.row2.isUse}}checked{{/if}}>
+                <label for="{{actor._id}}_R1r2" ></label>
+                <input type="text" name="system.RANK1.row2.name" value="{{system.RANK1.row2.name}}">
+            </div>
+            <div class="skill">
+                <input type="checkbox" name="system.RANK1.row3.isUse" id="{{actor._id}}_R1r3" {{#if system.RANK1.row3.isUse}}checked{{/if}}>
+                <label for="{{actor._id}}_R1r3" ></label>
+                <input type="text" name="system.RANK1.row3.name" value="{{system.RANK1.row3.name}}">
+            </div>
+            <div class="track" data-value="{{system.RANK1.stack}}" data-name="RANK1">
+                {{#for 4}}
+                    <div></div>
+                {{/for}}
+            </div>
+        </div>
+        <div class="RANK2">
+            <div class="title">
+                <h3>RANK 2</h3>
+                <span>PICK 2</span>
+            </div>
+            <div class="skill">
+                <input type="checkbox" name="system.RANK2.row1.isUse" id="{{actor._id}}_R2r1" {{#if system.RANK2.row1.isUse}}checked{{/if}}>
+                <label for="{{actor._id}}_R2r1"></label>
+                <input type="text" name="system.RANK2.row1.name" value="{{system.RANK2.row1.name}}"/>
+            </div>
+            <div class="skill">
+                <input type="checkbox" name="system.RANK2.row2.isUse" id="{{actor._id}}_R2r2" {{#if system.RANK2.row2.isUse}}checked{{/if}}>
+                <label for="{{actor._id}}_R2r2" ></label>
+                <input type="text" name="system.RANK2.row2.name" value="{{system.RANK2.row2.name}}">
+            </div>
+            <div class="skill">
+                <input type="checkbox" name="system.RANK2.row3.isUse" id="{{actor._id}}_R2r3" {{#if system.RANK2.row3.isUse}}checked{{/if}}>
+                <label for="{{actor._id}}_R2r3" ></label>
+                <input type="text" name="system.RANK2.row3.name" value="{{system.RANK1.row3.name}}">
+            </div>
+            <div class="track" data-value="{{system.RANK2.stack}}" data-name="RANK2">
+                {{#for 6}}
+                    <div></div>
+                {{/for}}
+            </div>
+        </div>
+        <div class="RANK3">
+            <div class="title">
+                <h3>RANK 3</h3>
+                <span>UPGRADE</span>
+            </div>
+            <input type="checkbox" nname="system.RANK3.isUse" id="{{actor._id}}_R3r1" {{#if system.RANK3.isUse}}checked{{/if}}>
+            <label for="{{actor._id}}_R3r1"></label>
+            <textarea name="system.RANK3.desc" cols="36" rows="5">{{system.RANK3.desc}}</textarea>
+            <div class="track" data-value="{{system.RANK3.stack}}" data-name="RANK3">
+                {{#for 6}}
+                    <div></div>
+                {{/for}}
+            </div>
+        </div>
+    </div>
+</form>
