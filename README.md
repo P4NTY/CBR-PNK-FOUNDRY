@@ -17,6 +17,7 @@ Unofficial system to play CBR+PNK on Foundry VTT
 
 ## To do:
 - Taking the text to the language packages
+- Make Hacks card
 
 ## To FIX:
 - Detection of throw by dice so nice
