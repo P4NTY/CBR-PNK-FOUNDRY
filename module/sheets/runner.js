@@ -177,7 +177,7 @@ export default class cbrRunner extends ActorSheet {
             rollResult = letsRoll.terms[0].results.map( ({result}) => result)
         }
 
-        if (rollResult.filter( dice => dice == 6).length == 2) {
+        if (rollResult.filter( dice => dice == 6).length >= 2) {
             templateData.title = "Critical";
             templateData.class = "critical";
             templateData.desc = "It goes as well as intended.";

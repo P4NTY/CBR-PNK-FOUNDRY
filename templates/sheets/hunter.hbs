@@ -8,7 +8,7 @@
                 <div class="activation">
                     <p>ACTIVATION</p>
                     <div class="track" data-value="{{system.activation.value}}" data-name="activation">
-                        {{#for 6}}
+                        {{#for system.activation.max}}
                             <div></div>
                         {{/for}}
                     </div>
@@ -16,7 +16,7 @@
                 <div class="counter">
                     <p>COUNTER</p>
                     <div class="track" data-value="{{system.counter.value}}" data-name="counter">
-                        {{#for 6}}
+                        {{#for system.counter.max}}
                             <div></div>
                         {{/for}}
                     </div>
@@ -58,7 +58,7 @@
                 <input type="text" name="system.RANK1.row3.name" value="{{system.RANK1.row3.name}}">
             </div>
             <div class="track" data-value="{{system.RANK1.stack}}" data-name="RANK1">
-                {{#for 4}}
+                {{#for system.RANK1.max}}
                     <div></div>
                 {{/for}}
             </div>
@@ -66,7 +66,7 @@
         <div class="RANK2">
             <div class="title">
                 <h3>RANK 2</h3>
-                <span>PICK 2</span>
+                <span>PICK 1</span>
             </div>
             <div class="skill">
                 <input type="checkbox" name="system.RANK2.row1.isUse" id="{{actor._id}}_R2r1" {{#if system.RANK2.row1.isUse}}checked{{/if}}>
@@ -84,7 +84,7 @@
                 <input type="text" name="system.RANK2.row3.name" value="{{system.RANK1.row3.name}}">
             </div>
             <div class="track" data-value="{{system.RANK2.stack}}" data-name="RANK2">
-                {{#for 6}}
+                {{#for system.RANK2.max}}
                     <div></div>
                 {{/for}}
             </div>
@@ -94,11 +94,11 @@
                 <h3>RANK 3</h3>
                 <span>UPGRADE</span>
             </div>
-            <input type="checkbox" nname="system.RANK3.isUse" id="{{actor._id}}_R3r1" {{#if system.RANK3.isUse}}checked{{/if}}>
+            <input type="checkbox" name="system.RANK3.isUse" id="{{actor._id}}_R3r1" {{#if system.RANK3.isUse}}checked{{/if}}>
             <label for="{{actor._id}}_R3r1"></label>
             <textarea name="system.RANK3.desc" cols="36" rows="5">{{system.RANK3.desc}}</textarea>
             <div class="track" data-value="{{system.RANK3.stack}}" data-name="RANK3">
-                {{#for 6}}
+                {{#for system.RANK3.max}}
                     <div></div>
                 {{/for}}
             </div>

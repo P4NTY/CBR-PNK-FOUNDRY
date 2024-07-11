@@ -538,7 +538,7 @@ section.gear p {
   top: 0;
   right: -10px;
   background: rgb(var(--yellow));
-  padding: 10px;
+  padding: 30px 10px;
 }
 
 form.runnerCard {
@@ -962,7 +962,7 @@ form.itemCard {
   display: grid;
   gap: 20px;
   background: rgba(var(--red),.8);
-  grid-template-areas: ". .";
+  grid-template-columns: 1fr 1fr;
 }
 
 form.itemCard .art {
@@ -1153,8 +1153,7 @@ form.hunterCard header textarea {
 
 .aa {
   display: grid;
-  grid-template-areas:
-      ". .";
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
@@ -1213,4 +1212,17 @@ form.hunterCard header textarea {
 }
 .hunterCard .track[data-value="6"] > div:nth-child(-n+6) {
   background: rgb(var(--yellow)) !important;
+}
+
+.SR input:checked + label {
+  text-decoration: line-through
+}
+
+.SR {
+  display: flex;
+  align-items: center;
+}
+
+.itemCard .art img {
+  width: 100%;
 }

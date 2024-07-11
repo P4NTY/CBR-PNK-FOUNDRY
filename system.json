@@ -3,14 +3,14 @@
     "name": "CBRPNK",
     "system": "CBR+PNK",
     "title": "CBR+PNK",
-    "description": "Unofficial system to <strong>CBR+PNK</strong>",
+    "description": "Unofficial system to CBR+PNK",
     "authors": [{
         "name": "Kiszu",
         "discord": "2137"
     }],
-    "version": 0.01,
+    "version": "0.6",
     "compatibility": {
-        "coreVersion": 12,
+        "coreVersion": "12",
         "minimum": "11",
         "compatible": "12"
     },
@@ -22,5 +22,6 @@
     ],
     "url": "https://github.com/P4NTY/CBR-PNK-FOUNDRY",
     "background": "systems/CBRPNK/assets/CBRPNK_splash.webp",
-    "download": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/raw/main/CBR-PNK-FOUNDRY.zip"
+    "manifest": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/releases/latest/download/system.json",
+    "download": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/releases/download/0.6/CBRPNK.zip"
 }

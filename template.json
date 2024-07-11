@@ -14,7 +14,8 @@
                 "CRED": {
                     "value": 0,
                     "max": 3
-                }
+                },
+                "SR": false
             },
             "roll": {
                 "efect": 2,
