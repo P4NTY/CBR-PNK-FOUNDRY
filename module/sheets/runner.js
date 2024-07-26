@@ -16,6 +16,13 @@ export default class cbrRunner extends ActorSheet {
         return context;
     }
 
+    _onResize(event) {
+        if (this._element[0].offsetWidth > 600)
+            this.actor.update({ "system.view": "grid" });
+        else 
+            this.actor.update({ "system.view": "block" });
+    }
+
     activateListeners(html) {
         super.activateListeners(html);
 
@@ -23,7 +30,9 @@ export default class cbrRunner extends ActorSheet {
         html.find(`#${this.actor._id}_actionRoll`).mousedown( this.actionRoll.bind(this) );
         html.find(`#${this.actor._id}_resistRoll`).mousedown( this.resistRoll.bind(this) );
         html.find(`#${this.actor._id}_breathRoll`).mousedown( this.breathRoll.bind(this) );
+
     }
+
     _RunnerOnMouseDown(event) {
         const btnClick = 
             (event.which === 1 || event.button === 0) ? "l" :

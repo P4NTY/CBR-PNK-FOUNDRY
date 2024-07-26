@@ -1,5 +1,6 @@
 {
     "Actor": {
+        "view": "block",
         "types": ["runner", "hunter"],
         "runner": {
             "angle": {
@@ -132,6 +133,14 @@
                         "POLITICS": false,
                         "MARKET": false,
                         "NAVIGATION": false
+                    }
+                },
+                "ATTUNE": {
+                    "dice": 0,
+                    "EXPERTISES": {
+                        "SPIRITS": false,
+                        "ARTIFACTS": false,
+                        "PLACES": false
                     }
                 }
             },

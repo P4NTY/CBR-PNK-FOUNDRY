@@ -1,4 +1,4 @@
-<form class="runnerCard" autocomplete="off">
+<form class="runnerCard" autocomplete="off" style="display: {{system.view}};">
   <header>
     <section class="persona {{#if system.angle.hunted}}hunted{{/if}}">
       <div class="angle {{#if system.angle.isOpen}}expan{{/if}}">
@@ -233,6 +233,20 @@
           <span class="{{#if system.skills.STREETWISE.EXPERTISES.NAVIGATION}}active{{/if}}">NAVIGATION</span>
         </p></td>
       </tr>
+      {{#if system.wiedModule}}
+      <tr data-value="{{system.skills.ATTUNE.dice}}"  class="{{#if (isEqual system.roll.skill "ATTUNE")}}select{{/if}}">
+        <td><h3>ATTUNE</h3></td>
+        <td><div class="dots">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div></td>
+        <td><p>
+          <span class="{{#if system.skills.ATTUNE.EXPERTISES.SPIRITS}}active{{/if}}">SPIRITS</span>,
+          <span class="{{#if system.skills.ATTUNE.EXPERTISES.ARTIFACTS}}active{{/if}}">ARTIFACTS</span>,
+          <span class="{{#if system.skills.ATTUNE.EXPERTISES.PLACES}}active{{/if}}">PLACES</span>
+        </p></td>
+      </tr>
+      {{/if}}
     </table>
   </section>
   <section class="augmentations">

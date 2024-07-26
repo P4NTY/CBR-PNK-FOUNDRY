@@ -1,6 +1,7 @@
 import cbrItem from "./module/sheets/item.js";
 import cbrRunner from "./module/sheets/runner.js";
 import cbrHunter from "./module/sheets/hunter.js";
+import { CbrSettings } from "./module/system.js";
 
 Hooks.once("init", function () {
     console.log('Start');
@@ -8,9 +9,13 @@ Hooks.once("init", function () {
     Items.unregisterSheet("core",ItemSheet);
     Items.registerSheet("cbr", cbrItem, {makeDefault: true});
 
-    Actors.unregisterSheet("core",ActorSheet);
+    Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("cbr", cbrRunner, {types: ["runner"],makeDefault: true});
     Actors.registerSheet("cbr", cbrHunter, {types: ["hunter"],makeDefault: true});
+
+    CbrSettings.register();
+
+    success("Successfully initialized CBR+PNK!");
 });
 
 // Custom HandelBars
