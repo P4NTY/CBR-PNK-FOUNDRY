@@ -1244,3 +1244,10 @@ form.runnerCard .augmentations { grid-area: 4 / 1 / 5 / 2; }
 form.runnerCard .harm { grid-area: 5 / 1 / 6 / 2; }
 form.runnerCard .gear { grid-area: 3 / 2 / 6 / 3; }
 
+li.chat-message.message.flexcol.whisper.blind {
+  filter: hue-rotate(45deg);
+}
+
+li.chat-message.message.flexcol.whisper {
+  filter: saturate(0.5) invert(0.9);
+}

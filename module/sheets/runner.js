@@ -13,6 +13,7 @@ export default class cbrRunner extends ActorSheet {
     getData() {
         const context = super.getData();
         context.system = context.actor.system;
+        context.system.wierd = game.settings.get("CBRPNK", "wiedModule");
         return context;
     }
 
@@ -178,11 +179,11 @@ export default class cbrRunner extends ActorSheet {
 
         if ( dicePool <= 0 ) {
             // dis Roll
-            letsRoll = await new Roll("2d6").roll();
+            letsRoll = await new Roll("2d6").roll({async:true});
             rollResult = [Math.min( ...letsRoll.terms[0].results.map( ({result}) => result) )];
         }else {
             // normal Roll
-            letsRoll =  await new Roll(dicePool+"d6").roll();
+            letsRoll =  await new Roll(dicePool+"d6").roll({async:true});
             rollResult = letsRoll.terms[0].results.map( ({result}) => result)
         }
 
@@ -225,6 +226,8 @@ export default class cbrRunner extends ActorSheet {
         const content = await renderTemplate('systems/CBRPNK/templates/roll-card.hbs', templateData);
 
         ChatMessage.create({
+            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+            rolls: [letsRoll],
             user: game.user._id,
             speaker: ChatMessage.getSpeaker({token: this.actor}),
             content: content
@@ -274,11 +277,11 @@ export default class cbrRunner extends ActorSheet {
 
         if ( dicePool <= 0 ) {
             // dis Roll
-            letsRoll = await new Roll("2d6").roll();
+            letsRoll = await new Roll("2d6").roll({async:true});
             rollResult = [Math.min( ...letsRoll.terms[0].results.map( ({result}) => result) )];
         }else {
             // normal Roll
-            letsRoll =  await new Roll(dicePool+"d6").roll();
+            letsRoll =  await new Roll(dicePool+"d6").roll({async:true});
             rollResult = letsRoll.terms[0].results.map( ({result}) => result)
         }
 
@@ -316,6 +319,8 @@ export default class cbrRunner extends ActorSheet {
         const content = await renderTemplate('systems/CBRPNK/templates/roll-card.hbs', templateData);
 
         ChatMessage.create({
+            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+            rolls: [letsRoll],
             user: game.user._id,
             speaker: ChatMessage.getSpeaker({token: this.actor}),
             content: content
@@ -342,11 +347,11 @@ export default class cbrRunner extends ActorSheet {
 
         if ( dicePool <= 0 ) {
             // dis Roll
-            letsRoll = await new Roll("2d6").roll();
+            letsRoll = await new Roll("2d6").roll({async:true});
             rollResult = [Math.min( ...letsRoll.terms[0].results.map( ({result}) => result) )];
         }else {
             // normal Roll
-            letsRoll =  await new Roll(dicePool+"d6").roll();
+            letsRoll =  await new Roll(dicePool+"d6").roll({async:true});
             rollResult = letsRoll.terms[0].results.map( ({result}) => result)
         }
 
@@ -382,6 +387,8 @@ export default class cbrRunner extends ActorSheet {
         const content = await renderTemplate('systems/CBRPNK/templates/roll-card.hbs', templateData);
 
         ChatMessage.create({
+            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+            rolls: [letsRoll],
             user: game.user._id,
             speaker: ChatMessage.getSpeaker({token: this.actor}),
             content: content
