@@ -1,4 +1,4 @@
-<form class="runnerCard" autocomplete="off" style="display: {{system.view}};">
+<form class="runnerCard {{#if system.isDarkMode}}black{{/if}}" autocomplete="off" style="display: {{system.view}};">
   <header>
     <section class="persona {{#if system.angle.hunted}}hunted{{/if}}">
       <div class="angle {{#if system.angle.isOpen}}expan{{/if}}">
@@ -10,8 +10,19 @@
           <label for="{{actor._id}}_hunted">HUNTED</label>
           <div class="CRED" style="--progress: {{system.angle.CRED.value}};">CRED</div>
         </div>
-        <input id="{{actor._id}}_angleOpen" class="value" name="system.angle.isOpen" type="checkbox" {{#if system.angle.isOpen}}checked{{/if}}/>
-        <label class="angleOpen" for="{{actor._id}}_angleOpen">{{#if system.angle.isOpen}}Collapse{{else}}Expand{{/if}}</label>
+        <div class="headerButton">
+          <input id="{{actor._id}}_angleOpen" class="value" name="system.angle.isOpen" type="checkbox" {{#if system.angle.isOpen}}checked{{/if}}/>
+          <label class="angleOpen" for="{{actor._id}}_angleOpen">{{#if system.angle.isOpen}}Collapse{{else}}Expand{{/if}}</label>
+          <input id="{{actor._id}}_toggleDarkMode" type="checkbox" name="system.isDarkMode" {{#if system.isDarkMode}}checked{{/if}}>
+          <label for="{{actor._id}}_toggleDarkMode">
+            {{#if system.isDarkMode}}
+            <i class="fa-solid fa-moon"></i>
+            {{else}}
+            <i class="fa-solid fa-sun"></i>
+            {{/if}}
+          </label>
+        </div>
+        
       </div>
       <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
       <h1><input name="name" type="text" placeholder="Name" value="{{actor.name}}"/></h1>
@@ -107,7 +118,7 @@
   </section>
   <section class="skills">
     <table>
-      <tr data-value="{{system.skills.ANALYZE.dice}}" class="{{#if (isEqual system.roll.skill "ANALYZE")}}select{{/if}}">
+      <tr data-gliched="{{system.skills.ANALYZE.gliched}}" data-value="{{system.skills.ANALYZE.dice}}" class="{{#if (isEqual system.roll.skill "ANALYZE")}}select{{/if}}">
         <td><h3>ANALYZE</h3></td>
         <td><div class="dots">
           <div class="box"></div>
@@ -119,7 +130,7 @@
           <span class="{{#if system.skills.ANALYZE.EXPERTISES.INFORMATION}}active{{/if}}">INFORMATION</span>
         </p></td>
       </tr>
-      <tr data-value="{{system.skills.ATHLETICS.dice}}"  class="{{#if (isEqual system.roll.skill "ATHLETICS")}}select{{/if}}">
+      <tr data-gliched="{{system.skills.ATHLETICS.gliched}}" data-value="{{system.skills.ATHLETICS.dice}}"  class="{{#if (isEqual system.roll.skill "ATHLETICS")}}select{{/if}}">
         <td><h3>ATHLETICS</h3></td>
         <td><div class="dots">
           <div class="box"></div>
@@ -132,7 +143,7 @@
           <span class="{{#if system.skills.ATHLETICS.EXPERTISES.CLIMB}}active{{/if}}">CLIMB</span>
         </p></td>
       </tr>
-      <tr data-value="{{system.skills.CLOSE.dice}}"  class="{{#if (isEqual system.roll.skill "CLOSE")}}select{{/if}}">
+      <tr data-gliched="{{system.skills.CLOSE.gliched}}" data-value="{{system.skills.CLOSE.dice}}"  class="{{#if (isEqual system.roll.skill "CLOSE")}}select{{/if}}">
         <td><h3>CLOSE COMBAT</h3></td>
         <td><div class="dots">
           <div class="box"></div>
@@ -146,7 +157,7 @@
           <span class="{{#if system.skills.CLOSE.EXPERTISES.WIRE}}active{{/if}}">WIRE</span>
         </p></td>
       </tr>
-      <tr data-value="{{system.skills.CODING.dice}}"  class="{{#if (isEqual system.roll.skill "CODING")}}select{{/if}}">
+      <tr data-gliched="{{system.skills.CODING.gliched}}" data-value="{{system.skills.CODING.dice}}"  class="{{#if (isEqual system.roll.skill "CODING")}}select{{/if}}">
         <td><h3>CODING</h3></td>
         <td><div class="dots">
           <div class="box"></div>
@@ -159,7 +170,7 @@
           <span class="{{#if system.skills.CODING.EXPERTISES.SCRAMBLE}}active{{/if}}">SCRAMBLE</span>
         </p></td>
       </tr>
-      <tr data-value="{{system.skills.INFLUENCE.dice}}"  class="{{#if (isEqual system.roll.skill "INFLUENCE")}}select{{/if}}">
+      <tr data-gliched="{{system.skills.INFLUENCE.gliched}}" data-value="{{system.skills.INFLUENCE.dice}}"  class="{{#if (isEqual system.roll.skill "INFLUENCE")}}select{{/if}}">
         <td><h3>INFLUENCE</h3></td>
         <td><div class="dots">
           <div class="box"></div>
@@ -171,7 +182,7 @@
           <span class="{{#if system.skills.INFLUENCE.EXPERTISES.INTIMIDATE}}active{{/if}}">INTIMIDATE</span>
         </p></td>
       </tr>
-      <tr  data-value="{{system.skills.PILOTING.dice}}"  class="{{#if (isEqual system.roll.skill "PILOTING")}}select{{/if}}">
+      <tr  data-gliched="{{system.skills.PILOTING.gliched}}" data-value="{{system.skills.PILOTING.dice}}"  class="{{#if (isEqual system.roll.skill "PILOTING")}}select{{/if}}">
         <td><h3>PILOTING</h3></td>
         <td><div class="dots">
           <div class="box"></div>
@@ -184,7 +195,7 @@
           <span class="{{#if system.skills.PILOTING.EXPERTISES.DRONES}}active{{/if}}">DRONES</span>
         </p></td>
       </tr>
-      <tr data-value="{{system.skills.RANGED.dice}}"  class="{{#if (isEqual system.roll.skill "RANGED")}}select{{/if}}">
+      <tr data-gliched="{{system.skills.RANGED.gliched}}" data-value="{{system.skills.RANGED.dice}}"  class="{{#if (isEqual system.roll.skill "RANGED")}}select{{/if}}">
         <td><h3>RANGED COMBAT</h3></td>
         <td><div class="dots">
           <div class="box"></div>
@@ -197,7 +208,7 @@
           <span class="{{#if system.skills.RANGED.EXPERTISES.THROWING}}active{{/if}}">THROWING</span>
         </p></td>
       </tr>
-      <tr data-value="{{system.skills.RIGGING.dice}}"  class="{{#if (isEqual system.roll.skill "RIGGING")}}select{{/if}}">
+      <tr data-gliched="{{system.skills.RIGGING.gliched}}" data-value="{{system.skills.RIGGING.dice}}"  class="{{#if (isEqual system.roll.skill "RIGGING")}}select{{/if}}">
         <td><h3>RIGGING</h3></td>
         <td><div class="dots">
           <div class="box"></div>
@@ -209,7 +220,7 @@
           <span class="{{#if system.skills.RIGGING.EXPERTISES.HEAVY}}active{{/if}}">HEAVY M.</span>
         </p></td>
       </tr>
-      <tr data-value="{{system.skills.SCIENCES.dice}}"  class="{{#if (isEqual system.roll.skill "SCIENCES")}}select{{/if}}">
+      <tr data-gliched="{{system.skills.SCIENCES.gliched}}" data-value="{{system.skills.SCIENCES.dice}}"  class="{{#if (isEqual system.roll.skill "SCIENCES")}}select{{/if}}">
         <td><h3>SCIENCES</h3></td>
         <td><div class="dots">
           <div class="box"></div>
@@ -221,7 +232,7 @@
           <span class="{{#if system.skills.SCIENCES.EXPERTISES.CHEMISTRY}}active{{/if}}">CHEMISTRY</span>
         </p></td>
       </tr>
-      <tr data-value="{{system.skills.STREETWISE.dice}}"  class="{{#if (isEqual system.roll.skill "STREETWISE")}}select{{/if}}">
+      <tr data-gliched="{{system.skills.STREETWISE.gliched}}" data-value="{{system.skills.STREETWISE.dice}}"  class="{{#if (isEqual system.roll.skill "STREETWISE")}}select{{/if}}">
         <td><h3>STREETWISE</h3></td>
         <td><div class="dots">
           <div class="box"></div>
@@ -234,7 +245,7 @@
         </p></td>
       </tr>
       {{#if system.wierd}}
-      <tr data-value="{{system.skills.ATTUNE.dice}}"  class="{{#if (isEqual system.roll.skill "ATTUNE")}}select{{/if}}">
+      <tr data-gliched="{{system.skills.ATTUNE.gliched}}" data-value="{{system.skills.ATTUNE.dice}}"  class="{{#if (isEqual system.roll.skill "ATTUNE")}}select{{/if}}">
         <td><h3>ATTUNE</h3></td>
         <td><div class="dots">
           <div class="box"></div>

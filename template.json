@@ -3,6 +3,7 @@
         "view": "block",
         "types": ["runner", "hunter"],
         "runner": {
+            "isDarkMode": false,
             "angle": {
                 "isOpen": false,
                 "hunted": false,
@@ -51,6 +52,7 @@
             "skills": {
                 "ANALYZE": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "PEOPLE": false,
                         "SITUATION": false,
@@ -59,6 +61,7 @@
                 },
                 "ATHLETICS": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "SPRINT": false,
                         "PARKOUR": false,
@@ -68,6 +71,7 @@
                 },
                 "CLOSE": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "BRAWLING": false,
                         "KNIFE": false,
@@ -78,6 +82,7 @@
                 },
                 "CODING": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "HACK": false,
                         "COMPILE": false,
@@ -87,6 +92,7 @@
                 },
                 "INFLUENCE": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "PERFORM": false,
                         "NEGOTIATE": false,
@@ -95,6 +101,7 @@
                 },
                 "PILOTING": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "CARS": false,
                         "BIKES": false,
@@ -104,6 +111,7 @@
                 },
                 "RANGED": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "PISTOL": false,
                         "RIFLE": false,
@@ -113,6 +121,7 @@
                 },
                 "RIGGING": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "ELETRONICS": false,
                         "ROBOTICS": false,
@@ -121,6 +130,7 @@
                 },
                 "SCIENCES": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "BIOTECH": false,
                         "PHYSICS": false,
@@ -129,6 +139,7 @@
                 },
                 "STREETWISE": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "POLITICS": false,
                         "MARKET": false,
@@ -137,6 +148,7 @@
                 },
                 "ATTUNE": {
                     "dice": 0,
+                    "gliched": 0,
                     "EXPERTISES": {
                         "SPIRITS": false,
                         "ARTIFACTS": false,

@@ -1,0 +1,136 @@
+.runnerCard p {
+    font-size: x-small;
+    margin: 0;
+    color: rgb(var(--gray));
+}
+
+.approach {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 20px;
+    position: relative;
+    width: 400px;
+}
+
+.approach h3 {
+    padding: 5px;
+    grid-area: title;
+    margin: 0;
+}
+
+.approach::before {
+    content: "APPROACH";
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    position: absolute;
+    top: 0;
+    left: -20px;
+}
+
+.approach>div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "title dots"
+        "text dots";
+    background: rgb(var(--black));
+    color: rgb(var(--white));
+    clip-path: polygon(20% 0%, 95% 0%, 100% 40%, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0 0);
+}
+
+.approach .texts {
+    grid-area: text;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+}
+
+.dots {
+    grid-area: dots;
+    display: flex;
+    align-items: stretch;
+    margin: 5px;
+    position: relative;
+}
+
+.approach .dots::after {
+    content: "GLICHED";
+    position: absolute;
+    font-size: x-small;
+    bottom: -6px;
+    right: 20%;
+    color: rgb(var(--gray));
+}
+
+.dots .box {
+    display: inline-block;
+    border: 7px solid rgb(var(--black));
+    text-align: center;
+    WIDTH: 34px;
+}
+
+.skills .dots .box {
+    width: 25px;
+}
+
+.dots .box::after {
+    content: "+";
+    color: rgb(var(--yellow));
+    font-weight: bold;
+}
+
+section.skills {
+    margin-left: 20px;
+    position: relative;
+    width: 400px;
+}
+
+section.skills h3,
+section.skills p {
+    margin: 0;
+}
+
+section.skills h3 {
+    font-size: 16px;
+    width: 1fr;
+    font-weight: normal;
+}
+
+section.skills p {
+    color: rgb(var(--black));
+    border-bottom: 1px solid;
+    padding: 5px;
+}
+
+section.skills p strong {
+    color: rgb(var(--dark));
+}
+
+section.skills::before {
+    content: "SKILLS";
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    position: absolute;
+    top: 0;
+    left: -20px;
+}
+
+section.skills>div {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+    position: relative;
+    width: 400px;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.skills .dots {
+    gap: 5px;
+}
+
+section.skills .dots .box {
+    border-width: 4px;
+}

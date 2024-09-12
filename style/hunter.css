@@ -1,0 +1,91 @@
+.hunterCard header {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin-bottom: 20px;
+}
+
+form.hunterCard {
+    background: rgb(var(--dark));
+    padding: 5px;
+}
+
+form.hunterCard header img {
+    border: 10px solid rgb(var(--red));
+    border-radius: 0;
+
+}
+
+form.hunterCard header input[name="name"] {
+    color: rgb(var(--white));
+    background: rgb(var(--red));
+    border: 0;
+    font-size: 20px;
+    padding: 20px;
+    display: inline-block;
+    clip-path: polygon(20% 0%, 95% 0%, 100% 40%, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0 0);
+    border-radius: 0;
+}
+
+
+form.hunterCard header textarea {
+    background: rgb(var(--white));
+}
+
+.hunterCard textarea {
+    color: rgb(var(--white));
+}
+
+.hunterCard .persona .editor-content {
+    padding: 0 5px;
+}
+
+.hunterCard .track {
+    display: inline-block;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.hunterCard .track>div {
+    width: 20px;
+    height: 30px;
+    background: rgb(var(--red));
+    transform: skew(-15deg);
+    clip-path: polygon(80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%, 0 0);
+}
+
+.hunterCard .editor-content p {
+    color: rgb(var(--white));
+}
+
+.hunterCard input[type="text"] {
+    display: inline-block;
+    border: 0;
+    border-bottom: 1px solid rgb(var(--red));
+    color: rgb(var(--white));
+    padding: 15px;
+}
+
+.hunterCard .track[data-value="1"]>div:nth-child(-n+1) {
+    background: rgb(var(--yellow)) !important;
+}
+
+.hunterCard .track[data-value="2"]>div:nth-child(-n+2) {
+    background: rgb(var(--yellow)) !important;
+}
+
+.hunterCard .track[data-value="3"]>div:nth-child(-n+3) {
+    background: rgb(var(--yellow)) !important;
+}
+
+.hunterCard .track[data-value="4"]>div:nth-child(-n+4) {
+    background: rgb(var(--yellow)) !important;
+}
+
+.hunterCard .track[data-value="5"]>div:nth-child(-n+5) {
+    background: rgb(var(--yellow)) !important;
+}
+
+.hunterCard .track[data-value="6"]>div:nth-child(-n+6) {
+    background: rgb(var(--yellow)) !important;
+}

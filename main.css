@@ -852,7 +852,7 @@ em {font-style: italic;color: rgb(var(--yellow));}
 }
 
 .bar label {
-    color: rgb(var(--white));;
+    color: rgb(var(--white));
 }
 
 .bar input:checked + label {
@@ -1248,6 +1248,64 @@ li.chat-message.message.flexcol.whisper.blind {
   filter: hue-rotate(45deg);
 }
 
-li.chat-message.message.flexcol.whisper {
+li.chat-message.message.flexcol.whisper,
+.box.gliched {
+  filter: saturate(0.5) invert(0.9);
+}
+
+form.black.runnerCard {
+  background: rgb(var(--dark));
+  color: rgb(var(--white));
+}
+
+form.black.runnerCard .roll label {
+  color: rgb(var(--dark));
+}
+
+form.black.runnerCard [type="text"] {
+  color: rgb(var(--white));
+}
+
+form.black.runnerCard .skills span.active,
+form.black.runnerCard .skills .select h3 {
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+form.black.runnerCard .harm::before {
+  color: rgb(var(--dark));
+}
+
+form.runnerCard .headerButton {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+form.runnerCard .headerButton i.fa-solid {
+  font-size: large;
+  padding: 0 5px;
+}
+
+@keyframes highlight {
+  0%   {background-color: rgb(var(--yellow));; }
+  50%  {background-color: rgb(var(--wierd));}
+  100% {background-color: rgb(var(--blue));; }
+}
+input[name="addDice"]:checked + label:not(:nth-child(10)) {
+    animation: highlight 2s linear 0s infinite alternate;
+}
+
+.gear .stack {
+    color: rgb(var(--wierd));
+}
+
+.runner.overload {
+    min-height: 330px;
+}
+
+tr[data-gliched="1"] .dots .box:nth-child(1) {
+  filter: saturate(0.5) invert(0.9);
+}
+
+tr[data-gliched="2"] .dots .box {
   filter: saturate(0.5) invert(0.9);
 }

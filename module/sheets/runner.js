@@ -14,6 +14,7 @@ export default class cbrRunner extends ActorSheet {
         const context = super.getData();
         context.system = context.actor.system;
         context.system.wierd = game.settings.get("CBRPNK", "wiedModule");
+
         return context;
     }
 
@@ -28,9 +29,9 @@ export default class cbrRunner extends ActorSheet {
         super.activateListeners(html);
 
         html.mousedown( this._RunnerOnMouseDown.bind(this) );
-        html.find(`#${this.actor._id}_actionRoll`).mousedown( this.actionRoll.bind(this) );
-        html.find(`#${this.actor._id}_resistRoll`).mousedown( this.resistRoll.bind(this) );
-        html.find(`#${this.actor._id}_breathRoll`).mousedown( this.breathRoll.bind(this) );
+        html.find( `#${this.actor._id}_actionRoll`).mousedown( this.actionRoll.bind(this) );
+        html.find( `#${this.actor._id}_resistRoll`).mousedown( this.resistRoll.bind(this) );
+        html.find( `#${this.actor._id}_breathRoll`).mousedown( this.breathRoll.bind(this) );
 
     }
 
@@ -44,10 +45,16 @@ export default class cbrRunner extends ActorSheet {
             case "persona":
                 if ( ["DEBT","CRED"].includes(event.target.classList[0]) ){
                     if (btnClick == "l") {
-                        this.actor.update({ [`system.angle.${event.target.innerText}.value`]: Math.min(this.actor.system.angle[event.target.innerText].value+1, this.actor.system.angle[event.target.innerText].max) });
+                        this.actor.update({ 
+                            [`system.angle.${event.target.innerText}.value`]:
+                            Math.min(this.actor.system.angle[event.target.innerText].value+1, this.actor.system.angle[event.target.innerText].max)
+                        });
                     }
                     else if (btnClick == "r") {
-                        this.actor.update({ [`system.angle.${event.target.innerText}.value`]: Math.max(this.actor.system.angle[event.target.innerText].value-1,0) });
+                        this.actor.update({
+                            [`system.angle.${event.target.innerText}.value`]: 
+                            Math.max(this.actor.system.angle[event.target.innerText].value-1,0)
+                        });
                     }
                 }
             break;
@@ -74,42 +81,63 @@ export default class cbrRunner extends ActorSheet {
 
                 if (event.target.classList[0] === 'box') {
                     const currSkillValue = event.target.parentElement.parentElement.getAttribute("data-value");
-                    if (btnClick == "l") {
+                    if ( btnClick == "l" )
                         this.actor.update({ [clickedApproachName+".dice"]: Math.min(currSkillValue+1, 2) });
-                    }
-                    else if (btnClick == "r") {
+                    else if ( btnClick == "r" )
                         this.actor.update({ [clickedApproachName+".dice"]: Math.max(currSkillValue-1,0) });
-                    }
                 }
                 else if ( event.target.classList[0] === 'dots' ) {
-                    this.actor.update({ ["system.approach."+event.target.parentElement.querySelector("h3").innerText+".GLICHED"]: !this.actor.system.approach[event.target.parentElement.querySelector("h3").innerText].GLICHED });
+                    this.actor.update({ 
+                        ["system.approach."+event.target.parentElement.querySelector("h3").innerText+".GLICHED"]: 
+                        !this.actor.system.approach[event.target.parentElement.querySelector("h3").innerText].GLICHED
+                    });
                 }
-                else if ( event.target.nodeName === "H3" && btnClick == "l" ) 
-                    this.actor.update({ "system.roll.approach": event.target.innerText });
-                else if ( event.target.nodeName === "H3" && btnClick == "r" ) 
-                    this.actor.update({ "system.roll.approach": "" });
-                else if ( event.target.nodeName === "H3" && btnClick == "m" ) 
-                    this.actor.update({ [`system.approach.${event.target.innerText}.GLICHED`]: !this.actor.system.approach[event.target.innerText].GLICHED });
+                if ( event.target.nodeName === "H3" ) {
+                    if ( btnClick == "l" ) 
+                        this.actor.update({ "system.roll.approach": event.target.innerText });
+                    else if ( btnClick == "r" ) 
+                        this.actor.update({ "system.roll.approach": "" }); 
+                }
             break;
             case "skills": 
-                const clickedSkillName = `system.skills.${event.target.closest("tr").querySelector("h3").innerText.split(" ")[0]}`;
+                const clickedSkillName = event.target.closest("tr").querySelector("h3").innerText.split(" ")[0];
                 if (event.target.classList[0] === 'box') {
                     const currSkillValue = event.target.closest("tr").getAttribute("data-value");
-                    if (btnClick == "l") {
-                        this.actor.update({ [clickedSkillName+".dice"]: Math.min(currSkillValue+1, 2) });
-                    }
-                    else if (btnClick == "r") {
-                        this.actor.update({ [clickedSkillName+".dice"]: Math.max(currSkillValue-1,0) });
+                    if (btnClick == "l")
+                        this.actor.update({ ["system.skills."+clickedSkillName+".dice"]: Math.min(currSkillValue+1, 2) });
+                    else if (btnClick == "r")
+                        this.actor.update({ ["system.skills."+clickedSkillName+".dice"]: Math.max(currSkillValue-1,0) });
+                    else if ( btnClick == "m" ) {
+                        const arrValues = [];
+                        for (let index = 0; index <= currSkillValue; index++) {
+                            arrValues.push(index);
+                        }
+
+                        console.log({
+                            oldValue: this.actor.system.skills[clickedSkillName].gliched,
+                            newValue: (this.actor.system.skills[clickedSkillName].gliched + 1)%arrValues.length
+                        });
+                        
+
+                        this.actor.update({
+                            ["system.skills."+clickedSkillName+".gliched"]:
+                            arrValues[ (this.actor.system.skills[clickedSkillName].gliched + 1)%arrValues.length ]
+                        })
                     }
                 }
                 else if ( event.target.nodeName === "SPAN" ) {
                     const clickedSkillExp = event.target.innerText.split(" ")[0];
-                    this.actor.update({ [clickedSkillName+".EXPERTISES."+clickedSkillExp]: !this.actor.system.skills[event.target.closest("tr").querySelector("h3").innerText.split(" ")[0]].EXPERTISES[clickedSkillExp] });
+                    this.actor.update({ 
+                        ["system.skills."+clickedSkillName+".EXPERTISES."+clickedSkillExp]: 
+                        !this.actor.system.skills[event.target.closest("tr").querySelector("h3").innerText.split(" ")[0]].EXPERTISES[clickedSkillExp]
+                    });
                 }
-                else if ( event.target.nodeName === "H3" && btnClick == "l" ) 
-                    this.actor.update({ "system.roll.skill": event.target.innerText.split(" ")[0] });
-                else if ( event.target.nodeName === "H3" && btnClick == "r" ) 
-                    this.actor.update({ "system.roll.skill": "" });
+                if ( event.target.nodeName === "H3" ) {
+                    if ( btnClick == "l" ) 
+                        this.actor.update({ "system.roll.skill": event.target.innerText.split(" ")[0] });
+                    else if (  btnClick == "r" ) 
+                        this.actor.update({ "system.roll.skill": "" });
+                }
             break;
             case "augmentations": 
                 if (  event.target.nodeName === "INPUT" && btnClick == "m" ) 
@@ -160,7 +188,10 @@ export default class cbrRunner extends ActorSheet {
     async actionRoll(){
         const dataRoll = {
             ...this.actor.system.roll,
-            GLICHED: Object.values(this.actor.system.AUGMENTATIONS).filter( ({GLICHED}) => GLICHED ).length + this.actor.system.approach[this.actor.system.roll.approach].GLICHED,
+            GLICHED: 
+                Object.values(this.actor.system.AUGMENTATIONS).filter( ({GLICHED}) => GLICHED ).length + 
+                this.actor.system.approach[this.actor.system.roll.approach].GLICHED + 
+                this.actor.system.skills[this.actor.system.roll.skill].gliched,
             dices: `${this.actor.system.approach[this.actor.system.roll.approach].dice} + ${(this.actor.system.skills[this.actor.system.roll.skill]||{dice: 0}).dice}`
         }, dicePool = Math.min(6, eval(`${dataRoll.dices}${dataRoll.addDice||"+0"}`) );
         let letsRoll, rollResult = 0;
@@ -232,6 +263,10 @@ export default class cbrRunner extends ActorSheet {
             speaker: ChatMessage.getSpeaker({token: this.actor}),
             content: content
         });
+
+        if (game.settings.get("CBRPNK", "resetDice")) {
+            this.actor.update({ "system.roll.addDice" : 0 });
+        }
     }
 
     async overLOAD() {
@@ -327,6 +362,10 @@ export default class cbrRunner extends ActorSheet {
         });
         
         if ( stress >= 7 && !this.actor.system.stress.isLOAD) this.overLOAD();
+
+        if (game.settings.get("CBRPNK", "resetDice")) {
+            this.actor.update({ "system.roll.addDice" : 0 });
+        }
     }
     async breathRoll() {
         const dataRoll = {
@@ -394,5 +433,8 @@ export default class cbrRunner extends ActorSheet {
             content: content
         });
         
+        if (game.settings.get("CBRPNK", "resetDice")) {
+            this.actor.update({ "system.roll.addDice" : 0 });
+        }
     }
 }
