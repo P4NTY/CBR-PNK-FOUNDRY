@@ -138,9 +138,9 @@
         "ResistRoll": "RESIST ROLL",
         "ActionRoll": "ACTION ROLL",
         "BreathRoll": "TAKE A BREATH",
-        "AngelRoll": "ANGEL ROLL"
+        "AngleRoll": "ANGLE ROLL"
     },
-    "ANGEL": {
+    "ANGLE": {
         "crit": {
             "title": "SUCCEEDED REMARKABLY",
             "desc": "After all, other players are done. Choose who you offer a hand to-improve thier result by one step. Describe togheter how this works in the fiction."
@@ -266,5 +266,13 @@
         "level_2": "",
         "level_3": "OUT",
         "level_4": "TIME TO DIE 💀"
+    },
+    "Tooltips": {
+        "ToggleDarkMode": "Toggle dark mode",
+        "GlitchDice": "Glitch dice",
+        "Activate": "Activate",
+        "Glitch": "Glitch",
+        "Delete": "Delete",
+        "SwitchLoad": "Switch load"
     }
 }
