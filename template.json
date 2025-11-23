@@ -26,8 +26,8 @@
             "roll": {
                 "efect": 2,
                 "threat": 2,
-                "approach": "",
-                "skill": "",
+                "approach": "AGGRESSIVE",
+                "skill": "ANALYZE",
                 "addDice": "+0",
                 "isGlichDice": false
             },

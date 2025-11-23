@@ -18,6 +18,14 @@ export default class cbrRunner extends foundry.appv1.sheets.ActorSheet {
 
         context.augs = context.items.filter( ({type}) => type === "augmentation");
 
+        // Set default approach and skill if not already set
+        if (!this.actor.system.roll.approach) {
+            this.actor.update({ "system.roll.approach": "AGGRESSIVE" });
+        }
+        if (!this.actor.system.roll.skill) {
+            this.actor.update({ "system.roll.skill": "ANALYZE" });
+        }
+
         return context;
     }
 
@@ -197,13 +205,23 @@ export default class cbrRunner extends foundry.appv1.sheets.ActorSheet {
     }
 
     async actionRoll(){
+        // Validate that an approach and skill are selected
+        if (!this.actor.system.roll.approach || !this.actor.system.approach[this.actor.system.roll.approach]) {
+            ui.notifications.warn(game.i18n.localize("CBRPNK.Warnings.NoApproach"));
+            return;
+        }
+        if (!this.actor.system.roll.skill || !this.actor.system.skills[this.actor.system.roll.skill]) {
+            ui.notifications.warn(game.i18n.localize("CBRPNK.Warnings.NoSkill"));
+            return;
+        }
+
         const dataRoll = {
             ...this.actor.system.roll,
-            GLICHED: 
-                this.actor.items.map( ({system}) => 
+            GLICHED:
+                this.actor.items.map( ({system}) =>
                     system.isGLICHED && ( !this.actor.system.AugGlitchedCheck || system.isActive )
-                ).filter(x => x).length + 
-                this.actor.system.approach[this.actor.system.roll.approach].GLICHED + 
+                ).filter(x => x).length +
+                this.actor.system.approach[this.actor.system.roll.approach].GLICHED +
                 this.actor.system.roll.isGlichDice,
             dices: `${this.actor.system.approach[this.actor.system.roll.approach].dice} + ${(this.actor.system.skills[this.actor.system.roll.skill]||{dice: 0}).dice}`
         }, dicePool = Math.min(6, eval(`${dataRoll.dices}${dataRoll.addDice||"+0"}+${this.actor.system.roll.isGlichDice||'0'}`) );
@@ -309,6 +327,12 @@ export default class cbrRunner extends foundry.appv1.sheets.ActorSheet {
     }
 
     async resistRoll() {
+        // Validate that an approach is selected
+        if (!this.actor.system.roll.approach || !this.actor.system.approach[this.actor.system.roll.approach]) {
+            ui.notifications.warn(game.i18n.localize("CBRPNK.Warnings.NoApproach"));
+            return;
+        }
+
         const dataRoll = {
             ...this.actor.system.roll,
             dices: `${this.actor.system.approach[this.actor.system.roll.approach].dice}`
@@ -387,6 +411,12 @@ export default class cbrRunner extends foundry.appv1.sheets.ActorSheet {
         }
     }
     async breathRoll() {
+        // Validate that an approach is selected
+        if (!this.actor.system.roll.approach || !this.actor.system.approach[this.actor.system.roll.approach]) {
+            ui.notifications.warn(game.i18n.localize("CBRPNK.Warnings.NoApproach"));
+            return;
+        }
+
         const dataRoll = {
             ...this.actor.system.roll,
             dices: `${this.actor.system.approach[this.actor.system.roll.approach].dice}`
@@ -462,6 +492,12 @@ export default class cbrRunner extends foundry.appv1.sheets.ActorSheet {
     }
 
     async angelRoll() {
+        // Validate that an approach is selected
+        if (!this.actor.system.roll.approach || !this.actor.system.approach[this.actor.system.roll.approach]) {
+            ui.notifications.warn(game.i18n.localize("CBRPNK.Warnings.NoApproach"));
+            return;
+        }
+
         const dataRoll = {
             ...this.actor.system.roll,
             dices: `${this.actor.system.approach[this.actor.system.roll.approach].dice}`

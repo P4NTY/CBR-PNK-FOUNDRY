@@ -266,5 +266,11 @@
         "level_2": "",
         "level_3": "OUT",
         "level_4": "TIME TO DIE 💀"
+    },
+    "CBRPNK": {
+        "Warnings": {
+            "NoApproach": "Please select an approach before rolling.",
+            "NoSkill": "Please select a skill before rolling."
+        }
     }
 }
