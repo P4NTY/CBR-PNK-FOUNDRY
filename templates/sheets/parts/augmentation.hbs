@@ -7,17 +7,17 @@
             <i class="fa-regular fa-square-caret-right"></i>
         </button>
         <input class="item-name" type="text" value="{{name}}">
-        <button class="item-active">
+        <button class="item-active" title="{{localize 'Tooltips.Activate'}}">
             {{#if system.isActive}}
             <i class="fa-solid fa-toggle-on" style="color: rgb(var(--yellow));"></i>
             {{else}}
             <i class="fa-solid fa-toggle-off"></i>
             {{/if}}
         </button>   
-        <button class="item-glitch" style="color: rgb(var(--blue));">
+        <button class="item-glitch" title="{{localize 'Tooltips.Glitch'}}" style="color: rgb(var(--blue));">
             <i class="fa-etch fa-solid fa-bug"></i>
         </button>
-        <button class="item-delete">
+        <button class="item-delete" title="{{localize 'Tooltips.Delete'}}">
             <i class="fa-regular fa-circle-xmark"></i>
         </button>
     </div>

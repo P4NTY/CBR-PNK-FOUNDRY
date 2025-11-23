@@ -138,9 +138,9 @@
     "ResistRoll": "ROLAR RESISTÊNCIA",
     "ActionRoll": "ROLAR AÇÃO",
     "BreathRoll": "RECUPERAR FÔLEGO",
-    "AngelRoll": "ROLAR AJUDA"
+    "AngleRoll": "ROLAR AJUDA"
   },
-  "ANGEL": {
+  "ANGLE": {
     "crit": {
       "title": "MUITO BEM SUCEDIDA",
       "desc": "Após as demais jogadoras terminarem, escolha uma para oferecer uma mãozinha e melhore o resultado dela em um passo. Descrevam juntas como isso ocorre na ficção."
