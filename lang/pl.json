@@ -6,13 +6,16 @@
         },
         "Item": {
             "item": "Przedmiot",
-            "augmentation": "Wszczep"
+            "augmentation": "Wszczep",
+            "gear": "Sprzęt",
+            "dossier": "Dossier"
         }
     },
     "EXPAND": "ROZWIŃ",
     "COLLAPSE": "ZWIŃ",
     "EDIT": "EDYTUJ",
     "RUNNER": {
+        "wrf": "Po co się w to pakujesz?",
         "SR": "SPCEJALNY PANCERZ",
         "DEBT": "DŁUGI",
         "CRED": "FANTY",
@@ -20,7 +23,7 @@
         "GLICHED": "GLICZ",
         "OVERLOAD": {
             "name": "Przegrzanie",
-            "desc": "<p>Zaznaczyłeś ostatni stres ⚡, Wybierz podejście, które będzie <em>ZGLICZOWANE</em> i zmierz się z wynikającymi komplikacjami:</p><ul><li>Wypadasz z akcji.</li><li>Wystawiasz drużyne na zagrożenie.</li><li>Tracicie przewagę.</li><li>Niszczysz lub przeoczasz coś ważnego.</li></ul><p>Kiedy <strong>PRZEGRZEWASZ SIĘ</strong> nie możesz podejmować akcji wymqagajacych ⚡. Zaczerpnij <strong>Oddechu</strong>, by odzyskać ⚡ i wyczyścić status.</p>"
+            "desc": "<p>Zaznaczyłeś ostatni stres <i class='fa-solid fa-bolt'></i>, Wybierz podejście, które będzie <em>ZGLICZOWANE</em> i zmierz się z wynikającymi komplikacjami:</p><ul><li>Wypadasz z akcji.</li><li>Wystawiasz drużyne na zagrożenie.</li><li>Tracicie przewagę.</li><li>Niszczysz lub przeoczasz coś ważnego.</li></ul><p>Kiedy <strong>PRZEGRZEWASZ SIĘ</strong> nie możesz podejmować akcji wymqagajacych <i class='fa-solid fa-bolt'></i>. Zaczerpnij <strong>Oddechu</strong>, by odzyskać <i class='fa-solid fa-bolt'></i> i wyczyścić status.</p>"
         },
         "AUG": "WSZCZEPY",
         "ABILITY": "ZDOLNOŚCI"
@@ -41,7 +44,7 @@
             "desc": "SIŁA ZASTRASZANIE ZNISZCZENIE"
         },
         "SMART": {
-            "name": "MĄDRE",
+            "name": "ZMYŚLNE",
             "flaw": "DESORIENTACJA",
             "desc": "KREATYWNOŚĆ SPRYT PERCEPCJA"
         },
@@ -133,12 +136,12 @@
     },
     "ROLL": {
         "Effect": "EFEKT",
-        "Threat": "POZYCJA",
+        "Threat": "RYZYKO",
         "Dice": "KOŚCI",
         "ResistRoll": "ODPIERANIE",
         "ActionRoll": "AKCJA",
         "BreathRoll": "ODDECH",
-        "AngelRoll": "OPATRZNOŚĆ"
+        "AngelRoll": "WYJŚCIE"
     },
     "ANGEL": {
         "crit": {
@@ -161,19 +164,19 @@
     "BREATH": {
         "crit": {
             "title": "BYŁEŚ GOTOWY NA GORSZE",
-            "desc": "<strong>WYCZYŚĆ CAŁY ⚡</strong> -LUB- <strong>ZIGNORUJ WSZYSTKIE</strong> RANY 1 i 2 poziomu do końca skoku."
+            "desc": "<strong>WYCZYŚĆ CAŁY <i class='fa-solid fa-bolt'></i></strong> -LUB- <strong>ZIGNORUJ WSZYSTKIE</strong> RANY 1 i 2 poziomu do końca skoku."
         },
         "succ": {
             "title": "TO POWINNO DZIAŁAĆ",
-            "desc": "<strong>WYCZYŚĆ ⚡⚡⚡</strong> -LUB- <strong>ZIGNORUJ</strong> RANĘ 1 lub 2 poziomu do końca skoku."
+            "desc": "<strong>WYCZYŚĆ <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i></strong> -LUB- <strong>ZIGNORUJ</strong> RANĘ 1 lub 2 poziomu do końca skoku."
         },
         "part": {
             "title": "ZACISKASZ ZĘBY",
-            "desc": "<strong>WYCZYŚĆ ⚡⚡</strong> -LUB- <strong>ZIGNORUJ</strong> RANĘ 1 poziomu do końca skoku."
+            "desc": "<strong>WYCZYŚĆ <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i></strong> -LUB- <strong>ZIGNORUJ</strong> RANĘ 1 poziomu do końca skoku."
         },
         "fail": {
             "title": "WYCISNĄŁEŚ CO MOGŁEŚ",
-            "desc": "WYCZYŚĆ ⚡"
+            "desc": "WYCZYŚĆ <i class='fa-solid fa-bolt'></i>"
         }
     },
     "RESIST": {
@@ -183,21 +186,21 @@
         },
         "succ": {
             "title": "SOLIDNIE",
-            "desc": "ZAZNACZ ⚡"
+            "desc": "ZAZNACZ <i class='fa-solid fa-bolt'></i>"
         },
         "part": {
             "title": "NIE NAJGORZEJ",
-            "desc": "ZAZNACZ ⚡⚡"
+            "desc": "ZAZNACZ <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i>"
         },
         "fail": {
             "title": "BLISKO",
-            "desc": "ZAZNACZ ⚡⚡⚡"
+            "desc": "ZAZNACZ <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i>"
         }
     },
     "ACTION": {
         "crit": {
             "title": "KRYTYK",
-            "desc": "Uzyskujesz przewagę (▲Eefekt, odkrywasz sekret, ▼Pozycje, zdobywasz skarb)."
+            "desc": "Uzyskujesz przewagę (▲Eefekt, odkrywasz sekret, ▼Ryzyko, zdobywasz skarb)."
         },
         "succ": {
             "title": "SUKCES",
@@ -218,12 +221,28 @@
     },
     "GEAR": {
         "name": "SPRZĘT",
-        "BLADE": "OSTRZE LUB DWA",
-        "SIDEARM": "KLAMKA",
-        "SUBMACHINE": "DŁUGA LUFA",
-        "LARGEHEAVY": "BROŃ KONKRET",
-        "TRACKING": "PLUSKWA GPS",
-        "CYBERDECK": "CYBERDECK",
+        "overGEARED": {
+            "name": "Przeciążony",
+            "desc": "Nosisz za dużo sprzętu!"
+        },
+        "BLADE": {
+            "name": "OSTRZE LUB DWA"
+        },
+        "SIDEARM": {
+            "name": "KLAMKA"
+        },
+        "SUBMACHINE": {
+            "name": "DŁUGA LUFA"
+        },
+        "LARGEHEAVY": {
+            "name": "BROŃ KONKRET"
+        },
+        "TRACKING": {
+            "name": "PLUSKWA GPS"
+        },
+        "CYBERDECK": {
+            "name": "CYBERDECK"
+        },
         "SDRONE": {
             "name": "MAŁY DRON",
             "desc": "SKRYTY / ZWROTNY"
@@ -232,28 +251,49 @@
             "name": "ŚREDNI DRON",
             "desc": "TWARDY / BOJOWY"
         },
-        "BATTERY": "ZAPASOWA BATERIA",
-        "MEDKIT": "APTECZKA",
-        "DISGUISE": "PRZYKRYWKA / KAMUFLARZ",
-        "ARMOR": "PANCERZ",
-        "AHEAVY": "+CIĘŻKI",
-        "INFILTRATION": "SZPIEG. KIT",
+        "BATTERY": {
+            "name": "ZAPASOWA BATERIA"
+        },
+        "MEDKIT": {
+            "name": "APTECZKA"
+        },
+        "DISGUISE": {
+            "name": "PRZYKRYWKA / KAMUFLARZ"
+        },
+        "ARMOR": {
+            "name": "PANCERZ"
+        },
+        "AHEAVY": {
+            "name": "CIĘŻKI PANCERZ",
+            "desc": "MUSISZ MIEĆ ZWYKŁY PANCERZ"
+        },
+        "INFILTRATION": {
+            "name": "SZPIEG. KIT"
+        },
         "AMMO": {
             "name": "EXTRA AMMO",
             "desc": "STAN / P.PANC / WYBUCH / ZAPAL"
         },
         "SURVIVAL": {
-            "name": "SUVRIVAL",
+            "name": "SURVIVAL",
             "desc": "MASKA, RACJE, FILTRY"
         },
         "GRENADES": {
             "name": "GRANATY",
             "desc": "EMP / GAS / STUN / ZAPŁON / FRAG"
         },
-        "DEMOLITION": "ŁADUNKI WYBUCHOWE",
-        "MICROTRONICS": "PRECYZYJNE NARZĘDZIA",
-        "SPARTS": "CZĘŚCI ZAMIENNE",
-        "EXTRA": "DOD. OBCIĄZENIE"
+        "DEMOLITION": {
+            "name": "ŁADUNKI WYBUCHOWE"
+        },
+        "MICROTRONICS": {
+            "name": "PRECYZYJNE NARZĘDZIA"
+        },
+        "SPARTS": {
+            "name": "CZĘŚCI ZAMIENNE"
+        },
+        "EXTRA": {
+            "name": "DOD. OBCIĄZENIE"
+        }
     },
     "LOAD": {
         "LIGHT": "LEKKI: Swobodny, Wtapiajacy się",
@@ -263,7 +303,7 @@
     "HARM": {
         "name": "RANY",
         "level_1": "▼E",
-        "level_2": "",
+        "level_2": "<i class='fa-solid fa-square-minus'></i>",
         "level_3": "WYPAD",
         "level_4": "WYBIŁA TWOJA GODZINA 💀"
     },

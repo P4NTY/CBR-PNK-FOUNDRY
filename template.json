@@ -3,12 +3,9 @@
         "view": "block",
         "types": ["runner", "hunter"],
         "runner": {
-            "isDarkMode": false,
+            "isWierd": false,
             "angle": {
-                "isOpen": false,
                 "hunted": false,
-                "for": "",
-                "DETAILS": "",
                 "DEBT": {
                     "value": 0,
                     "max": 3
@@ -164,137 +161,27 @@
             "GEAR": {
                 "LOAD": {
                     "value": 0,
-                    "selected": "light",
-                    "light": { "value": 3 },
-                    "medium": { "value": 5 },
-                    "heavy": { "value": 7 }
-                },
-                "Equpment": {
-                    "eq1": {
-                        "name": "A BLADE OR TWO",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq2": {
-                        "name": "SIDEARM",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq3": {
-                        "name": "SUBMACHINE GUN",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq4": {
-                        "name": "LARGE/HEAVY WEAPON",
-                        "isUse": false,
-                        "value": 2
-                    },
-                    "eq5": {
-                        "name": "TRACKING DEVICE",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq6": {
-                        "name": "CYBERDECK",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq7": {
-                        "name": "SMALL DRONE",
-                        "isUse": false,
-                        "value": 1,
-                        "desc": "STEALTHY OR SWIFT"
-                    },
-                    "eq8": {
-                        "name": "MEDIUM DRONE",
-                        "isUse": false,
-                        "value": 2,
-                        "desc": "TOUGH OR OFFENSIVE"
-                    },
-                    "eq9": {
-                        "name": "SPARE BATTERY",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq10": {
-                        "name": "MEDKIT",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq11": {
-                        "name": "DISGUISE OR CAMO",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq12": {
-                        "name": "ARMOR",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq12a": {
-                        "name": "+HEAVY",
-                        "isUse": false,
-                        "value": 2
-                    },
-                    "eq13": {
-                        "name": "INFILTRATION GEAR",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq14": {
-                        "name": "EXTRA AMMO",
-                        "isUse": false,
-                        "value": 1,
-                        "desc": "STANDARD / PIERCING / EXPLOSIVE / INCENDIARY"
-                    },
-                    "eq15": {
-                        "name": "SURVIVAL KIT",
-                        "isUse": false,
-                        "value": 1,
-                        "desc": "MASK, RATION, WATER / AIR PURIF",
-                        "stack": 0,
-                        "max": 3
-                    },
-                    "eq16": {
-                        "name": "GRENADES",
-                        "isUse": false,
-                        "value": 1,
-                        "desc": "EMP / GAS / STUN / INCEND / FRAG",
-                        "stack": 0,
-                        "max": 2
-                    },
-                    "eq17": {
-                        "name": "DEMOLITION TOOLS",
-                        "isUse": false,
-                        "value": 2
-                    },
-                    "eq18": {
-                        "name": "MICROTRONICS TOOLS",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq20": {
-                        "name": "SPARE PARTS",
-                        "isUse": false,
-                        "value": 1
-                    },
-                    "eq21": {
-                        "name": "EXTRA LOAD",
-                        "isUse": false,
-                        "stack": 0,
-                        "max": 4
-                    }
+                    "selected": 0,
+                    "max": 3,
+                    "desc": ""
                 }
             },
             "HARM": {
                 "light": {
-                    "name": "",
+                    "first": {
+                        "name": "",
+                        "heal": false
+                    },
+                    "second":  {
+                        "name": "",
+                        "heal": false
+                    },
                     "value": 0,
                     "max": 2
                 },
                 "medium": {
-                    "name": "",
+                    "first": "",
+                    "second": "",
                     "value": 0,
                     "max": 2
                 },
@@ -330,7 +217,7 @@
                 "desc": ""
             },
             "RANK1": {
-                "stack": 0,
+                "value": 0,
                 "max": 4,
                 "row1": {
                     "isUse": false,
@@ -346,7 +233,7 @@
                 }
             },
             "RANK2": {
-                "stack": 0,
+                "value": 0,
                 "max": 6,
                 "row1": {
                     "isUse": false,
@@ -362,15 +249,23 @@
                 }
             },
             "RANK3": {
-                "stack": 0,
+                "value": 0,
                 "max": 6,
                 "isUse": false,
                 "desc": ""
             }
+        },
+        "crew": {
+            "name": "",
+            "fame": {
+                "cred": 0,
+                "debt": 0
+            },
+            "hideout": ""
         }
     },
     "Item": {
-        "types": ["item", "augmentation"],
+        "types": ["item", "augmentation","gear","dossier"],
         "item": {
             "desc": "",
             "stack": 0,
@@ -381,6 +276,37 @@
             "isOpen": false,
             "isGLICHED": false,
             "isActive": false
+        },
+        "gear": {
+            "isUse": false,
+            "value": 0,
+            "desc": "",
+            "stack": 0,
+            "max": 0
+        },
+        "dossier": {
+            "tab": "option",
+            "desc": "",
+            "wrf": "",
+            "isWierd": false,
+            "mods": {
+                "stress": {
+                    "isActive": false,
+                    "value": 0
+                },
+                "gear" : {
+                    "isActive": false,
+                    "value": 0
+                },
+                "cred" : {
+                    "isActive": false,
+                    "value": 0
+                },
+                "debt" : {
+                    "isActive": false,
+                    "value": 0
+                }
+            }
         }
     }
 }

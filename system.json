@@ -6,41 +6,53 @@
     {
       "name": "Kiszu",
       "discord": "2137",
-      "url": "https://github.com/P4NTY/"
+      "url": "https://github.com/P4NTY/",
+      "flags": {}
     }
   ],
-  "version": "1.05",
+  "version": "1.1",
+  "url": "https://github.com/P4NTY/CBR-PNK-FOUNDRY",
+  "background": "systems/CBRPNK/assets/CBRPNK_splash.png",
+  "manifest": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/releases/latest/download/system.json",
+  "download": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/releases/download/1.1/CBRPNK.zip",
   "compatibility": {
-    "minimum": 11,
-    "verified": 13,
-    "maximum": 13
+    "minimum": "13",
+    "verified": "14",
+    "maximum": "14"
   },
-  "esmodules": ["main.js"],
-  "styles": ["main.css"],
+  "esmodules": [
+    "main.js"
+  ],
+  "styles": [
+    {
+      "src": "main.css"
+    }
+  ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "lang/en.json",
+      "flags": {}
     },
     {
       "lang": "pl",
       "name": "Polski",
-      "path": "lang/pl.json"
+      "path": "lang/pl.json",
+      "flags": {}
     },
     {
       "lang": "ru",
       "name": "РУССКИЙ",
-      "path": "lang/ru.json"
+      "path": "lang/ru.json",
+      "flags": {}
     },
     {
       "lang": "pt-BR",
       "name": "Português (Brasil)",
-      "path": "lang/pt-br.json"
+      "path": "lang/pt-br.json",
+      "flags": {}
     }
   ],
-  "url": "https://github.com/P4NTY/CBR-PNK-FOUNDRY",
-  "background": "systems/CBRPNK/assets/CBRPNK_splash.webp",
-  "manifest": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/releases/latest/download/system.json",
-  "download": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/releases/download/1.05/CBRPNK.zip"
+  "flags": {}
 }

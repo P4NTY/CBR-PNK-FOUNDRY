@@ -1,18 +1,21 @@
 {
   "TYPES": {
-    "Actor": {
-      "runner": "Correria",
-      "hunter": "Caçador"
-    },
-    "Item": {
-      "item": "Item",
-      "augmentation": "Ampliação"
-    }
+      "Actor": {
+          "runner": "Correria",
+          "hunter": "Caçador"
+      },
+      "Item": {
+          "item": "Item",
+          "augmentation": "Ampliação",
+          "gear": "EQUIPAMENTO",
+          "dossier": "Dossiê"
+      }
   },
   "EXPAND": "EXPANDIR",
   "COLLAPSE": "MINIMIZAR",
   "EDIT": "EDITAR",
   "RUNNER": {
+    "wrf": "Ângulo",
     "SR": "RESISTÊNCIA ESPECIAL",
     "DEBT": "DÉBITO",
     "CRED": "CRED",
@@ -20,7 +23,7 @@
     "GLICHED": "BUGADO",
     "OVERLOAD": {
       "name": "SOBRECARGA",
-      "desc": "<p>Quando você marcar seu último ⚡, uma Atitude à sua escola fica permanentemente <em>BUGADA</em> e uma complicação, como:</p><ul><li>Você é tirada de ação.</li><li>Você expõe o ponto fraco da equipe.</li><li>Você faz a equipe perder uma vantagem.</li><li>Você danifica ou se descuida de algo crucial.</li></ul><p>Enquanto <strong>SOBRECARREGADA</strong> você não pode fazer ações que exijam ⚡. <strong>RECUPERE O FÔLEGO</strong> para recuperar ⚡ e se livrar desse estado.</p>"
+      "desc": "<p>Quando você marcar seu último <i class='fa-solid fa-bolt'></i>, uma Atitude à sua escola fica permanentemente <em>BUGADA</em> e uma complicação, como:</p><ul><li>Você é tirada de ação.</li><li>Você expõe o ponto fraco da equipe.</li><li>Você faz a equipe perder uma vantagem.</li><li>Você danifica ou se descuida de algo crucial.</li></ul><p>Enquanto <strong>SOBRECARREGADA</strong> você não pode fazer ações que exijam <i class='fa-solid fa-bolt'></i>. <strong>RECUPERE O FÔLEGO</strong> para recuperar <i class='fa-solid fa-bolt'></i> e se livrar desse estado.</p>"
     },
     "AUG": "AMPLIAÇÃO",
     "ABILITY": "CAPACIDADE"
@@ -33,7 +36,7 @@
     "UPGRADE": "MELHORIA"
   },
   "Approach": {
-    "name": "ATITUDES",
+     "name": "ATITUDES",
     "DETAILS": "DETALHES",
     "AGGRESSIVE": {
       "name": "AGRESSIVA",
@@ -57,79 +60,79 @@
     }
   },
   "Skill": {
-    "name": "PERÍCIAS",
-    "ANALYZE": {
-      "name": "ANÁLISE",
-      "PEOPLE": "PESSOAS",
-      "SITUATION": "SITUAÇÃO",
-      "INFORMATION": "INFORMAÇÃO"
-    },
-    "ATHLETICS": {
-      "name": "ATLETISMO",
-      "SPRINT": "CORRIDA",
-      "PARKOUR": "PARKOUR",
-      "SWIM": "NATAÇÃO",
-      "CLIMB": "ESCALADA"
-    },
-    "CLOSE": {
-      "name": "MANO A MANO",
-      "BRAWLING": "BRIGA",
-      "KNIFE": "FACA",
-      "SWORD": "ESPADA",
-      "BAT": "TACO",
-      "WIRE": "ARAME"
-    },
-    "CODING": {
-      "name": "PROGRAMAÇÃO",
-      "HACK": "INVASÃO",
-      "COMPILE": "COMPILAÇÃO",
-      "MINE": "MINERAR",
-      "SCRAMBLE": "EMBARALHAR"
-    },
-    "INFLUENCE": {
-      "name": "INFLUÊNCIA",
-      "PERFORM": "APRESENTAÇÃO",
-      "NEGOTIATE": "NEGOCIAÇÃO",
-      "INTIMIDATE": "INTIMIDAÇÃO"
-    },
-    "PILOTING": {
-      "name": "PILOTAGEM",
-      "CARS": "CARROS",
-      "BIKES": "MOTOS",
-      "CHOPPERS": "HELICÓPTEROS",
-      "DRONES": "DRONES"
-    },
-    "RANGED": {
-      "name": "TIRO",
-      "PISTOL": "PISTOLA",
-      "RIFLE": "RIFLE",
-      "SMG": "SMG",
-      "THROWING": "ARREMESSO"
-    },
-    "RIGGING": {
-      "name": "GAMBIARRA",
-      "ELETRONICS": "ELETRÔNICA",
-      "ROBOTICS": "ROBÓTICA",
-      "HEAVY": "MÁQ. PESADO"
-    },
-    "SCIENCES": {
-      "name": "CIÊNCIAS",
-      "BIOTECH": "BIOTECNOLOGIA",
-      "PHYSICS": "FÍSICA",
-      "CHEMISTRY": "QUÍMICA"
-    },
-    "STREETWISE": {
-      "name": "MALANDRAGEM",
-      "POLITICS": "POLÍTICA",
-      "MARKET": "MERCADO",
-      "NAVIGATION": "NAVEGAÇÃO"
-    },
-    "ATTUNE": {
-      "name": "SINTONIA",
-      "SPIRITS": "ESPÍRITOS",
-      "ARTIFACTS": "ARTEFATOS",
-      "PLACES": "LUGARES"
-    }
+      "name": "PERÍCIAS",
+      "ANALYZE": {
+        "name": "ANÁLISE",
+        "PEOPLE": "PESSOAS",
+        "SITUATION": "SITUAÇÃO",
+        "INFORMATION": "INFORMAÇÃO"
+      },
+      "ATHLETICS": {
+        "name": "ATLETISMO",
+        "SPRINT": "CORRIDA",
+        "PARKOUR": "PARKOUR",
+        "SWIM": "NATAÇÃO",
+        "CLIMB": "ESCALADA"
+      },
+      "CLOSE": {
+        "name": "MANO A MANO",
+        "BRAWLING": "BRIGA",
+        "KNIFE": "FACA",
+        "SWORD": "ESPADA",
+        "BAT": "TACO",
+        "WIRE": "ARAME"
+      },
+      "CODING": {
+        "name": "PROGRAMAÇÃO",
+        "HACK": "INVASÃO",
+        "COMPILE": "COMPILAÇÃO",
+        "MINE": "MINERAR",
+        "SCRAMBLE": "EMBARALHAR"
+      },
+      "INFLUENCE": {
+        "name": "INFLUÊNCIA",
+        "PERFORM": "APRESENTAÇÃO",
+        "NEGOTIATE": "NEGOCIAÇÃO",
+        "INTIMIDATE": "INTIMIDAÇÃO"
+      },
+      "PILOTING": {
+          "name": "PILOTING",
+          "CARS": "CARS",
+          "BIKES": "BIKES",
+          "CHOPPERS": "CHOPPERS",
+          "DRONES": "DRONES"
+      },
+      "RANGED": {
+        "name": "TIRO",
+        "PISTOL": "PISTOLA",
+        "RIFLE": "RIFLE",
+        "SMG": "SMG",
+        "THROWING": "ARREMESSO"
+      },
+      "RIGGING": {
+        "name": "GAMBIARRA",
+        "ELETRONICS": "ELETRÔNICA",
+        "ROBOTICS": "ROBÓTICA",
+        "HEAVY": "MÁQ. PESADO"
+      },
+      "SCIENCES": {
+        "name": "CIÊNCIAS",
+        "BIOTECH": "BIOTECNOLOGIA",
+        "PHYSICS": "FÍSICA",
+        "CHEMISTRY": "QUÍMICA"
+      },
+      "STREETWISE": {
+        "name": "MALANDRAGEM",
+        "POLITICS": "POLÍTICA",
+        "MARKET": "MERCADO",
+        "NAVIGATION": "NAVEGAÇÃO"
+      },
+      "ATTUNE": {
+        "name": "SINTONIA",
+        "SPIRITS": "ESPÍRITOS",
+        "ARTIFACTS": "ARTEFATOS",
+        "PLACES": "LUGARES"
+      }
   },
   "ROLL": {
     "Effect": "EFEITO",
@@ -161,19 +164,19 @@
   "BREATH": {
     "crit": {
       "title": "VOCÊ JÁ PASSOU POR COISA BEM PIOR",
-      "desc": "<strong>APAGUE TODO O ⚡</strong> -OU- <strong>IGNORE AMBOS</strong> OS NÍVEIS 1 E 2 DE PENALIDADES POR DANO PELO RESTO DO CORRE."
+      "desc": "<strong>APAGUE TODO O <i class='fa-solid fa-bolt'></i></strong> -OU- <strong>IGNORE AMBOS</strong> OS NÍVEIS 1 E 2 DE PENALIDADES POR DANO PELO RESTO DO CORRE."
     },
     "succ": {
       "title": "PARECE QUE JÁ DEU",
-      "desc": "<strong>APAGUE⚡⚡⚡</strong> -OU- <strong>IGNORE</strong> OU O NÍVEL O1 OU O NÍVEL 2 DE PENALIDADES POR DANO PELO RESTO DO CORRE."
+      "desc": "<strong>APAGUE <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i></strong> -OU- <strong>IGNORE</strong> OU O NÍVEL O1 OU O NÍVEL 2 DE PENALIDADES POR DANO PELO RESTO DO CORRE."
     },
     "part": {
       "title": "ENGOLE O CHORO",
-      "desc": "<strong>APAGUE ⚡⚡</strong> -OU- <strong>IGNORE</strong> O NÍVEL 1 DE PENALIDADES POR DANO PELO RESTO DO CORRE."
+      "desc": "<strong>APAGUE <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i></strong> -OU- <strong>IGNORE</strong> O NÍVEL 1 DE PENALIDADES POR DANO PELO RESTO DO CORRE."
     },
     "fail": {
       "title": "FEZ O QUE DEU",
-      "desc": "APAGUE ⚡"
+      "desc": "APAGUE <i class='fa-solid fa-bolt'></i>"
     }
   },
   "RESIST": {
@@ -183,15 +186,15 @@
     },
     "succ": {
       "title": "SUBSTANCIAL",
-      "desc": "MARQUE ⚡"
+      "desc": "MARQUE <i class='fa-solid fa-bolt'></i>"
     },
     "part": {
       "title": "NADA MAL",
-      "desc": "MARQUE ⚡⚡"
+      "desc": "MARQUE <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i>"
     },
     "fail": {
       "title": "QUASE",
-      "desc": "MARQUE ⚡⚡⚡"
+      "desc": "MARQUE <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i>"
     }
   },
   "ACTION": {
@@ -217,60 +220,97 @@
     }
   },
   "GEAR": {
-    "name": "EQUIPAMENTO",
-    "BLADE": "UMA LÂMINA OU DUAS",
-    "SIDEARM": "ARMA SOBRESSALENTE",
-    "SUBMACHINE": "SUBMETRALHADORA",
-    "LARGEHEAVY": "ARMA GRANDE/PESADA",
-    "TRACKING": "DISPOSITIVO DE RASTREIO",
-    "CYBERDECK": "CYBERDECK",
-    "SDRONE": {
-      "name": "DRONE PEQUENO",
-      "desc": "FURTIVO OU RÁPIDO"
-    },
-    "MDRONE": {
-      "name": "DRONE MÉDIO",
-      "desc": "RESISTENTE OU AGRESSIVO"
-    },
-    "BATTERY": "BATERIA EXTRA",
-    "MEDKIT": "KIT MÉDICO",
-    "DISGUISE": "DISFARCE OU CAMUFLAGEM",
-    "ARMOR": "ARMADURA",
-    "AHEAVY": "+PESADA",
-    "INFILTRATION": "EQUIP. DE INFILTRAÇÃO",
-    "AMMO": {
-      "name": "MUNIÇÃO EXTRA",
-      "desc": "PADRÃO / PERFURANTE / EXPLOSIVA / INCENDIÁRIA"
-    },
-    "SURVIVAL": {
-      "name": "KIT DE SOBREVIVÊNCIA",
-      "desc": "MÁSCARA, RAÇÃO, ÁGUA / AR"
-    },
-    "GRENADES": {
-      "name": "GRANADAS",
-      "desc": "PEM / GÁS / ARTODOAR / INCEND. / FRAG."
-    },
-    "DEMOLITION": "FERRAM. DE DEMOLIÇÃO",
-    "MICROTRONICS": "FERRAM. MICROTRÔNICAS",
-    "SPARTS": "PEÇAS DE REPOSIÇÃO",
-    "EXTRA": "CARGA ADICIONAL"
+      "name": "EQUIPAMENTO",
+      "overGEARED": {
+          "name": "Sobrecargado",
+          "desc": "Carregas peso a mais!"
+      },
+      "BLADE": {
+          "name": "UMA LÂMINA OU DUAS"
+      },
+      "SIDEARM": {
+          "name": "ARMA SOBRESSALENTE"
+      },
+      "SUBMACHINE": {
+          "name": "SUBMETRALHADORA"
+      },
+      "LARGEHEAVY": {
+          "name": "ARMA GRANDE/PESADA"
+      },
+      "TRACKING": {
+          "name": "DISPOSITIVO DE RASTREIO"
+      },
+      "CYBERDECK": {
+          "name": "CYBERDECK"
+      },
+      "SDRONE": {
+          "name": "DRONE PEQUENO",
+          "desc": "FURTIVO OU RÁPIDO"
+      },
+      "MDRONE": {
+          "name": "DRONE MÉDIO",
+          "desc": "RESISTENTE OU AGRESSIVO"
+      },
+      "BATTERY": {
+          "name": "BATERIA EXTRA"
+      },
+      "MEDKIT": {
+          "name": "KIT MÉDICO"
+      },
+      "DISGUISE": {
+          "name": "DISFARCE OU CAMUFLAGEM"
+      },
+      "ARMOR": {
+          "name": "ARMADURA"
+      },
+      "AHEAVY": {
+          "name": "ARMADURA PESADA",
+          "desc": "COMPRE PRIMEIRO A ARMADURA"
+      },
+      "INFILTRATION": {
+          "name": "EQUIP. DE INFILTRAÇÃO"
+      },
+      "AMMO": {
+          "name": "MUNIÇÃO EXTRA",
+          "desc": "PADRÃO / PERFURANTE / EXPLOSIVA / INCENDIÁRIA"
+      },
+      "SURVIVAL": {
+          "name": "KIT DE SOBREVIVÊNCIA",
+          "desc": "MÁSCARA, RAÇÃO, ÁGUA / AR"
+      },
+      "GRENADES": {
+          "name": "GRANADAS",
+          "desc": "PEM / GÁS / ARTODOAR / INCEND / FRAG"
+      },
+      "DEMOLITION": {
+          "name": "FERRAM DE DEMOLIÇÃO"
+      },
+      "MICROTRONICS": {
+          "name": "FERRAM MICROTRÔNICAS"
+      },
+      "SPARTS": {
+          "name": "PEÇAS DE REPOSIÇÃO"
+      },
+      "EXTRA": {
+          "name": "CARGA ADICIONAL"
+      }
   },
   "LOAD": {
-    "LIGHT": "LEVE: Movimenta-se livremente, mistura-se fácil.",
-    "MEDIUM": "MÉDIO: Parece preparada para um trabalho.",
-    "HEAVY": "PESADA: Barulhenta ou lenta, bem notável."
+    "LIGHT": "LEVE: Movimenta-se livremente, mistura-se fácil",
+    "MEDIUM": "MÉDIO: Parece preparada para um trabalho",
+    "HEAVY": "PESADA: Barulhenta ou lenta, bem notável"
   },
   "HARM": {
     "name": "DANO",
     "level_1": "▼E",
-    "level_2": "",
+    "level_2": "<i class='fa-solid fa-square-minus'></i>",
     "level_3": "EXAUSTA",
     "level_4": "CHEGOU SUA HORA 💀"
   },
   "WARN": {
-    "ROLL": "Nenhuma ATITUDE ou PERÍCIA selecionada"
+      "ROLL": "Nenhuma ATITUDE ou PERÍCIA selecionada"
   },
   "TOOLTIP": {
-    "glich_dice": "+ BUGADO DADO"
+      "glich_dice": "+ BUGADO DADO"
   }
 }

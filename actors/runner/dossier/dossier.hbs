@@ -1,0 +1,112 @@
+<div class="dossier">
+    <section class="tabs">
+        <label>
+            <input
+                type="radio"
+                name="system.tab"
+                value="option"
+                {{#if (isEqual system.tab "option")}}checked{{/if}}
+            >
+            <i class="fa-solid fa-note"></i>
+        </label>
+        <label>
+            <input
+                type="radio"
+                name="system.tab"
+                value="mods"
+                {{#if (isEqual system.tab "mods")}}checked{{/if}}
+            >
+            <i class="fa-solid fa-gears"></i>
+        </label>
+        <label class="wierd">
+            <input
+                type="checkbox"
+                name="system.isWierd"
+                value="true"
+                {{#if system.isWierd}}checked{{/if}}
+            />
+            {{#if system.isWierd}}
+            <i class="fa-solid fa-toggle-on"></i>
+            {{else}}
+            <i class="fa-solid fa-toggle-off"></i>
+            {{/if}}
+            Wi3rd+
+        </label>
+    </section>
+    {{#if (isEqual system.tab "mods")}}
+    <section class="mods">
+        <h2>Mods</h2>
+        <table>
+            <tr
+                class="mod {{#if system.mods.stress.isActive}}active{{/if}}"
+                data-flag="stress"
+            >
+                <td><button data-action="toggleEffect">
+                    {{localize 'RUNNER.STRESS'}}
+                </button></td>
+                <td><input
+                    type="number"
+                    name="system.mods.stress.value"
+                    value="{{system.mods.stress.value}}"
+                /></td>
+            </tr>
+            <tr
+                class="mod {{#if system.mods.gear.isActive}}active{{/if}}"
+                data-flag="gear"
+            >
+                <td><button data-action="toggleEffect">
+                    {{localize 'GEAR.name'}}
+                </button></td>
+                <td><input
+                    type="number"
+                    name="system.mods.gear.value"
+                    value="{{system.mods.gear.value}}"
+                /></td>
+            </tr>
+            <tr
+                class="mod {{#if system.mods.cred.isActive}}active{{/if}}"
+                data-flag="cred"
+            >
+                <td><button data-action="toggleEffect">
+                    {{localize 'RUNNER.CRED'}}
+                </button></td>
+                <td><input
+                    type="number"
+                    name="system.mods.cred.value"
+                    value="{{system.mods.cred.value}}"
+                /></td>
+            </tr>
+            <tr
+                class="mod {{#if system.mods.debt.isActive}}active{{/if}}"
+                data-flag="debt"
+            >
+                <td><button data-action="toggleEffect">
+                    {{localize 'RUNNER.DEBT'}}
+                </button></td>
+                <td><input
+                    type="number"
+                    name="system.mods.debt.value"
+                    value="{{system.mods.debt.value}}"
+                /></td>
+            </tr>
+        </table>
+    </section>
+    {{else}}
+    <section class="story">
+        <h3><input
+            type="text"
+            name="system.wrf"
+            value="{{system.wrf}}"
+            placeholder="{{localize 'RUNNER.wrf'}}"
+        ></h3>
+        <prose-mirror
+            name="system.desc"
+            button="false"
+            editable="{{editable}}"
+            toggled="true"
+            value="{{system.desc}}">
+            {{{system.desc}}}
+        </prose-mirror>
+    </section>
+    {{/if}}
+</div>

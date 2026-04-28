@@ -1,0 +1,15 @@
+<div data-app="{{id}}" class="approach {{#if isGLICHED}}GLICHED{{/if}} {{#if isActive}}select{{/if}}">
+    <div>
+        <label>
+            <input type="radio" name="system.roll.approach" value="{{id}}" {{#if isActive}}checked{{/if}}>
+            <h3 data-text="{{flaw}}">{{name}}</h3>
+        </label>
+        <div class="texts">
+            <p>{{desc}}</p>
+            <button data-action="glichToggle" class="flaw">{{flaw}}</button>
+        </div>
+    </div>
+    <button data-action="setDice" class="dots">
+        {{{drawDice dice}}}
+    </button>
+</div>

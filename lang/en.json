@@ -6,13 +6,16 @@
         },
         "Item": {
             "item": "Item",
-            "augmentation": "Augmentation"
+            "augmentation": "Augmentation",
+            "gear": "Gear",
+            "dossier": "Dossier"
         }
     },
     "EXPAND": "EXPAND",
     "COLLAPSE": "COLLAPSE",
     "EDIT": "EDIT",
     "RUNNER": {
+        "wrf": "Angle",
         "SR": "SPECIAL RESISTANCE",
         "DEBT": "DEBT",
         "CRED": "CRED",
@@ -20,7 +23,7 @@
         "GLICHED": "GLICHED",
         "OVERLOAD": {
             "name": "OVERLOAD",
-            "desc": "<p>When you mark your last ⚡, an Approach of your choosing becomes permanently <em>GLITCHED</em> and immediately incurs a complication, such as:</p><ul><li>You are taken out of action.</li><li>You expose the team’s weakness.</li><li>You make the team lose an advantage.</li><li>You damage or overlook something crucial.</li></ul><p>While <strong>OVERLOADED</strong> you can’t perform actions that would require ⚡. <strong>TAKE A BREATHER</strong> to relieve ⚡ and clear this status.</p>"
+            "desc": "<p>When you mark your last <i class='fa-solid fa-bolt'></i>, an Approach of your choosing becomes permanently <em>GLITCHED</em> and immediately incurs a complication, such as:</p><ul><li>You are taken out of action.</li><li>You expose the team’s weakness.</li><li>You make the team lose an advantage.</li><li>You damage or overlook something crucial.</li></ul><p>While <strong>OVERLOADED</strong> you can’t perform actions that would require <i class='fa-solid fa-bolt'></i>. <strong>TAKE A BREATHER</strong> to relieve <i class='fa-solid fa-bolt'></i> and clear this status.</p>"
         },
         "AUG": "AUGMENTATIONS",
         "ABILITY": "ABILITY"
@@ -161,7 +164,7 @@
     "BREATH": {
         "crit": {
             "title": "YOU’VE BEEN THROUGH WORSE",
-            "desc": "<strong>CLEAR ALL ⚡</strong> -OR- <strong>IGNORE BOTH</strong> LEVELS 1 AND 2 HARM PENALTIES FOR THE REMAINDER OF THE RUN."
+            "desc": "<strong>CLEAR ALL <i class='fa-solid fa-bolt'></i></strong> -OR- <strong>IGNORE BOTH</strong> LEVELS 1 AND 2 HARM PENALTIES FOR THE REMAINDER OF THE RUN."
         },
         "succ": {
             "title": "THAT SHOULD WORK",
@@ -173,7 +176,7 @@
         },
         "fail": {
             "title": "TAKE WHAT YOU CAN GET",
-            "desc": "CLEAR ⚡"
+            "desc": "CLEAR <i class='fa-solid fa-bolt'></i>"
         }
     },
     "RESIST": {
@@ -183,7 +186,7 @@
         },
         "succ": {
             "title": "SOLID",
-            "desc": "MARK ⚡"
+            "desc": "MARK <i class='fa-solid fa-bolt'></i>"
         },
         "part": {
             "title": "NOT BAD",
@@ -191,7 +194,7 @@
         },
         "fail": {
             "title": "CLOSE",
-            "desc": "MARK ⚡⚡⚡"
+            "desc": "MARK <i class='fa-solid fa-bolt'></i>⚡⚡"
         }
     },
     "ACTION": {
@@ -218,12 +221,28 @@
     },
     "GEAR": {
         "name": "GEAR",
-        "BLADE": "A BLADE OR TWO",
-        "SIDEARM": "SIDEARM",
-        "SUBMACHINE": "SUBMACHINE GUN",
-        "LARGEHEAVY": "LARGE/HEAVY WEAPON",
-        "TRACKING": "TRACKING DEVICE",
-        "CYBERDECK": "CYBERDECK",
+        "overGEARED": {
+            "name": "OVER GEARED",
+            "desc": "You carry too much!"
+        },
+        "BLADE": {
+            "name": "A BLADE OR TWO"
+        },
+        "SIDEARM": {
+            "name": "SIDEARM"
+        },
+        "SUBMACHINE": {
+            "name": "SUBMACHINE GUN"
+        },
+        "LARGEHEAVY": {
+            "name": "LARGE/HEAVY WEAPON"
+        },
+        "TRACKING": {
+            "name": "TRACKING DEVICE"
+        },
+        "CYBERDECK": {
+            "name": "CYBERDECK"
+        },
         "SDRONE": {
             "name": "SMALL DRONE",
             "desc": "STEALTHY OR SWIFT"
@@ -232,12 +251,25 @@
             "name": "MEDIUM DRONE",
             "desc": "TOUGH OR OFFENSIVE"
         },
-        "BATTERY": "SPARE BATTERY",
-        "MEDKIT": "MEDKIT",
-        "DISGUISE": "DISGUISE OR CAMO",
-        "ARMOR": "ARMOR",
-        "AHEAVY": "+HEAVY",
-        "INFILTRATION": "INFILTRATION GEAR",
+        "BATTERY": {
+            "name": "SPARE BATTERY"
+        },
+        "MEDKIT": {
+            "name": "MEDKIT"
+        },
+        "DISGUISE": {
+            "name": "DISGUISE OR CAMO"
+        },
+        "ARMOR": {
+            "name": "ARMOR"
+        },
+        "AHEAVY": {
+            "name": "HEAVY ARMOR",
+            "desc": "BUY ARMOR FIRST"
+        },
+        "INFILTRATION": {
+            "name": "INFILTRATION GEAR"
+        },
         "AMMO": {
             "name": "EXTRA AMMO",
             "desc": "STANDARD / PIERCING / EXPLOSIVE / INCENDIARY"
@@ -250,22 +282,30 @@
             "name": "GRENADES",
             "desc": "EMP / GAS / STUN / INCEND / FRAG"
         },
-        "DEMOLITION": "DEMOLITION TOOLS",
-        "MICROTRONICS": "MICROTRONICS TOOLS",
-        "SPARTS": "SPARE PARTS",
-        "EXTRA": "EXTRA LOAD"
+        "DEMOLITION": {
+            "name": "DEMOLITION TOOLS"
+        },
+        "MICROTRONICS": {
+            "name": "MICROTRONICS TOOLS"
+        },
+        "SPARTS": {
+            "name": "SPARE PARTS"
+        },
+        "EXTRA": {
+            "name": "EXTRA LOAD"
+        }
     },
     "LOAD": {
-        "LIGHT": "LIGHT: Move freely, blend in easily.",
-        "MEDIUM": "MEDIUM: Look ready for a job.",
-        "HEAVY": "HEAVY: Loud or slow, very conspicuous."
+        "LIGHT": "LIGHT: Move freely, blend in easily",
+        "MEDIUM": "MEDIUM: Look ready for a job",
+        "HEAVY": "HEAVY: Loud or slow, very conspicuous"
     },
     "HARM": {
         "name": "HARM",
         "level_1": "▼E",
-        "level_2": "",
-        "level_3": "OUT",
-        "level_4": "TIME TO DIE 💀"
+        "level_2": "<i class='fa-solid fa-square-minus'></i>",
+        "level_3": "WYPAD",
+        "level_4": "WYBIŁA TWOJA GODZINA 💀"
     },
     "WARN": {
         "ROLL": "No APPROACH or SKILL selected"

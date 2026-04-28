@@ -1,0 +1,18 @@
+<div class="gear" data-item-id="{{_id}}">
+    <div>
+        <button data-action="gearSelect" {{#if (isEqual system.value 0)}}disabled{{/if}}>
+            {{#if system.value}} {{{drawSlots system.value system.isUse}}} {{/if}}
+            {{name}}
+        </button>
+        {{#if system.max}}
+        <button
+            class="stack"
+            data-action="gearChangeStack"
+            style="--max: {{system.max}};--stack: {{system.stack}}"
+        >
+            {{system.stack}} / {{system.max}}
+        </button>
+        {{/if}}
+    </div>
+    {{#if system.desc}}<p>{{system.desc}}</p>{{/if}}
+</div>

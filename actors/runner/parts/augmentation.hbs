@@ -1,0 +1,39 @@
+<div 
+    class="aug {{#if system.isGLICHED}}GLICHED{{/if}}"
+>
+    <div data-item-id="{{_id}}">
+        <button data-flag="isActive" data-action="itemToggle">
+            {{#if system.isActive}}
+            <i class="fa-solid fa-toggle-on"></i>
+            {{else}}
+            <i class="fa-solid fa-toggle-off"></i>
+            {{/if}}
+        </button>  
+        <input type="text" value="{{name}}" data-action="itemName"> 
+        <button
+            data-action="itemToggle"
+            data-flag="isGLICHED"
+        >
+            <i class="fa-etch fa-solid fa-bug"></i>
+        </button>
+        <button data-action="itemDelAug">
+            <i class="fa-regular fa-circle-xmark"></i>
+        </button>
+    </div>
+{{#if system.isOpen}}
+    <div class="desc">
+        {{#if editable}}
+            <prose-mirror
+                name="system.desc"
+                button="true"
+                editable="{{editable}}"
+                toggled="false"
+                value="{{system.desc}}">
+                {{{system.desc}}}
+            </prose-mirror>
+        {{else}}
+            {{{system.desc}}}
+        {{/if}}
+    </div>
+{{/if}}
+</div>

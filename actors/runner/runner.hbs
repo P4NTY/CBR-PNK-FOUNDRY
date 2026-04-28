@@ -1,0 +1,247 @@
+<div class="runner {{#if system.angle.hunted}}hunted{{/if}}">
+  <section class="header">
+      <div class="options">
+        <button
+          data-action="fateChange"
+          data-flag="CRED"
+          class="stack"
+          style="--max: {{system.angle.CRED.max}};--stack: {{system.angle.CRED.value}}"
+        > {{localize 'RUNNER.CRED'}}: {{system.angle.CRED.value}} / {{system.angle.CRED.max}} </button>
+        <button data-action="rollAngle">
+          <i class="fa-duotone fa-solid fa-person-to-door"></i>
+        </button>
+        <label>
+          <input type="checkbox" name="system.angle.hunted">
+          <i class="fa-duotone fa-solid fa-arrows-to-eye"></i>
+        </label>
+        <button
+          data-action="fateChange"
+          data-flag="DEBT"
+          class="stack"
+          style="--max: {{system.angle.DEBT.max}};--stack: {{system.angle.DEBT.value}}"
+        > {{localize 'RUNNER.DEBT'}}: {{system.angle.DEBT.value}} / {{system.angle.DEBT.max}} </button>
+      </div>
+      <img src="{{actor.img}}" title="{{actor.name}}" data-action="editImage" data-edit="img"/>
+      <h1>
+        <input name="name" type="text" placeholder="Name" value="{{actor.name}}"/>
+        <button data-action="openNotes">
+          <i class="fa-solid fa-file-lines"></i>
+        </button>
+      </h1>
+  </section>
+  <section class="rollSection">
+      <div>
+        <div class="efect">
+          {{{loopTrack 1 4 system.roll.efect "system.roll.efect" "desc"}}}
+          <span class="label">{{localize 'ROLL.Effect'}}</span>
+        </div>
+        <label data-tip="{{localize 'TOOLTIP.glich_dice'}}">
+            <input name="system.roll.isGlichDice" type="checkbox" {{#if system.roll.isGlichDice}}checked{{/if}} />
+            {{#if system.roll.isGlichDice}}
+              <i class="fa-etch fa-solid fa-bug"></i>
+            {{else}}
+              <i class="fa-thin fa-bug"></i>
+            {{/if}}
+        </label>
+        <div class="threat">
+          <span class="label">{{localize 'ROLL.Threat'}}</span>
+          {{{loopTrack 1 4 system.roll.threat "system.roll.threat" "asc"}}}
+        </div>
+      </div>
+      <div class="addDice">
+          {{{loopTrack -4 4 system.roll.addDice "system.roll.addDice" "desc"}}}
+      </div>
+      <div class="throws">
+      <button data-action="rollResist" {{#if system.stress.isLOAD}}disabled{{/if}}>{{localize 'ROLL.ResistRoll'}}</button>
+      <button data-action="rollAction">{{localize 'ROLL.ActionRoll'}}</button>
+      <button data-action="rollBreath">{{localize 'ROLL.BreathRoll'}}</button>
+    </div>
+  </section>
+  <section class="stress">
+      <span class="label">{{localize 'RUNNER.STRESS'}}</span>
+      <button data-action="stressChange">
+          {{{drawStress system.stress.value system.stress.max}}}
+      </button>
+      <p class="{{#if system.stress.isLOAD}}active{{/if}}">{{localize 'RUNNER.OVERLOAD.name'}}</p>
+  </section>
+  <section class="approaches">
+      <div class="label">{{localize 'Approach.name'}}</div>
+      <div>
+        {{#each approaches as |app id|}}
+            {{> "systems/CBRPNK/actors/runner/parts/approach.hbs" app}}
+        {{/each}}
+      </div>
+  </section>
+  <section class="skills">
+      <div class="label">{{localize 'Skill.name'}}</div>
+      <div class="skillList">
+          {{#each skills as |skill id|}}
+              {{> "systems/CBRPNK/actors/runner/parts/skill.hbs" skill}}
+          {{/each}}
+      </div>
+  </section>
+  <section class="augmentations">
+    <h3>
+      {{localize 'RUNNER.AUG'}}
+      <button class="add" data-action="itemAddAug">+</button>
+    </h3>
+    {{#each augs as |aug id|}}
+        {{> "systems/CBRPNK/actors/runner/parts/augmentation.hbs" aug}}
+    {{/each}}
+  </section>
+  <section class="gears">
+    <h3>
+      {{localize 'GEAR.name'}}
+      <button
+        data-action="gearLoadChange"
+        class="stack"
+        style="--max: {{system.GEAR.LOAD.max}};--stack: {{system.GEAR.LOAD.value}}"
+      >
+        {{system.GEAR.LOAD.value}} /
+        {{system.GEAR.LOAD.max}}
+      </button>
+      {{!-- <button class="add" data-action="itemAddGear">+</button> --}}
+    </h3>
+    <p class="desc">{{system.GEAR.LOAD.desc}}</p>
+    {{#each gears as |gear|}}
+      {{> "systems/CBRPNK/actors/runner/parts/gear.hbs" gear}}
+    {{/each}}
+  </section>
+  <section class="harm">
+    <h3 class="label">
+      {{localize 'HARM.name'}}
+      {{!-- <button class="add" data-action="itemAddHarm">+</button> --}}
+    </h3>
+    <div class="armors">
+      <label>
+        <i class="fa-light fa-dice-one"></i>
+        <input type="checkbox" name="system.armors.armor" {{#if system.armors.armor }}checked{{/if}}/>
+        {{localize 'GEAR.ARMOR.name'}}
+      </label>
+      <label>
+        <i class="fa-light fa-dice-two"></i>
+        <input type="checkbox" name="system.armors.heavy" {{#if system.armors.heavy }}checked{{/if}}/>
+        {{localize 'GEAR.AHEAVY.name'}}
+      </label>
+      <label>
+        <i class="fa-light fa-dice-six"></i>
+        <input type="checkbox" name="system.armors.SR" {{#if system.armors.SR }}checked{{/if}}/>
+        {{localize 'RUNNER.SR'}}
+      </label>
+    </div>
+    <ol start="1">
+      <li>
+        <div>
+          <input
+            type="text"
+            name="system.HARM.light.first.name"
+            value="{{system.HARM.light.first.name}}"
+            {{#if system.HARM.light.first.name}}harmOpen{{/if}}
+          />
+          <label>
+            <input
+              type="checkbox"
+              name="system.HARM.light.first.heal"
+              {{#if system.HARM.light.first.heal }}checked{{/if}}
+            />
+            {{#if system.HARM.light.first.heal}}
+              <i class="fa-solid fa-bandage"></i>
+            {{else}}
+              <i class="fa-thin fa-bandage"></i>
+            {{/if}}
+          </label>
+        </div>
+        <div>
+          <input 
+            type="text"
+            name="system.HARM.light.second.name"
+            value="{{system.HARM.light.second.name}}"
+            {{#if system.HARM.light.second.name}}harmOpen{{/if}}
+          />
+          <label>
+            <input
+              type="checkbox"
+              name="system.HARM.light.second.heal"
+              {{#if system.HARM.light.second.heal }}checked{{/if}}
+            />
+            {{#if system.HARM.light.second.heal}}
+              <i class="fa-solid fa-bandage"></i>
+            {{else}}
+              <i class="fa-thin fa-bandage"></i>
+            {{/if}}
+          </label>
+        </div>
+        <div>{{localize 'HARM.level_1'}}</div>
+      </li>
+      <li>
+        <div>
+          <input
+            type="text"
+            name="system.HARM.medium.first.name"
+            value="{{system.HARM.medium.first.name}}"
+            {{#if system.HARM.medium.first.name}}harmOpen{{/if}}
+          />
+          <label>
+            <input
+              type="checkbox"
+              name="system.HARM.medium.first.heal"
+              {{#if system.HARM.medium.first.heal }}checked{{/if}}
+            />
+            {{#if system.HARM.medium.first.heal}}
+              <i class="fa-solid fa-bandage"></i>
+            {{else}}
+              <i class="fa-thin fa-bandage"></i>
+            {{/if}}
+          </label>
+        </div>
+        <div>
+          <input 
+            type="text"
+            name="system.HARM.medium.second.name"
+            value="{{system.HARM.medium.second.name}}"
+            {{#if system.HARM.medium.second.name}}harmOpen{{/if}}
+          />
+          <label>
+            <input
+              type="checkbox"
+              name="system.HARM.medium.second.heal"
+              {{#if system.HARM.medium.second.heal }}checked{{/if}}
+            />
+            {{#if system.HARM.medium.second.heal}}
+              <i class="fa-solid fa-bandage"></i>
+            {{else}}
+              <i class="fa-thin fa-bandage"></i>
+            {{/if}}
+          </label>
+        </div>
+        <div>{{{localize 'HARM.level_2'}}}</div>
+      </li>
+      <li>
+        <div>
+          <input
+            type="text"
+            name="system.HARM.hard.name"
+            value="{{system.HARM.hard.name}}"
+            {{#if system.HARM.hard.name}}harmOpen{{/if}}
+          />
+          <label>
+            <input
+              type="checkbox"
+              name="system.HARM.hard.heal"
+              {{#if system.HARM.hard.heal }}checked{{/if}}
+            />
+            {{#if system.HARM.hard.heal}}
+              <i class="fa-solid fa-bandage"></i>
+            {{else}}
+              <i class="fa-thin fa-bandage"></i>
+            {{/if}}
+          </label>
+        </div>
+        <div>{{localize 'HARM.level_3'}}</div>
+      </li>
+      <li>
+        <div>{{localize 'HARM.level_4'}}</div>
+      </li>
+    </ol>
+  </section>
+</div>

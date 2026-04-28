@@ -1,0 +1,89 @@
+[
+    {
+        "name": "BLADE",
+        "value": 1
+    },
+    {
+        "name": "SIDEARM",
+        "value": 1
+    },
+    {
+        "name": "SUBMACHINE",
+        "value": 1
+    },
+    {
+        "name": "LARGEHEAVY",
+        "value": 2
+    },
+    {
+        "name": "TRACKING",
+        "value": 1
+    },
+    {
+        "name": "CYBERDECK",
+        "value": 1
+    },
+    {
+        "name": "SDRONE",
+        "value": 1
+    },
+    {
+        "name": "MDRONE",
+        "value": 2
+    },
+    {
+        "name": "BATTERY",
+        "value": 1
+    },
+    {
+        "name": "MEDKIT",
+        "value": 1
+    },
+    {
+        "name": "DISGUISE",
+        "value": 1
+    },
+    {
+        "name": "ARMOR",
+        "value": 1
+    },
+    {
+        "name": "AHEAVY",
+        "value": 2
+    },
+    {
+        "name": "INFILTRATION",
+        "value": 1
+    },
+    {
+        "name": "AMMO",
+        "value": 1
+    },
+    {
+        "name": "SURVIVAL",
+        "value": 1,
+        "max": 3
+    },
+    {
+        "name": "GRENADES",
+        "value": 1,
+        "max": 2
+    },
+    {
+        "name": "DEMOLITION",
+        "value": 2
+    },
+    {
+        "name": "MICROTRONICS",
+        "value": 1
+    },
+    {
+        "name": "SPARTS",
+        "value": 1
+    },
+    {
+        "name": "EXTRA",
+        "value": 0,
+        "max": 4
+    }
+]

@@ -1,0 +1,22 @@
+<label>
+    <input 
+        type="radio"
+        name="system.roll.skill"
+        value="{{id}}"
+        {{#if isActive}}checked{{/if}}
+    >
+    <h3>{{name}}</h3>
+</label>
+<button data-action="setDice" data-skill="{{id}}" class="dots">
+    {{{drawDice dice}}}
+</button>
+<div data-skill={{id}} class="expertises">
+    {{#each expertises}}
+        <button 
+            data-action="setExpertise" 
+            data-id="{{id}}"
+            class="{{#if e_isActive}}select{{/if}}">
+            {{e_name}}
+        </button>
+    {{/each}}
+</div>

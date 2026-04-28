@@ -1,0 +1,50 @@
+.dossier section.tabs {
+    display: flex;
+}
+
+.dossier section.tabs label {
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid;
+    background: rgb(var(--breath));
+    color: rgb(var(--dark));
+}
+
+.dossier section.tabs label:has(:checked) {
+    background: rgb(var(--action));
+}
+
+.dossier section.tabs label.wierd:has(:checked) {
+    background: rgb(var(--resist));
+}
+
+.dossier section.tabs input {
+    display: none;
+}
+.dossier table {
+    width: 50%;
+    margin: auto;
+}
+
+.dossier table button {
+    width: 100%;
+}
+
+.dossier table input {
+    width: 50px;
+    text-align: center;
+}
+
+.dossier tr.mod.active {
+    background: rgb(var(--good));
+}
+
+.dossier prose-mirror .editor-content {
+    position: relative;
+    text-align: justify;
+}
+
+.dossier input[name="system.wrf"] {
+    text-align: center;
+}
