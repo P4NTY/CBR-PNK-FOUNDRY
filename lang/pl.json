@@ -2,7 +2,9 @@
     "TYPES": {
         "Actor": {
             "runner": "Runner",
-            "hunter": "Łowca"
+            "hunter": "Łowca",
+            "crew": "Szajka", 
+            "inquisitor": "Inkizytor"
         },
         "Item": {
             "item": "Przedmiot",
@@ -312,5 +314,104 @@
     },
     "TOOLTIP": {
         "glich_dice": "+ Zgliczowana Kostka"
-    }
+    },
+    "ROOKIE": {
+        "BEATS": {
+            "1": "Start a /Run with 2 marked Stress, regardless of how you ended the previous.",
+            "2": "Gear Restrictions: your network is not quite build up yet. Upgrades and Assets cost an extra Stress to declare.",
+            "3": "Endanger the crew by making a rookie mistake (examples below).",
+            "4": "Assist a Runner on a challenge clearly above your level with a Skill you don’t have dice on.",
+            "5": "Mark Special Resistance to avoid any type of Consequence by sheer luck.",
+            "6": "A Runner gets +1D to Resist when Protecting you from a Consequence.",
+            "7": "Take Harm of Level 2 or greater when Protecting a crew mate.",
+            "8": "When you Overload, instead of marking an Approach as Glitched, gain +1 to any Approach.",
+            "9": "Learn a harsh truth about the Runner life."
+        },
+        "Mistakes": {
+            "1": "Underestimating the threat.",
+            "2": "Overestimating their own abilities.",
+            "3": "Taking the enemy’s bait.",
+            "4": "Inadvertently spilling the beans.",
+            "5": "Stubbornly ignoring orders.",
+            "6": "Over-committing to the plan.",
+            "7": "Trusting the wrong person.",
+            "8": "Taking a Breather at the wrong moment.",
+            "9": "Misjudge crucial details.",
+            "10": "Falling for an obvious trap."
+        }
+    },
+    "CREW": {
+        "resources": "Zasoby",
+        "crew": "Członkowie",
+        "dropInfo": "Przeciągnij Aktora",
+        "notes": "Notatki",
+        "tracker": "Zegar",
+        "trackerValue": "Wartość"
+    },
+    "INQ":{
+        "blood": {
+            "name": "Krew",
+            "Recovery": "<b>Odzyskaj: </b> +2 Krwi za Sprzęt.",
+            "Spend": "<b>Strać: </b> otrzymując krzywdę lub wzmacniając Ikoniczną Broń."
+        },
+        "stamina": {
+            "name": "Skupienie",
+            "Recovery": "<b>Odzyskaj: </b> po zmierzeniu się z Konsekwencją.",
+            "Spend": "<b>Wydaj: </b> używając Ikonicznej Broni."
+        },
+        "insight": {
+            "name": "Dusza",
+            "Recovery": "<b>Odzyskaj: </b> raz na przygodę jak oddajesz się medytacji.",
+            "Spend": "<b>Wydaj: </b> Przywołując duchy lub napełniając broń."
+        },
+        "gear": {
+            "name": "Sprzęt",
+            "Recovery": "<b>Odzyskaj: </b> kiedy znajdziesz moment na uzupełnienie zapasów.",
+            "Spend": "<b>Wydaj: </b>  kiedy potrzebujesz użyć jakiegoś specjalistycznego sprzętu."
+        },
+        "prowess": {
+            "name": "Brawura",
+            "desc": "Siła, Lekkoatletyka, Wytrzymałość Fizyczna"
+        },
+        "resolve": {
+            "name": "Zdecydowanie",
+            "desc": "Siła Woli, Hart Ducha, Charyzma, Perswazja"
+        },
+        "wit": {
+            "name": "Spryt",
+            "desc": "Spostrzegawczość, Refleks, Mądrość, Wiedza Zakazana"
+        },
+        "weapon": {
+            "name": "Ikoniczna Broń",
+            "basic": "Podstawa",
+            "alt": "Dodatek",
+            "action_1": "Szybko i Celnie",
+            "action_2": "Potężnie i Efektywnie",
+            "blood": {
+                "label": "Pokryj Krwią",
+                "desc": "pokryj broń swoją krwią. Weź kostkę za każdy przelany punkt Krwi."
+            },
+            "insight": {
+                "label": "Wypełnij Duszą",
+                "desc": "napełnij broń swoją duszą. Podnieś Efekt za każdy fragment Duszy."
+            },
+            "gear": {
+                "label": "Użyj sprzętu",
+                "desc": "skorzystaj ze sprzętu, który masz, by zmniejszyć Ryzyko."
+            },
+            "trick": "Sztuczka",
+            "parry": {
+                "label": "Paruj",
+                "desc": "rzuć kostką za każdy wydany punkt. Użyj tego by odeprzeć Konsekwencje lub przeciwność."
+            },
+            "counter": {
+                "label": "Kontruj",
+                "desc": "rzuć kostką za każde 2 wydane punkty. Użyj tego by odbić Konsekwencje lub ogłuszyć przeciwników."
+            },
+            "reload": {
+                "label": "Przeładuj",
+                "desc": "rzuć kością za każdą wydaną Krew. Odzyskaj Odzyskaj najwyższą wartość."
+            }
+        }
+    } 
 }

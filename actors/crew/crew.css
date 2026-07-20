@@ -1,0 +1,209 @@
+.cbr_crew {
+    --border: 5px;
+
+    *:not(i) {
+        font-family: "Play", sans-serif;
+    }
+
+    header.window-header {
+        h1 {
+            font-size: large;
+        }
+        button.icon,
+        a.button.icon {
+            font-family: var(--font-awesome);
+        }
+    }
+    
+    section.header {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        align-items: center;
+        border-bottom: 1px solid;
+        
+        input {
+            background: transparent;
+            border-bottom: 2px dashed;
+        }
+        img {
+            max-width: 200px;
+            border: 1px solid var(--color-text-primary);
+            border-bottom: 0;
+            border-top-left-radius: var(--border);
+            border-top-right-radius: var(--border);
+        }
+
+        h1 {
+            flex-grow: 1;
+            margin: 0;
+
+            input {
+                padding: 20px 10px;
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 210px 1fr;
+        
+        h3 {
+            margin: 10px 0;
+            text-align: center
+        }
+
+        p.none {
+            width: max-content;
+            text-align: center;
+            font-size: xxx-large;
+            margin: 0;
+            opacity: 50%;
+            border: var(--border) solid;
+            padding: 0 50px;
+            border-radius: var(--border);
+        }
+    }
+
+    .squad {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 200px);
+        gap: 10px;
+        justify-items: center;
+        align-content: start;
+        justify-content: center;
+        padding: var(--border);
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+
+    .crewMate {
+        position: relative;
+        max-width: 200px;
+        cursor: pointer;
+        border-radius: var(--border);
+        overflow: hidden;
+        min-height: 200px;
+
+        h3 {
+            position: absolute;
+            bottom: 0;
+            margin: auto;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            background: #4448
+        }
+
+        button {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: opacity .2s linear;
+        }
+
+        &:hover button {
+            opacity: 1;
+        }
+    }
+
+    section.resources {
+    flex-direction: column;
+    gap: 20px;
+    max-height: 500px;
+    overflow-y: scroll;
+
+    & > div {
+        margin-bottom: 20px
+    }
+}
+
+button[data-action="openRes"] {
+    flex-direction: column;
+    overflow: hidden;
+    width: 200px;
+    height: fit-content;
+    border: 0px;
+    border-radius: 0;
+}
+
+.res {
+    position: relative;
+    border: 1px solid;
+    border-radius: var(--border);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+    button[data-action="openRes"] {
+        background:#4444;
+        backdrop-filter: blur(1px);
+        text-shadow: 0 0 var(--border) black;
+        padding: 10px var(--border);
+        
+        &:hover {
+            backdrop-filter: blur(3px);
+            background: #4448;
+        }
+    }
+    
+    button[data-action="removeItem"] {
+        position: absolute;
+        border-radius: 0;
+        border-bottom-left-radius: var(--border);
+        top: 0;
+        right: 0;
+        opacity: 0;
+        z-index: 10;
+    }
+
+    &:hover button[data-action="removeItem"] {
+        opacity: 1
+    }
+
+    div[data-action="changeClock"] {
+        display: flex;
+        overflow: hidden;
+        background: transparent;
+        cursor: pointer;
+
+        label {
+            pointer-events: none;
+            background: var(--color);
+            color: contrast-colot(var(--color));
+            text-align: center;
+            flex-grow: 1;
+            border: 1px solid;
+        }
+
+        label:has(:checked) ~ label {
+            color: contrast-colot(var(--bg));
+            background: var(--bg);
+        }
+        input {
+            display: none;
+        }
+    }
+}
+
+    button[data-action="addResources"] {
+        width: 100%;
+    }
+
+    .notesHeader {
+        margin: 0;
+        background: var(--color-text-primary);
+        padding: var(--border) 10px;
+        width: fit-content;
+        color: #444;
+        border-top-left-radius: var(--border);
+        border-top-right-radius: var(--border);
+        margin-top: 10px;
+    }
+    .notes {
+        border-radius: var(--border);
+        border-top-left-radius: 0;
+        border: 1px solid;
+        padding: var(--border);
+    }
+}

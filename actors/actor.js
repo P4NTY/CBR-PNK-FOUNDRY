@@ -20,6 +20,7 @@ export default class Actor extends HandlebarsApplicationMixin(ActorSheet) {
 
   static getTemplateData (action, approach, actor) {
     return ({
+      actorType: actor.type,
       img: actor.img,
       name: actor.name,
       title: "",
@@ -33,7 +34,7 @@ export default class Actor extends HandlebarsApplicationMixin(ActorSheet) {
 
   static dicesToIcon (diceArray, isGLICHED) {
     const sides = ['one','two', 'three', 'four', 'five', 'six'];
-    return diceArray.map( (dice, index) => `<i class="fa-solid fa-dice-${sides[dice-1]} ${index < isGLICHED ? 'gliched' : ''}"></i>` )
+    return diceArray.map( (dice, index) => `<i class="fa-solid fa-dice-${sides[dice-1]} ${index < isGLICHED ? 'gliched' : ''}"></i>` ).join('')
   }
 
   static async rollPop (templateData, letsRoll) {

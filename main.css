@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Play:wght@400;700');
 @import url('./actors/runner/runner.css');
 @import url('./actors/hunter/hunter.css');
+@import url('./actors/inquisitor/inquisitor.css');
 @import url('./actors/runner/dossier/dossier.css');
+@import url('./actors/crew/crew.css');
+@import url('./actors/crew/Resource/res.css');
 
 .application .window-content {
   overflow: auto;
@@ -126,7 +129,7 @@
   --good: 86 216 99;
   --mixed: 217 152 87;
   --bad: 224 38 120;
-  --dark: 47, 47, 47;
+  --dark: 47 47 47;
 } 
 
 
@@ -201,4 +204,103 @@ figure.paused {
 a.entry-name.ellipsis {
   height: -webkit-fill-available;
   align-content: center;
+}
+
+li.chat-message.message.flexcol {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  position: relative;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+
+  & * {
+    color: rgb(var(--text));
+    padding: 0;
+    margin: 0;
+  }
+  & .text,
+  & .situation {
+    position: absolute;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    backdrop-filter: blur(5px);
+    background: rgb(var(--action) / .8);
+  }
+
+  & .text {
+    bottom: 0;
+    border-top: 2px solid;
+  }
+
+  & .text .result {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  & .text h1 {
+    font-size: x-large;
+    text-align: center;
+  }
+
+  & .result .dice i{
+    font-size: x-large;
+  }
+
+  & .situation {
+    top: 0;
+    border-bottom: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+  }
+
+  & .desc {
+    padding: 5px;
+  }
+
+  & .consequence .text,
+  & .consequence .situation  {
+    background: rgb(var(--mixed)  / .8);
+  }
+
+  & .good .text,
+  & .good .situation  {
+    background: rgb(var(--good)  / .8);
+  }
+
+  & .bad .text,
+  & .bad .situation  {
+    background: rgb(var(--bad)  / .8);
+  }
+
+  & .critical .text,
+  & .critical .situation {
+    background: rgb(var(--breath)  / .8);
+  }
+
+  & .consequence *,
+  & .good *,
+  & .bad *,
+  & .critical * {
+    color: rgb(var(--action));
+  }
+}
+
+header.message-header.flexrow {
+  display: none;
+}
+
+p.infoAlert {
+  padding: 10px !important;
+  color: rgb(237 17 88) !important;
+  background: rgb(37 23 78);
+  border: 2px solid;
+  border-radius: 5px;
+  text-align: center;
+  font-size: large;
 }

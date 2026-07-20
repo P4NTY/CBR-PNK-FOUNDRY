@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Manufacturing+Consent');
+.inquisitor *:not(i) {
+    font-family: "Jim Nightshade", cursive;
+
+    .desc {
+        font-size: large;
+    }
+}
+
+.inquisitor-actor {
+    --blood: #8A0303;
+    --stamina: #C5A059;
+    --insight: #008C8C;
+    --steel: #708090;
+    --backpack: #8B4513;
+    --gap: 5px;
+
+    font-family: "Jim Nightshade";
+
+h1.window-title {
+    font-size: xx-large;
+    font-family: "Manufacturing Consent", system-ui;
+}
+
+.fa-droplet {
+    color: var(--blood);
+}
+.fa-diamond {
+    color: var(--stamina);
+}
+.fa-triangle {
+    color: var(--insight);
+
+}
+.fa-backpack {
+    color: var(--backpack);
+}
+    
+.type {
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+    justify-content: center;
+}
+.two,
+section.weapons {
+    display: grid;
+    grid-template-areas: ". .";
+    gap: var(--gap);
+    margin: 5px 0;
+}
+
+button:not(.icon) {
+    height: auto;
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--stamina);
+    font-family: "Manufacturing Consent", system-ui;
+    
+    &:hover {
+        background: var(--steel);
+    }
+
+    &:disabled {
+        border-color: var(--steel);
+        pointer-events: none;
+        opacity: 0.8;
+
+    }
+}
+
+section.stats,
+section.gears {
+    display: grid;
+    grid-template-areas: ". . .";
+    gap: var(--gap);
+    margin: 5px 0;
+}
+
+.attire,
+.gear,
+.tools {
+    display: grid;
+    gap: var(--gap);
+}
+    
+.orgin,
+.window-content section > div {
+    border: 2px solid;
+    border-radius: 15px;
+    overflow: hidden;
+    display: grid;
+}
+
+h3 {
+    background: var(--stamina);
+    color: var(--blood);
+    text-align: center;
+    margin: 0;
+    align-content: center;
+    font-family: "Manufacturing Consent", system-ui;
+}
+.clock,
+.track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+}
+
+section.stats .track {
+    margin: -5px 0 5px;
+}
+
+.silverTrack span,
+section.weapons .bullets label,
+section.gears .clock label,
+section.stats .track label {
+    border: 2px solid;
+    width: 20px;
+    aspect-ratio: 1;
+    background: var(--stamina);
+    text-align: center;
+    font-family: '';
+    color: var(--blood);
+    font-family: "Manufacturing Consent", system-ui;
+    
+    
+    &:has(:checked) ~ label {
+        background: var(--steel);
+    }
+
+    & input {
+        display: none;
+    }
+}
+
+.silverTrack button:disabled span {
+    background: var(--steel);
+    color: var(--blood);
+}
+
+section.stats .track label {
+    transform: rotate(45deg);
+}
+
+section.weapons .bullets label {
+    border-radius: 50%;
+}
+
+section.orgin label {
+    display: block;
+}
+
+section.trackers {
+    display: grid;
+    gap: 10px;
+}
+
+.header h1 {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px;
+    background: oklab(from var(--steel) l a b / .8);
+    
+    & input[type="text"] {
+        padding: 25px 10px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: var(--blood);
+        font-family: "Manufacturing Consent", system-ui;
+        text-align: center;
+    }
+}
+
+section.header {
+    position: relative;
+    border: 1px solid;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+section.stats > div {
+    grid-row: 1/4;
+    grid-template-rows: subgrid;
+    text-align: center;
+}
+section.stats input {
+    display: none;
+}
+
+section.stats label:has(:checked) h3 {
+    background: var(--blood);
+    color: var(--steel);
+}
+section.gears .attire .clock label:has(.fa-arrow-rotate-left), 
+section.gears .attire .clock label:has(.fa-hexagon) {
+    background: transparent;
+    border: 0px;
+    font-size: large;
+}
+
+.bullets label {
+    --r: 25px;
+    position:absolute;
+    transform: translate(
+        calc(cos(60deg * (sibling-index() - 2)) * var(--r)),
+        calc(sin(60deg * (sibling-index() - 2)) * var(--r))
+    );
+    left: 50%;
+    top: 30%;
+
+    &:first-child {
+        --r: 0px;
+    }
+}
+
+.bullets {
+    width: 120px;
+    position: relative;
+    height: 50px;
+}
+
+section.trackers input {
+    display: none;
+}
+
+section.weapons > div {
+    grid-row: 1/3;
+    grid-template-rows: subgrid;
+}
+
+.bloodTrack,
+.insightTrack,
+.gearTrack {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    & label {
+        color: var(--active);
+    
+        &[disabled] {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    
+        &:has(:checked) ~ label * {
+            color: var(--steel);
+        }
+    
+        input {
+            display: none;
+        }
+    }
+}
+
+.bulletTrack {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.silverTrack {
+    display: flex;
+    justify-content: center;
+}
+
+.bullet {
+    border: 2px solid;
+    width: 20px;
+    aspect-ratio: 1;
+    background: var(
+    --stamina);
+    text-align: center;
+    border-radius: 50%;
+    color: var(--blood);
+}
+
+.type label,
+.orgin label,
+.attire .options label {
+    padding: 5px 10px;
+    color: var(--steel);
+    display: block;
+    font-size: medium;
+
+    input:not([type='text']) {
+        display: none;
+    }
+
+    &:has(:checked) {
+        color: var(--blood);
+        text-decoration: underline;
+        font-size: large;
+        text-shadow: 0 0 var(--stamina);
+    }
+}
+
+section.stats p, .trackers p {
+    margin: 0 5px;
+    align-content: center;
+    font-size: medium;
+}
+
+.tools label,
+.gear label {
+    margin: 0 5px;
+}
+
+.attire .clock {
+    color: var(--blood)
+}
+
+.weapons .actions {
+    padding: 5px 10px;
+    display: grid;
+    gap: 5px;
+
+    & > * {
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 5px;
+        font-family: "Jim Nightshade", cursive;
+        font-size: large;
+    }
+}
+
+section.stats button {
+    border-width: 0px;
+    border-bottom-width: 2px;
+    font-size: x-large;
+    color: var(--blood);
+    min-height: auto;
+    height: 40px;
+    font-weight: bold;
+    font-family: "Manufacturing Consent", system-ui;
+    text-shadow: 0px 0px 2px var(--steel);
+    border-radius: 0;
+
+    &:hover {
+        color:var(--blood);
+    }
+}
+}

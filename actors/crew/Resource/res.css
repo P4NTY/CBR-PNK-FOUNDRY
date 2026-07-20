@@ -1,0 +1,103 @@
+.resource {
+    *:not(i) {
+        font-family: "Play", sans-serif;
+    }
+
+    header.window-header {
+        h1 {
+            font-size: large;
+        }
+        button.icon,
+        a.button.icon {
+            font-family: var(--font-awesome);
+        }
+    }
+
+    section.window-content {
+        padding: 0;
+    }
+    section.header {
+        position: relative;
+        overflow: hidden;
+
+        & > div {
+            position: absolute;
+            bottom:0;
+            background: #46454ff2;
+            border-top: 1px solid;
+            backdrop-filter: blur(5px);
+            width: 100%;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        input {
+            background: transparent;
+            border-bottom: 1px dashed;
+            padding: 20px 5px;
+            display: block;
+            border-radius: 0;
+        }
+
+        .img {
+            background-size: cover;
+            height: 500px;
+            position: relative;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            img {
+                opacity: 0;
+            }
+        }
+    }
+
+    prose-mirror {
+        border: 1px solid;
+        border-radius: 5px;
+        border-top-left-radius: 0;
+        background: #4448;
+        backdrop-filter: blur(5px);
+    }
+    
+    h3 {
+        margin: 0;
+        margin-top: 10px;
+        padding: 5px 10px;
+        width: fit-content;
+        background: var(--color-text-primary);
+        color: #444;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .clock {
+        border: 1px solid;
+        padding: 20px 10px;
+        border-radius: 5px;
+        border-top-left-radius: 0;
+        background: #4448;
+        backdrop-filter: blur(5px);
+
+        & > div {
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            align-items: center;
+        }
+    }
+
+    .trackerColor,
+    .trackerValue {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    
+        input[type="number"] {
+            width: 60px;
+            text-align: right;
+        }
+    }
+}

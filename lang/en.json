@@ -2,7 +2,9 @@
     "TYPES": {
         "Actor": {
             "runner": "Runner",
-            "hunter": "Hunter"
+            "hunter": "Hunter",
+            "crew": "Crew", 
+            "inquisitor": "Inquisitor"
         },
         "Item": {
             "item": "Item",
@@ -168,11 +170,11 @@
         },
         "succ": {
             "title": "THAT SHOULD WORK",
-            "desc": "<strong>CLEAR ⚡⚡⚡</strong> -OR- <strong>IGNORE</strong> LEVEL 1 OR 2 HARM PENALTIES FOR THE REMAINDER OF THE RUN."
+            "desc": "<strong>CLEAR <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i></strong> -OR- <strong>IGNORE</strong> LEVEL 1 OR 2 HARM PENALTIES FOR THE REMAINDER OF THE RUN."
         },
         "part": {
             "title": "SUCK IT UP",
-            "desc": "<strong>CLEAR ⚡⚡</strong> -OR- <strong>IGNORE</strong> LLEVEL 1 HARM PENALTIES FOR THE REMAINDER OF THE RUN."
+            "desc": "<strong>CLEAR <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i></strong> -OR- <strong>IGNORE</strong> LLEVEL 1 HARM PENALTIES FOR THE REMAINDER OF THE RUN."
         },
         "fail": {
             "title": "TAKE WHAT YOU CAN GET",
@@ -190,11 +192,11 @@
         },
         "part": {
             "title": "NOT BAD",
-            "desc": "MARK ⚡⚡"
+            "desc": "MARK <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i>"
         },
         "fail": {
             "title": "CLOSE",
-            "desc": "MARK <i class='fa-solid fa-bolt'></i>⚡⚡"
+            "desc": "MARK <i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i><i class='fa-solid fa-bolt'></i>"
         }
     },
     "ACTION": {
@@ -304,13 +306,110 @@
         "name": "HARM",
         "level_1": "▼E",
         "level_2": "<i class='fa-solid fa-square-minus'></i>",
-        "level_3": "WYPAD",
-        "level_4": "WYBIŁA TWOJA GODZINA 💀"
+        "level_3": "GET OUT",
+        "level_4": "YOU DIE NOW 💀"
     },
     "WARN": {
         "ROLL": "No APPROACH or SKILL selected"
     },
     "TOOLTIP": {
         "glich_dice": "+ GLICHED DICE"
-    }
+    },
+    "ROOKIE": {
+        "BEATS": {
+            "1": "Start a /Run with 2 marked Stress, regardless of how you ended the previous.",
+            "2": "Gear Restrictions: your network is not quite build up yet. Upgrades and Assets cost an extra Stress to declare.",
+            "3": "Endanger the crew by making a rookie mistake (examples below).",
+            "4": "Assist a Runner on a challenge clearly above your level with a Skill you don’t have dice on.",
+            "5": "Mark Special Resistance to avoid any type of Consequence by sheer luck.",
+            "6": "A Runner gets +1D to Resist when Protecting you from a Consequence.",
+            "7": "Take Harm of Level 2 or greater when Protecting a crew mate.",
+            "8": "When you Overload, instead of marking an Approach as Glitched, gain +1 to any Approach.",
+            "9": "Learn a harsh truth about the Runner life."
+        },
+        "Mistakes": {
+            "1": "Underestimating the threat.",
+            "2": "Overestimating their own abilities.",
+            "3": "Taking the enemy’s bait.",
+            "4": "Inadvertently spilling the beans.",
+            "5": "Stubbornly ignoring orders.",
+            "6": "Over-committing to the plan.",
+            "7": "Trusting the wrong person.",
+            "8": "Taking a Breather at the wrong moment.",
+            "9": "Misjudge crucial details.",
+            "10": "Falling for an obvious trap."
+        }
+    },
+    "CREW": {
+        "resources": "Resources",
+        "crew": "Crew",
+        "dropInfo": "Drop Actor",
+        "notes": "Notes"
+    },
+    "INQ":{
+        "blood": {
+            "name": "Blood",
+            "Recovery": "<b>Recover: </b> +2 Blood per Gear.",
+            "Spend": "<b>Loose: </b> by taking damage or enhancing an Iconic Weapon."
+        },
+        "stamina": {
+            "name": "Focus",
+            "Recovery": "<b>Recover: </b> after facing the Consequences.",
+            "Spend": "<b>Spend: </b> using Iconic Weapons."
+        },
+        "insight": {
+            "name": "Soul",
+            "Recovery": "<b>Recover: </b> one time, when you're meditating.",
+            "Spend": "<b>Spend: </b> using  or filling Iconic Weapon."
+        },
+        "gear": {
+            "name": "Gear",
+            "Recovery": "<b>Recover: </b> when you have a moment to restock.",
+            "Spend": "<b>Spend: </b> when you need to use specialized equipment."
+        },
+        "prowess": {
+            "name": "Prowess",
+            "desc": "Power, Athletics, Endurance"
+        },
+        "resolve": {
+            "name": "Resolve",
+            "desc": "Willpower, Fortitude, Charisma, Persuasion"
+        },
+        "wit": {
+            "name": "Wit",
+            "desc": "Perception, Reflexes, Wisdom, Forbidden Knowledge"
+        },
+        "weapon": {
+            "name": "Iconic Weapon",
+            "basic": "Basic",
+            "alt": "Alt",
+            "action_1": "Fast and Precise",
+            "action_2": "Powerful and Effective",
+            "blood": {
+                "label": "Blood Cover",
+                "desc": "cover your weapon with your blood. Take one die for each Blood point lost.."
+            },
+            "insight": {
+                "label": "Fill with Soul",
+                "desc": "fill your weapon with your soul. Gain a Effect for each Soul fragment."
+            },
+            "gear": {
+                "label": "Use Gear",
+                "desc": "use gear you have to reduce the Risk."
+            },
+            "trick": "Trick",
+            "parry": {
+                "label": "Parry",
+                "desc": "roll a die for each point spent. Use this to ward off Consequences or disadvantages.."
+            },
+            "counter": {
+                "label": "Counter",
+                "desc": "roll the die for every 2 points spent. Use this to deflect Consequences or stun opponents."
+            },
+            "reload": {
+                "label": "Reload",
+                "desc": "roll the die for each point of Blood spent. Recover the highest value."
+            }
+        }
+    } 
 }

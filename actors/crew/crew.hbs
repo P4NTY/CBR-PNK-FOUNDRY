@@ -1,3 +1,63 @@
-<div>
-    
+<div class="crew">
+    <section class="header">
+        <img src="{{actor.img}}" title="{{actor.name}}" data-action="editImage" data-edit="img"/>
+        <div>
+        <h1><input
+            name="name"
+            type="text"
+            placeholder="Name"
+            value="{{actor.name}}"
+        /></h1>
+        <section class="desc">
+            <input
+                name="system.desc"
+                type="text"
+                placeholder="Opis"
+                value="{{system.desc}}"
+            />
+        </section>
+        </div>
+    </section>
+    <div class="grid">
+        <h3>{{localize 'CREW.resources'}}</h3>
+        <h3>{{localize 'CREW.crew'}}</h3>
+        <section class="resources">
+            {{#each resources}}
+                <div class="res" data-id="{{_id}}" style="background-image: url({{img}});">
+                    <button data-action="removeItem">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <button data-action="openRes">
+                        <h4>{{name}}</h4>
+                        <p>{{system.short}}</p>
+                    </button>
+                    <div data-action="changeClock" style="--color: {{system.color}}; --bg: {{system.bg}}">
+                        {{{loopTrack 1 system.max system.value "" "desc"}}}
+                    </div>
+                </div>
+            {{/each}}
+            <button data-action="addResources">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </section>
+        <section class="squad">
+        {{#if (isEqual system.squadLength 0)}}
+            <p class="none"> {{localize 'CREW.dropInfo'}} </p>
+        {{/if}}
+        {{#each squad as |crewMate|}}
+            {{> "systems/CBRPNK/actors/crew/parts/crewMate.hbs" crewMate}}
+        {{/each}}
+        </section>
+    </div>
+    <h3 class="notesHeader">{{localize 'CREW.notes'}}</h3>
+    <section class="notes">
+        <prose-mirror
+            name="system.notes"
+            button="false"
+            editable="{{editable}}"
+            toggled="true"
+            value="{{system.notes}}">
+            {{{system.notes}}}
+        </prose-mirror>
+    </section>
 </div>

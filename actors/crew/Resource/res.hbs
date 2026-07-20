@@ -1,0 +1,55 @@
+<div
+ style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{item.img}}) center no-repeat;"
+>
+    <section class="header">
+        <div
+            class="img"
+            style="background-image: url({{item.img}});"
+        >
+        <img 
+            src="{{item.img}}"
+            title="{{item.name}}"
+            data-action="editImage"
+            data-edit="img"
+        />
+        </div>
+        <div>
+            <h1><input
+                name="name"
+                type="text"
+                placeholder="Name"
+                value="{{item.name}}"
+            /></h1>
+            <input
+                name="system.short"
+                type="text"
+                placeholder="Opis"
+                value="{{system.short}}"
+            />
+        </div>
+    </section>
+    <h3 class="notes">{{localize 'CREW.notes'}}</h3>
+    <prose-mirror
+        name="system.desc"
+        button="false"
+        editable="{{editable}}"
+        toggled="true"
+        value="{{system.desc}}">
+        {{{system.desc}}}
+    </prose-mirror>
+    <h3>{{localize 'CREW.tracker'}}</h3>
+    <div class="clock">
+        <div>
+            <div class="trackerValue">
+                <p>{{localize 'CREW.trackerValue'}}:</p>
+                <input type="number" name="system.value" value="{{system.value}}">
+                /
+                <input type="number" name="system.max" value="{{system.max}}">
+            </div>
+            <div class="trackerColor">
+                <input type="color" name="system.color" value="{{system.color}}">
+                <input type="color" name="system.bg" value="{{system.bg}}">
+            </div>
+        </div>
+    </div>
+</div>

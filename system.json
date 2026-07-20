@@ -10,11 +10,11 @@
       "flags": {}
     }
   ],
-  "version": "1.1",
+  "version": "1.2",
   "url": "https://github.com/P4NTY/CBR-PNK-FOUNDRY",
   "background": "systems/CBRPNK/assets/CBRPNK_splash.png",
   "manifest": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/releases/latest/download/system.json",
-  "download": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/releases/download/1.1/CBRPNK.zip",
+  "download": "https://github.com/P4NTY/CBR-PNK-FOUNDRY/releases/download/1.2/CBRPNK.zip",
   "compatibility": {
     "minimum": "13",
     "verified": "14",

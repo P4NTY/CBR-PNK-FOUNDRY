@@ -4,7 +4,7 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 export default class Runner extends HandlebarsApplicationMixin(Actor) {
 /** @inheritDoc */
   static DEFAULT_OPTIONS = {
-    classes: ['runner'],
+    classes: ['runner-actor'],
     tag: 'form',
     form: {
       handler: this.onSubmitForm,
@@ -77,11 +77,13 @@ export default class Runner extends HandlebarsApplicationMixin(Actor) {
             e_isActive: this.actor.system.skills[x].EXPERTISES[e]
         })),
         isActive: this.actor.system.roll.skill === x
-    }))
+    }));
+
     if (!this.actor.items.filter( ({type}) => type === "gear").length) {
         this.baseGear().then( gears =>{
             gears.forEach( ({name, value, max}) => {
                 Item.create({
+                    "gear_id": name,
                     "type": "gear",
                     "name": game.i18n.localize(`GEAR.${name}.name`),
                     system: {
@@ -95,11 +97,34 @@ export default class Runner extends HandlebarsApplicationMixin(Actor) {
             });
         })
     }
+
     return context
+  }
+
+  _isVaildRoll(isSkillNeeds = false) {
+    const skill = this.actor.system.roll.skill ? true : false;
+    const approach = this.actor.system.roll.approach ? true : false;
+    
+    if (
+        approach
+        &&
+        (skill || !isSkillNeeds)
+    ) return true;
+
+    ChatMessage.create({
+      rolls: [],
+      user: game.user._id,
+      speaker: ChatMessage.getSpeaker({token: this.actor}),
+      content: `<p class="infoAlert">${this.actor.name}: ${game.i18n.localize(`WARN.ROLL`)}</p>`,
+      rollMode: CONST.DICE_ROLL_MODES.PRIVATE
+    });
+    
+    return false;    
   }
 
   static async #rollAction(event, target) {
     event.preventDefault();
+    if ( !this._isVaildRoll(true) ) return ;
     const dataRoll = {
         ...this.actor.system.roll,
         dices: `${this.actor.system.approach[this.actor.system.roll.approach].dice} + ${(this.actor.system.skills[this.actor.system.roll.skill]||{dice: 0}).dice}`,
@@ -119,7 +144,7 @@ export default class Runner extends HandlebarsApplicationMixin(Actor) {
         )
     }
     const [letsRoll, rollResult] = await Runner.roll(
-        Math.min(6, eval([dataRoll.dices, dataRoll.addDice||0, (this.actor.system.roll.isGlichDice ? 1 : 0)].join('+')) )
+        Math.min(6, eval([dataRoll.dices, dataRoll.addDice||0].join('+')) )
     )
 
     if (rollResult.filter( dice => dice == 6).length >= 2) {
@@ -156,10 +181,12 @@ export default class Runner extends HandlebarsApplicationMixin(Actor) {
 
     templateData.dices = Runner.dicesToIcon(rollResult, dataRoll.GLICHED);
     await Runner.rollPop(templateData, letsRoll);
+    
   }
 
   static async #rollAngle (event, target) {
     event.preventDefault();
+    if ( !this._isVaildRoll() ) return ;
     const dataRoll = {
         ...this.actor.system.roll,
         dices: `${this.actor.system.approach[this.actor.system.roll.approach].dice} + ${this.actor.system.angle.CRED.value - this.actor.system.angle.DEBT.value}`,
@@ -201,6 +228,7 @@ export default class Runner extends HandlebarsApplicationMixin(Actor) {
 
   static async #rollResist(event, target) {
     event.preventDefault();
+    if ( !this._isVaildRoll() ) return ;
     const dataRoll = {
         ...this.actor.system.roll,
         dices: `${this.actor.system.approach[this.actor.system.roll.approach].dice}`,
@@ -247,6 +275,7 @@ export default class Runner extends HandlebarsApplicationMixin(Actor) {
   }
   static async #rollBreath(event, target) {
     event.preventDefault();
+    if ( !this._isVaildRoll() ) return ;
     const dataRoll = {
         ...this.actor.system.roll,
         dices: `${this.actor.system.approach[this.actor.system.roll.approach].dice}`,

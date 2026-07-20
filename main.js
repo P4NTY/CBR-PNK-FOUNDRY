@@ -1,6 +1,9 @@
 import cbrRunner from "./actors/runner/runner.js";
 import cbrDossier from "./actors/runner/dossier/dossier.js"
 import cbrHunter from "./actors/hunter/hunter.js";
+import cbrCrew from "./actors/crew/crew.js";
+import cbrRes from "./actors/crew/Resource/res.js";
+import bsInquisitor from "./actors/inquisitor/inquisitor.js";
 import { CbrSettings } from "./world.js";
 
 const runnerParts = 'systems/CBRPNK/actors/runner/parts/'
@@ -11,6 +14,7 @@ async function preloadHandlebarTemplates() {
       `${runnerParts}gear.hbs`,
       `${runnerParts}approach.hbs`,
       `${runnerParts}skill.hbs`,
+      `systems/CBRPNK/actors/crew/parts/crewMate.hbs`,
     ];
     return foundry.applications.handlebars.loadTemplates(templatepaths);
 }
@@ -19,17 +23,39 @@ Hooks.once("init", async function () {
     console.log('Start');
 
     foundry.documents.collections.Items.unregisterSheet("core",ItemSheet);
-    // foundry.documents.collections.Items.registerSheet("cbr", cbrItem, {makeDefault: true});
     foundry.documents.collections.Items.registerSheet("cbr", cbrDossier, {makeDefault: true});
+    foundry.documents.collections.Items.registerSheet("cbr", cbrRes, {makeDefault: true});
 
     foundry.documents.collections.Actors.unregisterSheet("core", ActorSheet);
-    foundry.documents.collections.Actors.registerSheet("cbr", cbrRunner, {types: ["runner"],makeDefault: true});
-    foundry.documents.collections.Actors.registerSheet("cbr", cbrHunter, {types: ["hunter"],makeDefault: true});
+    foundry.documents.collections.Actors.registerSheet("cbr", cbrRunner, {types: ["runner"], makeDefault: true});
+    foundry.documents.collections.Actors.registerSheet("cbr", cbrHunter, {types: ["hunter"], makeDefault: true});
+    foundry.documents.collections.Actors.registerSheet("cbr", cbrCrew, {types: ["crew"], makeDefault: true});
+    foundry.documents.collections.Actors.registerSheet("cbr", bsInquisitor, {types: ["inquisitor"], makeDefault: true});
 
     CbrSettings.register();
     await preloadHandlebarTemplates();
 
     console.log("Successfully initialized CBR+PNK!");
+});
+
+Hooks.on("dropActorSheetData", (actor, sheet, data) => {
+    console.log({
+        actor: actor,
+        data: data,
+        sheet: sheet
+    });
+
+    if ( 
+        (actor.type != 'crew' && data.type != "Actor")
+        ||
+        actor.system.squad.includes(data.uuid)
+        ||
+        !data.uuid.includes('Actor.')
+    ) return ;
+
+    actor.update({
+        "system.squad": [...actor.system.squad, data.uuid.replace("Actor.",'')]
+    })
 });
 
 // Custom HandelBars
@@ -46,6 +72,10 @@ Handlebars.registerHelper('isBigger', function (max, value) {
 
 Handlebars.registerHelper('isEqual', function (max, value) {
     return value == max;
+});
+
+Handlebars.registerHelper('isLower', function (min, value) {
+    return value > min;
 });
 
 Handlebars.registerHelper('drawDice', function (dices) {
@@ -97,3 +127,7 @@ Handlebars.registerHelper( 'loopTrack', function (min, max, current, track, sort
     }
     return result
 })
+
+Handlebars.registerHelper( 'lockGearName', function (name) {
+    return game.i18n.localize(`GEAR.${name}.name`);
+} )

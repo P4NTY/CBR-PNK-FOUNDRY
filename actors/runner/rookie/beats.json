@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "label": "Start a /Run with 2 marked Stress, regardless of how you ended the previous.",
+        "ticks": 2
+    },
+    { 
+        "id": 2,
+        "label": "Gear Restrictions: your network is not quite build up yet. Upgrades and Assets cost an extra Stress to declare.",
+        "ticks": 2
+    },
+    {
+        
+        "id": 3,
+        "label": "Endanger the crew by making a rookie mistake (examples below).",
+        "ticks": 2
+    },
+    {
+        
+        "id": 4,
+        "label": "Assist a Runner on a challenge clearly above your level with a Skill you don’t have dice on.",
+        "ticks": 2
+    },
+    {
+        
+        "id": 5,
+        "label": "Mark Special Resistance to avoid any type of Consequence by sheer luck.",
+        "ticks": 1
+    },
+    {
+        
+        "id": 6,
+        "label": "A Runner gets +1D to Resist when Protecting you from a Consequence.",
+        "ticks": 1
+    },
+    {
+        
+        "id": 7,
+        "label": "Take Harm of Level 2 or greater when Protecting a crew mate.",
+        "ticks": 1
+    },
+    {
+        
+        "id": 8,
+        "label": "When you Overload, instead of marking an Approach as Glitched, gain +1 to any Approach.",
+        "ticks": 1
+    },
+    {
+        
+        "id": 9,
+        "label": "Learn a harsh truth about the Runner life.",
+        "ticks": 1
+    }
+]

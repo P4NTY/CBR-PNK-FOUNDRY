@@ -1,7 +1,12 @@
 {
     "Actor": {
         "view": "block",
-        "types": ["runner", "hunter"],
+        "types": [
+            "runner", 
+            "hunter", 
+            "crew", 
+            "inquisitor"
+        ],
         "runner": {
             "isWierd": false,
             "angle": {
@@ -261,11 +266,43 @@
                 "cred": 0,
                 "debt": 0
             },
-            "hideout": ""
+            "desc": "",
+            "squad": [],
+            "tab": "main",
+            "notes": ""
+        },
+        "inquisitor": {
+            "blood":    { "curr": 5, "max": 5, "trick": 0 },
+            "stamina":  { "curr": 3, "max": 3 },
+            "insight":  { "curr": 4, "max": 4, "trick": 0 },
+            "prowess":  { "curr": 0, "max": 3 },
+            "resolve":  { "curr": 0, "max": 3 },
+            "wit":      { "curr": 0, "max": 3 },
+            "bandolier":{ "curr": 3, "max": 3, "trick": 0  },
+            "attire":   { "curr": 0, "max": 2, "isUseSpec": false, "type": ""},
+            "bullets":  { "curr": 6, "max": 6 },
+            "orgin": "",
+            "selectedSkill": "",
+            "selectedWeapon": {
+                "trick": "",
+                "fire": ""
+            },
+            "weapon": {
+                "basic": "",
+                "alt": "",
+                "special": ""
+            }
         }
     },
     "Item": {
-        "types": ["item", "augmentation","gear","dossier"],
+        "types": [
+            "item", 
+            "augmentation", 
+            "gear","dossier", 
+            "weapon", 
+            "weapon_skill",
+            "resources"
+        ],
         "item": {
             "desc": "",
             "stack": 0,
@@ -307,6 +344,31 @@
                     "value": 0
                 }
             }
+        },
+        "orgins": {
+            "name": "",
+            "desc": ""
+        },
+        "weapon": {
+            "type": "",
+            "desc": ""
+        },
+        "weapon_skill": {
+            "name": "",
+            "desc": "",
+            "cost": {
+                "value": 0,
+                "type": "stamina"
+            }
+        },
+        "resources": {
+            "desc": "",
+            "short": "",
+            "value": 1,
+            "max": 8,
+            "bg": "#25174e",
+            "color": "#d79002",
+            "squadLength": 0
         }
     }
 }

@@ -1,9 +1,8 @@
-.dossier {
-section.tabs {
+.dossier section.tabs {
     display: flex;
 }
 
-section.tabs label {
+.dossier section.tabs label {
     flex-grow: 1;
     text-align: center;
     padding: 10px;
@@ -12,41 +11,40 @@ section.tabs label {
     color: rgb(var(--dark));
 }
 
- section.tabs label:has(:checked) {
+.dossier section.tabs label:has(:checked) {
     background: rgb(var(--action));
 }
 
- section.tabs label.wierd:has(:checked) {
+.dossier section.tabs label.wierd:has(:checked) {
     background: rgb(var(--resist));
 }
 
- section.tabs input {
+.dossier section.tabs input {
     display: none;
 }
- table {
+.dossier table {
     width: 50%;
     margin: auto;
 }
 
- table button {
+.dossier table button {
     width: 100%;
 }
 
- table input {
+.dossier table input {
     width: 50px;
     text-align: center;
 }
 
- tr.mod.active {
+.dossier tr.mod.active {
     background: rgb(var(--good));
 }
 
- prose-mirror .editor-content {
+.dossier prose-mirror .editor-content {
     position: relative;
     text-align: justify;
 }
 
- input[name="system.wrf"] {
+.dossier input[name="system.wrf"] {
     text-align: center;
-}
 }

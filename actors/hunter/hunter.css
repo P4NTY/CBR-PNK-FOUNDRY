@@ -5,41 +5,40 @@
   --action: 215 144 2;
 
   font-family: "Play", sans-serif;
-}
 
-.cbr_hunter .header {
+ .header {
   display: flex;
   align-items: flex-start;
 }
 
-.cbr_hunter .pic {
+ .pic {
   width: 40%;
   display: flex;
   position: relative;
   border: 10px solid rgb(var(--main));
 }
 
-.cbr_hunter .pic p {
+ .pic p {
   text-align: right;
   margin: 0;
 }
 
-.cbr_hunter .persona {
+ .persona {
   flex-grow: 1;
 }
 
-.cbr_hunter .track {
+ .track {
   display: inline-block;
   display: flex;
   gap: 5px;
   justify-content: center;
 }
 
-.cbr_hunter .pic .track > div {
+ .pic .track > div {
   background: rgb(var(--second));
 }
 
-.cbr_hunter .track>div {
+ .track>div {
   width: 20px;
   height: 30px;
   transform: skew(-15deg);
@@ -49,16 +48,16 @@
   cursor: pointer;
 }
 
-.cbr_hunter .track[data-value="1"]>div:nth-child(-n+1),
-.cbr_hunter .track[data-value="2"]>div:nth-child(-n+2),
-.cbr_hunter .track[data-value="3"]>div:nth-child(-n+3),
-.cbr_hunter .track[data-value="4"]>div:nth-child(-n+4),
-.cbr_hunter .track[data-value="5"]>div:nth-child(-n+5),
-.cbr_hunter .track[data-value="6"]>div:nth-child(-n+6) {
+ .track[data-value="1"]>div:nth-child(-n+1),
+ .track[data-value="2"]>div:nth-child(-n+2),
+ .track[data-value="3"]>div:nth-child(-n+3),
+ .track[data-value="4"]>div:nth-child(-n+4),
+ .track[data-value="5"]>div:nth-child(-n+5),
+ .track[data-value="6"]>div:nth-child(-n+6) {
   background: rgb(var(--action));
 }
 
-.cbr_hunter .tracks > div {
+ .tracks > div {
   border: 5px solid;
   width: 80%;
   display: flex;
@@ -67,30 +66,30 @@
   justify-content: space-around;
 }
 
-.cbr_hunter .activation {
+ .activation {
   position: absolute;
   top: 25%;
   transform: rotate(-90deg) translate(0%, -100%);
   left: -24px;
 }
 
-.cbr_hunter .counter {
+ .counter {
   position: absolute;
   bottom: 25%;
   transform: rotate(90deg) translate(0%, -100%);
   right: -28px;
 }
 
-.cbr_hunter .aa {
+ .aa {
   display: grid;
   grid-template-areas: ". .";
   gap: 20px;
   margin: 20px 0;
 }
 
-.cbr_hunter .title,
-.cbr_hunter .persona input[name="name"],
-.cbr_hunter .aa h3 {
+ .title,
+ .persona input[name="name"],
+ .aa h3 {
   font-weight: bold;
   margin: 0;
   background: rgb(var(--main));
@@ -101,57 +100,58 @@
   text-shadow: 0px 0px 5px rgb(var(--dark));
 }
 
-.cbr_hunter .persona input[name="name"] {
+ .persona input[name="name"] {
   font-size: xx-large;
   font-family: "Pixelify Sans", sans-serif;
   padding: 10px 20px;
 }
 
-.cbr_hunter .aa prose-mirror {
+ .aa prose-mirror {
   border: 1px solid;
   border-top: 0;
 }
 
-.cbr_hunter .aa prose-mirror .editor-content {
+ .aa prose-mirror .editor-content {
   padding: 5px;
 }
 
-.cbr_hunter .rank {
+ .rank {
   display: grid;
   grid-template-areas: ". . .";
   gap: 10px
 }
 
-.cbr_hunter .persona prose-mirror {
+ .persona prose-mirror {
   margin-left: 15px;
   border-bottom: 1px solid;
   border-right: 1px solid;
 }
 
-.cbr_hunter .aa input {
+ .aa input {
   border-radius: 0;
 }
 
-.cbr_hunter .skill {
+ .skill {
   display: flex;
   margin: 5px 0;
 }
 
-.cbr_hunter .title {
+ .title {
   display: flex;
   justify-content: space-around;
   white-space: nowrap;
   align-items: center;
 }
 
-.cbr_hunter .title h3 {
+ .title h3 {
   margin: 0;
 }
 
-.cbr_hunter .title span {
+ .title span {
   font-size: x-small;
 }
 
-.cbr_hunter textarea {
+ textarea {
   width: 100%;
+}
 }

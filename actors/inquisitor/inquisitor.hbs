@@ -1,0 +1,334 @@
+<div>
+<div class="two">
+  <section class="header">
+    <img src="{{actor.img}}" title="{{actor.name}}" data-action="editImage" data-edit="img"/>
+    <h1>
+      <input name="name" type="text" placeholder="Name" value="{{actor.name}}"/>
+      {{!-- <button data-action="openNotes">
+        <i class="fa-solid fa-file-lines"></i>
+      </button> --}}
+    </h1>
+  </section>
+  <section class="trackers">
+    <div class="blood">
+      <h3>{{localize 'INQ.blood.name'}}</h3>
+      <p>{{{localize 'INQ.blood.Recovery'}}}</p>
+      <p>{{{localize 'INQ.blood.Spend'}}}</p>
+      <div class="track">
+        <label>
+          <input type="radio" name="system.blood.curr" value="0" {{#if (isEqual system.blood.curr 0)}}checked{{/if}}/>
+          <i class="{{#if (isEqual system.blood.curr 0)}}fa-solid{{else}}fa-light{{/if}} fa-skull"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.blood.curr" value="1" {{#if (isEqual system.blood.curr 1)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.blood.curr 1)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.blood.curr" value="2" {{#if (isEqual system.blood.curr 2)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.blood.curr 2)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.blood.curr" value="3" {{#if (isEqual system.blood.curr 3)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.blood.curr 3)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.blood.curr" value="4" {{#if (isEqual system.blood.curr 4)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.blood.curr 4)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.blood.curr" value="5" {{#if (isEqual system.blood.curr 5)}}checked{{/if}}/>
+          <i class="{{#if (isEqual system.blood.curr 5)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+        </label>
+      </div>
+    </div>
+    <div class="stamina">
+      <h3>{{localize 'INQ.stamina.name'}}</h3>
+      <p>{{{localize 'INQ.stamina.Recovery'}}}</p>
+      <p>{{{localize 'INQ.stamina.Spend'}}}</p>
+      <div class="track">
+        <label>
+          <input type="radio" name="system.stamina.curr" value="0" {{#if (isEqual system.stamina.curr 0)}}checked{{/if}}/>
+          <i class="{{#if (isEqual system.stamina.curr 0)}}fa-solid{{else}}fa-thin{{/if}} fa-empty-set"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.stamina.curr" value="1" {{#if (isEqual system.stamina.curr 1)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.stamina.curr 1)}}fa-solid{{else}}fa-light{{/if}} fa-diamond"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.stamina.curr" value="2" {{#if (isEqual system.stamina.curr 2)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.stamina.curr 2)}}fa-solid{{else}}fa-light{{/if}} fa-diamond"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.stamina.curr" value="3" {{#if (isEqual system.stamina.curr 3)}}checked{{/if}}/>
+          <i class="{{#if (isEqual system.stamina.curr 3)}}fa-solid{{else}}fa-light{{/if}} fa-diamond"></i>
+        </label>
+      </div>
+    </div>
+    <div class="insight">
+      <h3>{{localize 'INQ.insight.name'}}</h3>
+      <p>{{{localize 'INQ.insight.Recovery'}}}</p>
+      <p>{{{localize 'INQ.insight.Spend'}}}</p>
+      <div class="track">
+        <label>
+          <input type="radio" name="system.insight.curr" value="0" {{#if (isEqual system.insight.curr 0)}}checked{{/if}}/>
+          <i class="{{#if (isEqual system.insight.curr 0)}}fa-solid{{else}}fa-thin{{/if}} fa-empty-set"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.insight.curr" value="1" {{#if (isEqual system.insight.curr 1)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.insight.curr 1)}}fa-solid{{else}}fa-light{{/if}} fa-triangle"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.insight.curr" value="2" {{#if (isEqual system.insight.curr 2)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.insight.curr 2)}}fa-solid{{else}}fa-light{{/if}} fa-triangle"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.insight.curr" value="3" {{#if (isEqual system.insight.curr 3)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.insight.curr 3)}}fa-solid{{else}}fa-light{{/if}} fa-triangle"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.insight.curr" value="4" {{#if (isEqual system.insight.curr 4)}}checked{{/if}}/>
+          <i class="{{#if (isEqual system.insight.curr 4)}}fa-solid{{else}}fa-light{{/if}} fa-triangle"></i>
+        </label>
+      </div>
+    </div>
+    <div class="gear">
+      <h3>{{localize 'INQ.gear.name'}}</h3>
+      <p>{{{localize 'INQ.gear.Recovery'}}}</p>
+      <p>{{{localize 'INQ.gear.Spend'}}}</p>
+      <div class="track">
+        <label>
+          <input type="radio" name="system.bandolier.curr" value="0" {{#if (isEqual system.bandolier.curr 0)}}checked{{/if}}/>
+          <i class="{{#if (isEqual system.bandolier.curr 0)}}fa-solid{{else}}fa-thin{{/if}} fa-empty-set"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.bandolier.curr" value="1" {{#if (isEqual system.bandolier.curr 1)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.bandolier.curr 1)}}fa-solid{{else}}fa-light{{/if}} fa-backpack"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.bandolier.curr" value="2" {{#if (isEqual system.bandolier.curr 2)}}checked{{/if}}/>
+          <i class="{{#if (isBigger system.bandolier.curr 2)}}fa-solid{{else}}fa-light{{/if}} fa-backpack"></i>
+        </label>
+        <label>
+          <input type="radio" name="system.bandolier.curr" value="3" {{#if (isEqual system.bandolier.curr 3)}}checked{{/if}}/>
+          <i class="{{#if (isEqual system.bandolier.curr 3)}}fa-solid{{else}}fa-light{{/if}} fa-backpack"></i>
+        </label>
+      </div>
+    </div>
+  </section>
+</div>
+<section class="stats">
+  <div class="prowess">
+    <button data-action="rollSkill" data-skill="prowess">
+      {{localize 'INQ.prowess.name'}}
+    </button>
+    <p>{{localize 'INQ.prowess.desc'}}</p>
+    <div class="track">
+      {{{loopTrack 1 system.prowess.max system.prowess.curr "system.prowess.curr" "desc"}}}
+    </div>
+  </div>
+  <div class="resolve">
+    <button data-action="rollSkill" data-skill="resolve">
+      {{localize 'INQ.resolve.name'}}
+    </button>
+    <p>{{localize 'INQ.resolve.desc'}}</p>
+    <div class="track">
+      {{{loopTrack 1 system.resolve.max system.resolve.curr "system.resolve.curr" "desc"}}}
+    </div>
+  </div>
+  <div class="wit">
+    <button data-action="rollSkill" data-skill="wit">
+      {{localize 'INQ.wit.name'}}
+    </button>
+    <p>{{localize 'INQ.wit.desc'}}</p>
+    <div class="track">
+      {{{loopTrack 1 system.wit.max system.wit.curr "system.wit.curr" "desc"}}}
+    </div>
+  </div>
+</section>
+<section class="weapons">
+  <div class="trick">
+    <h3>{{localize 'INQ.weapon.name'}}</h3>
+    <div>
+      <div class="type">
+        <label>
+          {{localize 'INQ.weapon.basic'}}
+          <input type="text" name="system.weapon.basic" value="{{system.weapon.basic}}" />
+        </label>
+        <label>
+          {{localize 'INQ.weapon.alt'}}
+          <input type="text" name="system.weapon.alt" value="{{system.weapon.alt}}" />
+        </label>
+      </div>
+      <div class="actions">
+        <button data-action="rollTrick" data-cost="1" {{#if (isEqual system.stamina.curr 0)}}disabled{{/if}}>
+          <i class="fa-solid fa-diamond"></i>
+          {{localize 'INQ.weapon.action_1'}}
+        </button>
+        <button data-action="rollTrick" data-cost="2" {{#if (isLower system.stamina.curr 2)}}disabled{{/if}}>
+          <i class="fa-solid fa-diamond"></i>
+          <i class="fa-solid fa-diamond"></i>
+          {{localize 'INQ.weapon.action_2'}}
+        </button>
+        <div>
+          <b>{{localize 'INQ.weapon.blood.label'}}:</b>
+          {{localize 'INQ.weapon.blood.desc'}}
+          <div class="bloodTrack" data-blood="{{system.blood.curr}}">
+              <label>
+                <input type="radio" name="system.blood.trick" value="0" {{#if (isEqual system.blood.trick 0)}}checked{{/if}}/>
+                <i class="{{#if (isEqual system.blood.trick 0)}}fa-solid{{else}}fa-thin{{/if}} fa-empty-set"></i>
+              </label>
+              <label {{#if (isLower system.blood.curr 1)}}disabled{{/if}}>
+                <input type="radio" name="system.blood.trick" value="1" {{#if (isEqual system.blood.trick 1)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.blood.curr 1)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+              </label>
+              <label {{#if (isLower system.blood.curr 2)}}disabled{{/if}}>
+                <input type="radio" name="system.blood.trick" value="2" {{#if (isEqual system.blood.trick 2)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.blood.curr 2)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+              </label>
+              <label {{#if (isLower system.blood.curr 3)}}disabled{{/if}}>
+                <input type="radio" name="system.blood.trick" value="3" {{#if (isEqual system.blood.trick 3)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.blood.curr 3)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+              </label>
+              <label {{#if (isLower system.blood.curr 4)}}disabled{{/if}}>
+                <input type="radio" name="system.blood.trick" value="4" {{#if (isEqual system.blood.trick 4)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.blood.curr 4)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+              </label>
+              <label {{#if (isLower system.blood.curr 5)}}disabled{{/if}}>
+                <input type="radio" name="system.blood.trick" value="5" {{#if (isEqual system.blood.trick 5)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.blood.curr 5)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+              </label>
+          </div>
+        </div>
+        <div>
+          <b>{{localize 'INQ.weapon.insight.label'}}:</b>
+          {{localize 'INQ.weapon.insight.desc'}}
+          <div class="insightTrack" data-insight="{{system.insight.curr}}">
+              <label>
+                <input type="radio" name="system.insight.trick" value="0" {{#if (isEqual system.insight.trick 0)}}checked{{/if}}/>
+                <i class="{{#if (isEqual system.insight.trick 0)}}fa-solid{{else}}fa-thin{{/if}} fa-empty-set"></i>
+              </label>
+              <label {{#if (isLower system.insight.curr 1)}}disabled{{/if}}>
+                <input type="radio" name="system.insight.trick" value="1" {{#if (isEqual system.insight.trick 1)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.insight.curr 1)}}fa-solid{{else}}fa-light{{/if}} fa-triangle"></i>
+              </label>
+              <label {{#if (isLower system.insight.curr 2)}}disabled{{/if}}>
+                <input type="radio" name="system.insight.trick" value="2" {{#if (isEqual system.insight.trick 2)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.insight.curr 2)}}fa-solid{{else}}fa-light{{/if}} fa-triangle"></i>
+              </label>
+              <label {{#if (isLower system.insight.curr 3)}}disabled{{/if}}>
+                <input type="radio" name="system.insight.trick" value="3" {{#if (isEqual system.insight.trick 3)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.insight.curr 3)}}fa-solid{{else}}fa-light{{/if}} fa-triangle"></i>
+              </label>
+              <label {{#if (isLower system.insight.curr 4)}}disabled{{/if}}>
+                <input type="radio" name="system.insight.trick" value="4" {{#if (isEqual system.insight.trick 4)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.insight.curr 4)}}fa-solid{{else}}fa-light{{/if}} fa-triangle"></i>
+              </label>
+          </div>
+        </div>
+        <div>
+          <b>{{localize 'INQ.weapon.gear.label'}}:</b>
+          {{localize 'INQ.weapon.gear.desc'}}
+          <div class="gearTrack" data-bandolier="{{system.bandolier.curr}}">
+              <label>
+                <input type="radio" name="system.bandolier.trick" value="0" {{#if (isEqual system.bandolier.trick 0)}}checked{{/if}}/>
+                <i class="{{#if (isEqual system.bandolier.trick 0)}}fa-solid{{else}}fa-thin{{/if}} fa-empty-set"></i>
+              </label>
+              <label {{#if (isLower system.bandolier.curr 1)}}disabled{{/if}}>
+                <input type="radio" name="system.bandolier.trick" value="1" {{#if (isEqual system.bandolier.trick 1)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.bandolier.curr 1)}}fa-solid{{else}}fa-light{{/if}} fa-backpack"></i>
+              </label>
+              <label {{#if (isLower system.bandolier.curr 2)}}disabled{{/if}}>
+                <input type="radio" name="system.bandolier.trick" value="2" {{#if (isEqual system.bandolier.trick 2)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.bandolier.curr 2)}}fa-solid{{else}}fa-light{{/if}} fa-backpack"></i>
+              </label>
+              <label {{#if (isLower system.bandolier.curr 3)}}disabled{{/if}}>
+                <input type="radio" name="system.bandolier.trick" value="3" {{#if (isEqual system.bandolier.trick 3)}}checked{{/if}}/>
+                <i class="{{#if (isBigger system.bandolier.curr 3)}}fa-solid{{else}}fa-light{{/if}} fa-backpack"></i>
+              </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fire">
+    <h3>{{localize 'INQ.weapon.trick'}}</h3>
+    <div>
+      <div class="two">
+        <div class="type">
+          <label>
+            <input type="text" name="system.weapon.special" value="{{system.weapon.special}}" />
+          </label>
+        </div>
+        <div class="bullets">
+          {{{loopTrack 0 system.bullets.max system.bullets.curr "system.bullets.curr" "desc"}}}
+        </div>
+      </div>
+      <div  class="actions">
+        <div>
+          <b>{{localize 'INQ.weapon.parry.label'}}:</b>
+          {{localize 'INQ.weapon.parry.desc'}}
+          <div class="bulletTrack" data-bullets="{{system.bullets.curr}}">
+              <button data-action="rollSpecial" data-cost="1" {{#if (isLower system.bullets.curr 1)}}disabled{{/if}}>
+                <span class="bullet">1</span>
+              </button>
+              <button data-action="rollSpecial" data-cost="1" {{#if (isLower system.bullets.curr 2)}}disabled{{/if}}>
+                <span class="bullet">2</span>
+              </button>
+              <button data-action="rollSpecial" data-cost="1" {{#if (isLower system.bullets.curr 3)}}disabled{{/if}}>
+                <span class="bullet">3</span>
+              </button>
+              <button data-action="rollSpecial" data-cost="1" {{#if (isLower system.bullets.curr 4)}}disabled{{/if}}>
+                <span class="bullet">4</span>
+              </button>
+              <button data-action="rollSpecial" data-cost="1" {{#if (isLower system.bullets.curr 5)}}disabled{{/if}}>
+                <span class="bullet">5</span>
+              </button>
+              <button data-action="rollSpecial" data-cost="1" {{#if (isLower system.bullets.curr 6)}}disabled{{/if}}>
+                <span class="bullet">6</span>
+              </button>
+          </div>
+        </div>
+        <div>
+          <b>{{localize 'INQ.weapon.counter.label'}}:</b>
+          {{localize 'INQ.weapon.counter.desc'}}
+          <div class="bulletTrack" data-bullets="{{system.bullets.curr}}">
+              <button data-action="rollSpecial" data-cost="2" {{#if (isLower system.bullets.curr 2)}}disabled{{/if}}>
+                <span class="bullet">1</span>
+                <span class="bullet">2</span>
+              </button>
+              <button data-action="rollSpecial" data-cost="2" {{#if (isLower system.bullets.curr 4)}}disabled{{/if}}>
+                <span class="bullet">3</span>
+                <span class="bullet">4</span>
+              </button>
+              <button data-action="rollSpecial" data-cost="2" {{#if (isLower system.bullets.curr 6)}}disabled{{/if}}>
+                <span class="bullet">5</span>
+                <span class="bullet">6</span>
+              </button>
+          </div>
+        </div>
+        <div>
+          <b>{{localize 'INQ.weapon.reload.label'}}:</b>
+          {{localize 'INQ.weapon.reload.desc'}}
+            <div class="bloodTrack">
+              <button data-action="rollReaload" data-type="blood" {{#if (isLower system.blood.curr 1)}}disabled{{/if}}>
+                1 <i class="{{#if (isBigger system.blood.curr 1)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+              </button>
+              <button data-action="rollReaload" data-type="blood" {{#if (isLower system.blood.curr 2)}}disabled{{/if}}>
+                2 <i class="{{#if (isBigger system.blood.curr 2)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+              </button>
+              <button data-action="rollReaload" data-type="blood" {{#if (isLower system.blood.curr 3)}}disabled{{/if}}>
+                3 <i class="{{#if (isBigger system.blood.curr 3)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+              </button>
+              <button data-action="rollReaload" data-type="blood" {{#if (isLower system.blood.curr 4)}}disabled{{/if}}>
+                4 <i class="{{#if (isBigger system.blood.curr 4)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+              </button>
+              <button data-action="rollReaload" data-type="blood" {{#if (isLower system.blood.curr 5)}}disabled{{/if}}>
+                5 <i class="{{#if (isBigger system.blood.curr 5)}}fa-solid{{else}}fa-light{{/if}} fa-droplet"></i>
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
